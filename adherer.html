@@ -1,1 +1,740 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhérer - CIQ Luynes en action | ciq.13080.fr</title>
+<link rel="icon" href="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-carre-bleu.png">
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  :root{
+    --navy: #242E63;
+    --navy-deep: #171B41;
+    --gold: #FFC500;
+    --gold-dark: #AD8901;
+    --white: #FFFFFF;
+    --navy-muted-on-white: rgba(36,46,99,.62);
+    --white-muted-on-navy: rgba(255,255,255,.72);
+    --line-on-white: rgba(36,46,99,.12);
+    --line-on-navy: rgba(255,255,255,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.015em;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* =========================================================
+     HEADER 1 — bandeau logo
+     ========================================================= */
+  .site-header {
+    background-color: #242E63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .site-header__logo-link { display: block; line-height: 0; }
+  .site-header__logo {
+    display: block !important;
+    width: 300px !important;
+    height: auto !important;
+    max-width: 90vw !important;
+  }
+
+  /* =========================================================
+     HEADER 2 — navigation
+     ========================================================= */
+  .sub-header {
+    background-color: #242E63;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1000;
+  }
+  .sub-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .sub-header__brand { display: flex; align-items: center; gap: 16px; }
+  .sub-header__site-link {
+    color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; white-space: nowrap;
+  }
+  .sub-header__site-link:hover, .sub-header__site-link:focus { color: #FFC500; }
+  .sub-header__back-link {
+    color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 13px; font-weight: 400;
+    white-space: nowrap; transition: color 0.2s ease;
+  }
+  .sub-header__back-link:hover, .sub-header__back-link:focus { color: #FFC500; }
+  .sub-header__toggle { display: none; }
+  .sub-header__burger {
+    display: none; flex-direction: column; justify-content: space-between;
+    width: 26px; height: 18px; cursor: pointer; z-index: 1002;
+  }
+  .sub-header__burger span {
+    display: block; height: 2px; width: 100%; background-color: #FFFFFF; border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sub-header__nav { display: flex; align-items: center; gap: 24px; }
+  .sub-header__link { color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 400; white-space: nowrap; }
+  .sub-header__link:hover, .sub-header__link:focus { color: #FFC500; }
+  .sub-header__btn {
+    text-decoration: none; font-size: 15px; font-weight: 600; padding: 8px 18px; border-radius: 6px;
+    white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .sub-header__btn--primary { background-color: #FFC500; color: #242E63; }
+  .sub-header__btn--primary:hover, .sub-header__btn--primary:focus { background-color: #e6b100; }
+  .sub-header__btn--secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+  .sub-header__btn--secondary:hover, .sub-header__btn--secondary:focus { background-color: #FFFFFF; color: #242E63; }
+
+  @media (max-width: 860px) {
+    .sub-header__burger { display: flex; }
+    .sub-header__nav {
+      position: absolute; z-index: 1001; top: 100%; left: 0; right: 0; margin-top: 16px;
+      background-color: #242E63; flex-direction: column; align-items: flex-start; gap: 16px;
+      padding: 20px 24px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .sub-header__toggle:checked ~ .sub-header__nav { max-height: 400px; padding-top: 20px; padding-bottom: 20px; }
+    .sub-header__btn { width: 100%; text-align: center; box-sizing: border-box; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2) { opacity: 0; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+
+  /* =========================================================
+     BOUTONS
+     ========================================================= */
+  .hero__ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    transition:transform .15s ease, background-color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn--primary{ background:var(--gold); color:var(--navy); }
+  .btn--primary:hover{ background:#e6b200; }
+  .btn--ghost{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.6); }
+  .btn--ghost:hover{ background:rgba(255,255,255,.14); }
+  .btn--outline-navy{ background:transparent; color:var(--navy); border-color:rgba(36,46,99,.35); }
+  .btn--outline-navy:hover{ background:rgba(36,46,99,.06); }
+  /* Sur fond clair : jamais de --gold (FFC500), on utilise --gold-dark avec texte blanc */
+  .btn--accent{ background:var(--gold-dark); color:var(--white); }
+  .btn--accent:hover{ background:#8f6f02; }
+
+  /* =========================================================
+     SECTION SHARED
+     ========================================================= */
+  section{ padding:76px 0; }
+  .section-head{ max-width:640px; margin-bottom:36px; }
+  .section-head h2{
+    font-size:clamp(1.6rem,2.8vw,2.1rem);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .section-head p{
+    color:var(--navy-muted-on-white);
+    font-weight:400;
+    font-size:1rem;
+    line-height:1.6;
+    margin-top:12px;
+  }
+  .section-head--on-navy h2{ color:var(--white); }
+  .section-head--on-navy p{ color:var(--white-muted-on-navy); }
+  .section-head--lead h1{
+    font-size:clamp(2rem,3.6vw,2.75rem);
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.1;
+  }
+  .section-head--lead p{
+    font-size:1.05rem;
+    line-height:1.6;
+    max-width:58ch;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    margin-bottom:14px;
+  }
+  .eyebrow--on-navy{ color:var(--gold); }
+  .link-more{
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--gold-dark);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:22px;
+  }
+  .link-more:hover{ text-decoration:underline; }
+  .link-more svg{ transition:transform .15s ease; }
+  .link-more:hover svg{ transform:translateX(3px); }
+
+  .section--alt{ background:#FAFAF8; }
+
+  /* =========================================================
+     HERO ADHÉRER
+     ========================================================= */
+  .join-hero{ padding:76px 0 56px; }
+  .join-hero__grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .join-hero__body p{
+    color:var(--navy);
+    line-height:1.7;
+    font-size:1.05rem;
+    font-weight:400;
+    margin:0;
+  }
+  .join-hero__photo{
+    width:100%;
+    height:100%;
+    min-height:300px;
+    max-height:380px;
+    object-fit:cover;
+    border-radius:16px;
+  }
+
+  /* =========================================================
+     RAISONS D'ADHÉRER
+     ========================================================= */
+  .reasons__grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .reason-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-radius:14px;
+    padding:30px 28px;
+  }
+  .reason-card__num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    background:var(--navy);
+    color:var(--gold);
+    font-weight:800;
+    font-size:1.05rem;
+    margin-bottom:18px;
+  }
+  .reason-card p{
+    color:var(--navy-muted-on-white);
+    line-height:1.6;
+    font-size:.98rem;
+    font-weight:400;
+    margin:0;
+  }
+  .reason-card p strong{ color:var(--navy); font-weight:700; }
+
+  /* =========================================================
+     TARIFS
+     ========================================================= */
+  .pricing__grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    align-items:stretch;
+  }
+  .pricing-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-top:3px solid var(--gold-dark);
+    border-radius:14px;
+    padding:34px 30px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .pricing-card--featured{
+    background:var(--navy);
+    border-color:var(--navy);
+    border-top:3px solid var(--gold);
+    color:var(--white);
+  }
+  .pricing-card__badge{
+    position:absolute;
+    top:-13px;
+    right:24px;
+    background:var(--gold);
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:999px;
+  }
+  .pricing-card__price{
+    font-size:2.6rem;
+    font-weight:800;
+    color:var(--navy);
+    line-height:1;
+  }
+  .pricing-card--featured .pricing-card__price{ color:var(--gold); }
+  .pricing-card__duration{
+    margin-top:12px;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .pricing-card--featured .pricing-card__duration{ color:var(--white); }
+  .pricing-card__note{
+    margin-top:6px;
+    font-size:.92rem;
+    font-weight:400;
+    color:var(--navy-muted-on-white);
+  }
+  .pricing-card--featured .pricing-card__note{ color:var(--white-muted-on-navy); }
+  .pricing-card__spacer{ flex:1; margin-top:20px; padding-top:20px; border-top:1px solid var(--line-on-white); }
+  .pricing-card--featured .pricing-card__spacer{ border-top-color:var(--line-on-navy); }
+  .pricing-card__actions{ display:flex; flex-direction:column; gap:10px; }
+  .pricing-card__btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:11px 16px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    box-sizing:border-box;
+    border:1.5px solid transparent;
+    transition:opacity .15s ease;
+  }
+  .pricing-card__btn:hover{ opacity:.88; }
+  /* Carte claire (fond blanc) : jamais de --gold, on utilise --gold-dark + texte blanc */
+  .pricing-card__btn--main{ background:var(--gold-dark); color:var(--white); }
+  .pricing-card__btn--pay{ background:transparent; color:var(--gold-dark); border-color:var(--gold-dark); }
+  /* Carte mise en avant (fond navy = fond sombre) : --gold autorisé */
+  .pricing-card--featured .pricing-card__btn--main{ background:var(--gold); color:var(--navy); }
+  .pricing-card--featured .pricing-card__btn--pay{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.5); }
+
+  /* =========================================================
+     AVANTAGES ADHÉRENT (bande navy)
+     ========================================================= */
+  .perks-band{ background:var(--navy); color:var(--white); }
+  .perks__grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:32px;
+    padding:20px 0 8px;
+  }
+  .perk{ border-left:2px solid var(--line-on-navy); padding-left:20px; }
+  .perk__label{
+    color:var(--white);
+    font-size:1.02rem;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .perk__desc{
+    margin-top:8px;
+    color:var(--white-muted-on-navy);
+    font-size:.92rem;
+    line-height:1.5;
+  }
+
+  /* =========================================================
+     CTA BAND
+     ========================================================= */
+  .cta-band{ background:var(--navy); color:var(--white); padding:0; }
+  .cta-band__grid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+    padding:56px 0;
+  }
+  .cta-band h2{
+    color:var(--white);
+    font-size:clamp(1.5rem,3vw,2rem);
+    font-weight:700;
+    max-width:20ch;
+  }
+  .cta-band p{
+    color:var(--white);
+    font-weight:400;
+    margin-top:10px;
+    max-width:42ch;
+    font-size:15px;
+  }
+  .cta-band .btn--primary{ background:var(--gold); color:var(--navy); }
+  .cta-band .btn--primary:hover{ background:#e6b200; }
+  .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
+  .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
+
+  /* =========================================================
+     ESPACE ADHÉRENT
+     ========================================================= */
+  .member-area{ padding:60px 0; }
+  .member-area__card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    flex-wrap:wrap;
+    background:#FAFAF8;
+    border:1px solid var(--line-on-white);
+    border-radius:16px;
+    padding:36px 36px;
+  }
+  .member-area__card h3{
+    font-size:1.25rem;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .member-area__card p{
+    margin-top:8px;
+    color:var(--navy-muted-on-white);
+    font-size:.98rem;
+    line-height:1.55;
+    max-width:52ch;
+  }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  .site-footer {
+    background-color: #242E63;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    text-align: center;
+  }
+  .site-footer__logo { display: block; width: 300px; height: auto; max-width: 90vw; margin: 0 0 20px 0; }
+  .site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+  .site-footer__link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 500; }
+  .site-footer__link:hover, .site-footer__link:focus { color: #FFC500; text-decoration: underline; }
+  .site-footer__separator { color: #FFC500; font-size: 14px; }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+
+  /* Tablette */
+  @media (max-width:900px){
+    .join-hero{ padding:56px 0 40px; }
+    .join-hero__grid{ grid-template-columns:1fr; gap:32px; }
+    .join-hero__photo{ min-height:240px; max-height:300px; }
+
+    .reasons__grid{ grid-template-columns:1fr 1fr; }
+
+    .pricing__grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+
+    .perks__grid{ grid-template-columns:repeat(2, 1fr); row-gap:32px; }
+
+    .cta-band__grid{ padding:48px 0; }
+
+    .member-area__card{ padding:30px; }
+  }
+
+  /* Mobile */
+  @media (max-width:600px){
+    .wrap{ padding:0 18px; }
+    section{ padding:56px 0; }
+
+    .hero__ctas{ flex-direction:column; align-items:stretch; }
+    .hero__ctas .btn{ justify-content:center; }
+
+    .join-hero{ padding:44px 0 32px; }
+    .join-hero__photo{ min-height:200px; max-height:240px; border-radius:12px; }
+
+    .reasons__grid{ grid-template-columns:1fr; }
+    .reason-card{ padding:26px 22px; }
+
+    .pricing-card{ padding:28px 24px; }
+
+    .perks__grid{ grid-template-columns:1fr 1fr; gap:24px; }
+    .perk{ padding-left:16px; }
+
+    .cta-band__grid{ flex-direction:column; align-items:flex-start; padding:40px 0; }
+    .cta-band .hero__ctas{ width:100%; }
+    .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
+
+    .member-area__card{ flex-direction:column; align-items:flex-start; }
+    .member-area .btn{ width:100%; justify-content:center; }
+
+    .site-footer__logo{ width:220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER 1 — logo
+     ========================================================= -->
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<!-- =========================================================
+     HEADER 2 — navigation
+     ========================================================= -->
+<header class="sub-header">
+  <div class="sub-header__inner">
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a>
+      <a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO - passez à l'action
+     ========================================================= -->
+<section class="join-hero">
+  <div class="wrap">
+    <div class="section-head section-head--lead">
+      <span class="eyebrow">Adhérer</span>
+      <h1>💪 Vous aussi, passez à l'action !</h1>
+      <p>Rejoignez les centaines d'adhérents du CIQ Luynes en action et donnez du poids aux propositions des Luynois auprès des élus et des collectivités.</p>
+    </div>
+    <div class="join-hero__grid">
+      <div class="join-hero__body">
+        <p>Le CIQ Luynes en action n'est subventionné par aucune collectivité : son indépendance repose entièrement sur ses adhérents. <strong>Chaque adhésion compte</strong> et permet à l'association de continuer à porter la voix de tout le village, de la voirie aux petits tracas du quotidien.</p>
+        <p style="margin-top:18px;">En adhérant, vous soutenez le travail quotidien des bénévoles, vous accédez aux ressources réservées aux membres, et vous renforcez le poids du CIQ face aux décideurs : plus nous serons nombreux, plus Luynes sera entendu.</p>
+        <div class="hero__ctas" style="margin-top:28px;">
+          <a href="https://ciq.13080.fr/adherer/demarches" class="btn btn--accent">✍️ Adhérez dès maintenant, à partir de 5 €/an</a>
+        </div>
+      </div>
+      <img src="https://actus.13080.fr/wp-content/uploads/2026/08/image-4.png" alt="Adhérents du CIQ Luynes en action réunis en salle" class="join-hero__photo">
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     5 BONNES RAISONS D'ADHÉRER
+     ========================================================= -->
+<section class="section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pourquoi nous rejoindre</span>
+      <h2>5 bonnes raisons d'adhérer au CIQ Luynes en action</h2>
+    </div>
+    <div class="reasons__grid">
+      <div class="reason-card">
+        <div class="reason-card__num">1</div>
+        <p><strong>Soutenir l'investissement quotidien des bénévoles</strong> qui défendent vos intérêts auprès des décideurs.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__num">2</div>
+        <p><strong>Soutenir les travaux et les études menés</strong> par les équipes de l'association.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__num">3</div>
+        <p><strong>Montrer votre intérêt face aux problématiques</strong> traitées par l'association.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__num">4</div>
+        <p><strong>Accéder à l'intégralité des ressources réservées aux adhérents</strong> — comptes-rendus, PV, informations exclusives, groupe WhatsApp, et bien plus encore.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-card__num">5</div>
+        <p><strong>Appuyer vos demandes auprès des décideurs</strong> : plus nous serons nombreux, plus le village de Luynes sera entendu !</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TARIFS D'ADHÉSION
+     ========================================================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Adhésion particuliers</span>
+      <h2>Les tarifs et durées d'adhésion pour les particuliers</h2>
+      <p>Choisissez la formule qui vous convient : plus l'engagement est long, plus le tarif annuel est avantageux.</p>
+    </div>
+    <div class="pricing__grid">
+      <div class="pricing-card">
+        <div class="pricing-card__price">10 €</div>
+        <div class="pricing-card__duration">valable 1 an</div>
+        <div class="pricing-card__spacer">
+          <div class="pricing-card__actions">
+            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
+            <a href="https://pay.brevo.com/5ddb3aa0-520c-4d6e-9c96-0ba3631505ed" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-card pricing-card--featured">
+        <span class="pricing-card__badge">Meilleur rapport</span>
+        <div class="pricing-card__price">30 €</div>
+        <div class="pricing-card__duration">valable 4 ans</div>
+        <div class="pricing-card__note">soit 7,50 €/an</div>
+        <div class="pricing-card__spacer">
+          <div class="pricing-card__actions">
+            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
+            <a href="https://pay.brevo.com/2889b17c-4cf9-4e51-aac8-8475ec44f244" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card__price">50 €</div>
+        <div class="pricing-card__duration">valable 10 ans</div>
+        <div class="pricing-card__note">soit 5 €/an</div>
+        <div class="pricing-card__spacer">
+          <div class="pricing-card__actions">
+            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
+            <a href="https://pay.brevo.com/3ab6374f-7420-433d-abb7-dbca68f4010b" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__ctas" style="margin-top:36px; justify-content:center;">
+      <a href="https://ciq.13080.fr/adherer/demarches" class="btn btn--accent">✍️ Adhérez dès maintenant, à partir de 5 €/an</a>
+    </div>
+    <p style="text-align:center; margin-top:18px; font-size:.92rem; color:var(--navy-muted-on-white);">
+      Pour un règlement par chèque ou en espèces, <a href="https://ciq.13080.fr/contact" class="link-more" style="margin-top:0; display:inline-flex;">nous contacter</a>.
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CE QUE VOTRE ADHÉSION FINANCE (bande navy)
+     ========================================================= -->
+<section class="perks-band">
+  <div class="wrap">
+    <div class="section-head section-head--on-navy" style="margin-bottom:0;">
+      <span class="eyebrow eyebrow--on-navy">En rejoignant LEA</span>
+      <h2>Ce que votre adhésion rend possible</h2>
+    </div>
+    <div class="perks__grid">
+      <div class="perk">
+        <div class="perk__label">Indépendance</div>
+        <div class="perk__desc">Aucune subvention de collectivité : votre cotisation finance directement l'action du CIQ.</div>
+      </div>
+      <div class="perk">
+        <div class="perk__label">Ressources exclusives</div>
+        <div class="perk__desc">Comptes-rendus, PV, informations exclusives et groupe WhatsApp réservés aux adhérents.</div>
+      </div>
+      <div class="perk">
+        <div class="perk__label">Poids collectif</div>
+        <div class="perk__desc">Plus les adhérents sont nombreux, plus les propositions des Luynois pèsent auprès des élus.</div>
+      </div>
+      <div class="perk">
+        <div class="perk__label">Suivi des dossiers</div>
+        <div class="perk__desc">Un accès privilégié au travail et aux études menés par les équipes de l'association.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ESPACE ADHÉRENT
+     ========================================================= -->
+<section class="member-area">
+  <div class="wrap">
+    <div class="member-area__card">
+      <div>
+        <h3>🔐 Déjà adhérent ?</h3>
+        <p>Configurez ou accédez à votre espace adhérent pour retrouver vos documents et informations exclusives.</p>
+      </div>
+      <a href="https://adherents.13080.fr" class="btn btn--outline-navy">Accéder à mon espace adhérent →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA - Contact
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2>Plus vous vous engagez, plus Luynes avance.</h2>
+      <p>Une question sur l'adhésion ou sur nos actions ? Notre équipe vous répond.</p>
+    </div>
+    <div class="hero__ctas">
+      <a href="https://ciq.13080.fr/adherer/demarches" class="btn btn--primary">Adhérer / renouveler</a>
+      <a href="https://ciq.13080.fr/contact" class="btn btn--ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+</body>
+</html>
