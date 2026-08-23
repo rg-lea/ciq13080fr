@@ -1,0 +1,771 @@
+<!-- HEADER 1 -->
+
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<style>
+  .site-header {
+    background-color: #242E63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+
+  .site-header__logo-link {
+    display: block;
+    line-height: 0;
+  }
+
+  .site-header__logo {
+    display: block !important;
+    width: 300px !important;
+    height: auto !important;
+    max-width: 90vw !important;
+  }
+</style>
+
+<!-- HEADER 2 -->
+
+<header class="sub-header">
+  <div class="sub-header__inner">
+
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a><a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+
+  </div>
+</header>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+  .sub-header {
+    background-color: #242E63;
+    font-family: 'Outfit', sans-serif;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .sub-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  /* Nom du site + retour vers 13080.fr */
+  .sub-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sub-header__site-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .sub-header__site-link:hover,
+  .sub-header__site-link:focus {
+    color: #FFC500;
+  }
+
+  /* Retour vers le site principal */
+  .sub-header__back-link {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .sub-header__back-link:hover,
+  .sub-header__back-link:focus {
+    color: #FFC500;
+  }
+
+  .sub-header__toggle {
+    display: none;
+  }
+
+  .sub-header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .sub-header__burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .sub-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .sub-header__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .sub-header__link:hover,
+  .sub-header__link:focus {
+    color: #FFC500;
+  }
+
+  /* Boutons */
+  .sub-header__btn {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .sub-header__btn--primary {
+    background-color: #FFC500;
+    color: #242E63;
+  }
+
+  .sub-header__btn--primary:hover,
+  .sub-header__btn--primary:focus {
+    background-color: #e6b100;
+  }
+
+  .sub-header__btn--secondary {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+  }
+
+  .sub-header__btn--secondary:hover,
+  .sub-header__btn--secondary:focus {
+    background-color: #FFFFFF;
+    color: #242E63;
+  }
+
+  /* =========================
+     VERSION MOBILE
+     ========================= */
+
+  @media (max-width: 860px) {
+
+    .sub-header__burger {
+      display: flex;
+    }
+
+    .sub-header__nav {
+      position: absolute;
+      z-index: 1001;
+
+      top: 100%;
+      left: 0;
+      right: 0;
+
+      margin-top: 16px;
+
+      background-color: #242E63;
+
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+
+      padding: 20px 24px;
+
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+      max-height: 0;
+      overflow: hidden;
+
+      padding-top: 0;
+      padding-bottom: 0;
+
+      transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+    }
+
+    .sub-header__toggle:checked ~ .sub-header__nav {
+      max-height: 400px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .sub-header__btn {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    /* Animation du burger */
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+</style>
+
+<!-- CORPS DE PAGE -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luynois en Action (LEA) — Le collectif citoyen du village de Luynes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  :root{
+    --navy: #242E63;
+    --gold: #FFC500;
+    --gold-dark: #AD8901;
+    --white: #FFFFFF;
+    --navy-muted-on-white: rgba(36,46,99,.62);
+    --white-muted-on-navy: rgba(255,255,255,.72);
+    --line-on-white: rgba(36,46,99,.12);
+    --line-on-navy: rgba(255,255,255,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.015em;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 68px;
+    overflow:hidden;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem, 4.6vw, 3.75rem);
+    font-weight:800;
+    line-height:1.05;
+    color:var(--navy);
+    max-width:13ch;
+  }
+  .hero p.lede{
+    font-size:1.15rem;
+    font-weight:400;
+    line-height:1.6;
+    color:var(--navy-muted-on-white);
+    max-width:46ch;
+    margin:26px 0 34px;
+  }
+  .hero__ctas{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    transition:transform .15s ease, background-color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn--primary{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .btn--primary:hover{ background:#1b224c; }
+  .btn--ghost{
+    background:transparent;
+    color:var(--navy);
+    border-color:var(--navy);
+  }
+  .btn--ghost:hover{ background:var(--navy); color:var(--white); }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding:76px 0; }
+  .section-head{
+    max-width:640px;
+    margin-bottom:36px;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem,2.8vw,2.1rem);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .section-head p{
+    color:var(--navy-muted-on-white);
+    font-weight:400;
+    font-size:1rem;
+    line-height:1.6;
+    margin-top:12px;
+  }
+  .link-more{
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--gold-dark);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:22px;
+  }
+  .link-more:hover{ text-decoration:underline; }
+  .link-more svg{ transition:transform .15s ease; }
+  .link-more:hover svg{ transform:translateX(3px); }
+
+  /* ---------- ABOUT (teaser only) ---------- */
+  .about{
+    border-top:1px solid var(--line-on-white);
+    border-bottom:1px solid var(--line-on-white);
+  }
+  .about__body p{
+    color:var(--navy);
+    line-height:1.7;
+    font-size:1.05rem;
+    font-weight:400;
+    margin:0;
+  }
+  .about__body strong{ font-weight:700; color:var(--navy); }
+
+  /* ---------- ACTIONS (teaser cards) ---------- */
+  .actions__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-bottom:8px;
+  }
+  .action-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-radius:14px;
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .action-card:hover{
+    box-shadow:0 14px 30px rgba(36,46,99,.10);
+    transform:translateY(-3px);
+  }
+  .action-card__tag{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--gold-dark);
+    text-transform:uppercase;
+  }
+  .action-card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .action-card p{
+    color:var(--navy-muted-on-white);
+    font-size:14.5px;
+    font-weight:400;
+    line-height:1.55;
+    margin:0;
+  }
+
+  /* ---------- NEWS ---------- */
+  .news__list{
+    border-top:1px solid var(--line-on-white);
+  }
+  .news-item{
+    display:grid;
+    grid-template-columns:140px 1fr auto;
+    gap:24px;
+    align-items:baseline;
+    padding:24px 0;
+    border-bottom:1px solid var(--line-on-white);
+    text-decoration:none;
+    color:inherit;
+  }
+  .news-item:hover .news-item__title{ color:var(--gold-dark); }
+  .news-item__date{
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--navy-muted-on-white);
+  }
+  .news-item__title{
+    font-size:1.08rem;
+    font-weight:600;
+    color:var(--navy);
+    transition:color .15s ease;
+  }
+  .news-item__arrow{ color:var(--navy-muted-on-white); font-size:14px; }
+  .news-status{
+    padding:18px 0;
+    color:var(--navy-muted-on-white);
+    font-size:14.5px;
+  }
+  .news-skeleton{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:24px 0;
+    border-bottom:1px solid var(--line-on-white);
+  }
+  .news-skeleton span{
+    display:block;
+    height:14px;
+    border-radius:4px;
+    background:rgba(36,46,99,.08);
+    animation:pulse 1.4s ease-in-out infinite;
+  }
+  .news-skeleton span:first-child{ width:70px; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.4;} }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .cta-band__grid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+    padding:60px 0;
+  }
+  .cta-band h2{
+    color:var(--white);
+    font-size:clamp(1.5rem,3vw,2rem);
+    font-weight:700;
+    max-width:20ch;
+  }
+  .cta-band p{
+    color:var(--white-muted-on-navy);
+    font-weight:400;
+    margin-top:10px;
+    max-width:42ch;
+    font-size:15px;
+  }
+  .cta-band .btn--primary{ background:var(--gold); color:var(--navy); }
+  .cta-band .btn--primary:hover{ background:#e6b200; }
+  .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
+  .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .actions__grid{ grid-template-columns:1fr; }
+    .news-item{ grid-template-columns:1fr; gap:6px; }
+    .news-skeleton{ grid-template-columns:1fr; gap:8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <h1>Luynes avance quand ses habitants s'en mêlent.</h1>
+    <p class="lede">Né en 2021 d'un carrefour dangereux, Luynois en Action porte aujourd'hui la voix de tout le village auprès des élus et des collectivités — de la voirie aux petits tracas du quotidien.</p>
+    <div class="hero__ctas">
+      <a href="/adherer" class="btn btn--primary">Adhérer à LEA</a>
+      <a href="https://doleus.13080.fr" class="btn btn--ghost">Signaler un problème</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT (teaser) ================= -->
+<section class="about">
+  <div class="wrap">
+    <div class="about__body" style="max-width:64ch;">
+      <p>Luynois en Action est un <strong>collectif d'habitants</strong> du village de Luynes, indépendant des CIQ existants. Sa particularité : porter <strong>l'ensemble des sujets du village</strong> auprès des élus, plutôt qu'un périmètre spécifique.</p>
+      <a class="link-more" href="/quisommesnous">
+        Découvrir LEA
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACTIONS (teaser) ================= -->
+<section class="actions">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nos moyens d'action</h2>
+      <p>Trois outils construits par LEA pour rendre visible ce qui bloque dans le village.</p>
+    </div>
+
+    <div class="actions__grid">
+      <div class="action-card">
+        <span class="action-card__tag">doleus.13080.fr</span>
+        <h3>DOLÉ'US</h3>
+        <p>Signalez un défaut du quotidien et suivez sa résolution.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-card__tag">score.13080.fr</span>
+        <h3>SCORE</h3>
+        <p>Le baromètre qui suit l'avancement de nos grands dossiers.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-card__tag">Données libres</span>
+        <h3>Transparence</h3>
+        <p>Ce que deviennent vos réponses aux sondages et pétitions.</p>
+      </div>
+    </div>
+
+    <a class="link-more" href="/moyens">
+      Voir tous nos moyens d'action
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= NEWS (fetched live from RSS, not hardcoded) ================= -->
+<section class="news">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Actualités</h2>
+      <p>Les 3 dernières publications de notre newsroom.</p>
+    </div>
+
+    <div class="news__list" id="news-list">
+      <div class="news-skeleton"><span></span><span></span></div>
+      <div class="news-skeleton"><span></span><span></span></div>
+      <div class="news-skeleton"><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="cta-band">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2>Plus vous vous engagez, plus Luynes avance.</h2>
+      <p>Adhérer, c'est soutenir les projets qui améliorent le quotidien du village.</p>
+    </div>
+    <div class="hero__ctas">
+      <a href="/adherer" class="btn btn--primary">Adhérer / renouveler</a>
+      <a href="/contact" class="btn btn--ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  // ─── Articles via l'API REST WordPress (pas le flux RSS) ───
+  // L'API REST de WordPress envoie par défaut l'en-tête CORS
+  // "Access-Control-Allow-Origin: *" sur les routes publiques en lecture :
+  // c'est natif au cœur de WP, contrairement au flux RSS qui n'en envoie jamais.
+  // C'est cette route qu'il faut utiliser depuis un site statique / Google Sites.
+  var API_URL = "https://actus.13080.fr/wp-json/wp/v2/posts"
+    + "?per_page=3&orderby=date&order=desc&_fields=id,title,link,date";
+
+  // Filet de secours si jamais l'hébergeur a restreint le CORS sur cette route
+  // (rare, mais possible avec certains plugins de sécurité) : on repasse alors
+  // par un relais public qui va chercher la réponse côté serveur.
+  var FALLBACK_PROXY = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(API_URL);
+
+  var TIMEOUT_MS = 6000;
+  var listEl = document.getElementById("news-list");
+
+  function stripHtml(html) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return (tmp.textContent || tmp.innerText || "").replace(/\s+/g, " ").trim();
+  }
+
+  function formatDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+    } catch (e) { return ""; }
+  }
+
+  function fetchWithTimeout(url, ms) {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, ms);
+    return fetch(url, { signal: controller.signal }).finally(function () { clearTimeout(timer); });
+  }
+
+  function renderItems(posts) {
+    listEl.innerHTML = "";
+    posts.slice(0, 3).forEach(function (post) {
+      var a = document.createElement("a");
+      a.className = "news-item";
+      a.href = post.link || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      var titleText = stripHtml(post.title && post.title.rendered ? post.title.rendered : "Article");
+      a.innerHTML =
+        '<span class="news-item__date">' + formatDate(post.date) + '</span>' +
+        '<span class="news-item__title">' + titleText + '</span>' +
+        '<span class="news-item__arrow">→</span>';
+      listEl.appendChild(a);
+    });
+  }
+
+  function renderError() {
+    listEl.innerHTML =
+      '<div class="news-status">Impossible de charger les actualités pour le moment. ' +
+      '<a class="link-more" style="margin-top:0;display:inline" href="https://actus.13080.fr/ciq/">Voir la newsroom →</a></div>';
+  }
+
+  function fetchPosts(url) {
+    return fetchWithTimeout(url, TIMEOUT_MS).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    });
+  }
+
+  fetchPosts(API_URL)
+    .catch(function () { return fetchPosts(FALLBACK_PROXY); })
+    .then(function (posts) {
+      if (!Array.isArray(posts) || !posts.length) throw new Error("Aucune actualité");
+      renderItems(posts);
+    })
+    .catch(renderError);
+})();
+</script>
+
+</body>
+</html>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+  .site-footer {
+    background-color: #242E63;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .site-footer__logo {
+    display: block;
+    width: 300px;
+    height: auto;
+    max-width: 90vw;
+    margin: 0 0 20px 0;
+  }
+
+  .site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-footer__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .site-footer__link:hover,
+  .site-footer__link:focus {
+    color: #FFC500;
+    text-decoration: underline;
+  }
+
+  .site-footer__separator {
+    color: #FFC500;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+  }
+</style>
