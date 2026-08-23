@@ -1,1 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui sommes-nous ? - CIQ Luynes en action | ciq.13080.fr</title>
+<link rel="icon" href="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-carre-bleu.png">
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  :root{
+    --navy: #242E63;
+    --navy-deep: #171B41;
+    --gold: #FFC500;
+    --gold-dark: #AD8901;
+    --white: #FFFFFF;
+    --navy-muted-on-white: rgba(36,46,99,.62);
+    --white-muted-on-navy: rgba(255,255,255,.72);
+    --line-on-white: rgba(36,46,99,.12);
+    --line-on-navy: rgba(255,255,255,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.015em;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* =========================================================
+     HEADER 1 — bandeau logo
+     ========================================================= */
+  .site-header {
+    background-color: #242E63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .site-header__logo-link { display: block; line-height: 0; }
+  .site-header__logo {
+    display: block !important;
+    width: 300px !important;
+    height: auto !important;
+    max-width: 90vw !important;
+  }
+
+  /* =========================================================
+     HEADER 2 — navigation
+     ========================================================= */
+  .sub-header {
+    background-color: #242E63;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1000;
+  }
+  .sub-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .sub-header__brand { display: flex; align-items: center; gap: 16px; }
+  .sub-header__site-link {
+    color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; white-space: nowrap;
+  }
+  .sub-header__site-link:hover, .sub-header__site-link:focus { color: #FFC500; }
+  .sub-header__back-link {
+    color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 13px; font-weight: 400;
+    white-space: nowrap; transition: color 0.2s ease;
+  }
+  .sub-header__back-link:hover, .sub-header__back-link:focus { color: #FFC500; }
+  .sub-header__toggle { display: none; }
+  .sub-header__burger {
+    display: none; flex-direction: column; justify-content: space-between;
+    width: 26px; height: 18px; cursor: pointer; z-index: 1002;
+  }
+  .sub-header__burger span {
+    display: block; height: 2px; width: 100%; background-color: #FFFFFF; border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sub-header__nav { display: flex; align-items: center; gap: 24px; }
+  .sub-header__link { color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 400; white-space: nowrap; }
+  .sub-header__link:hover, .sub-header__link:focus { color: #FFC500; }
+  .sub-header__btn {
+    text-decoration: none; font-size: 15px; font-weight: 600; padding: 8px 18px; border-radius: 6px;
+    white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .sub-header__btn--primary { background-color: #FFC500; color: #242E63; }
+  .sub-header__btn--primary:hover, .sub-header__btn--primary:focus { background-color: #e6b100; }
+  .sub-header__btn--secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+  .sub-header__btn--secondary:hover, .sub-header__btn--secondary:focus { background-color: #FFFFFF; color: #242E63; }
+
+  @media (max-width: 860px) {
+    .sub-header__burger { display: flex; }
+    .sub-header__nav {
+      position: absolute; z-index: 1001; top: 100%; left: 0; right: 0; margin-top: 16px;
+      background-color: #242E63; flex-direction: column; align-items: flex-start; gap: 16px;
+      padding: 20px 24px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .sub-header__toggle:checked ~ .sub-header__nav { max-height: 400px; padding-top: 20px; padding-bottom: 20px; }
+    .sub-header__btn { width: 100%; text-align: center; box-sizing: border-box; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2) { opacity: 0; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+
+  /* =========================================================
+     BOUTONS - réutilisés dans la bande CTA de fin de page
+     ========================================================= */
+  .hero__ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    transition:transform .15s ease, background-color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn--primary{ background:var(--gold); color:var(--navy); }
+  .btn--primary:hover{ background:#e6b200; }
+  .btn--ghost{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.6); }
+  .btn--ghost:hover{ background:rgba(255,255,255,.14); }
+
+  /* =========================================================
+     SECTION SHARED
+     ========================================================= */
+  section{ padding:76px 0; }
+  .section-head{ max-width:640px; margin-bottom:36px; }
+  .section-head h2{
+    font-size:clamp(1.6rem,2.8vw,2.1rem);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .section-head p{
+    color:var(--navy-muted-on-white);
+    font-weight:400;
+    font-size:1rem;
+    line-height:1.6;
+    margin-top:12px;
+  }
+  .section-head--on-navy h2{ color:var(--white); }
+  .section-head--on-navy p{ color:var(--white-muted-on-navy); }
+  .section-head--lead h1{
+    font-size:clamp(2rem,3.6vw,2.75rem);
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.1;
+  }
+  .section-head--lead p{
+    font-size:1.05rem;
+    line-height:1.6;
+    max-width:58ch;
+  }
+  .section-head--lead + .section-head{
+    margin-top:8px;
+    padding-top:32px;
+    border-top:1px solid var(--line-on-white);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    margin-bottom:14px;
+  }
+  .eyebrow--on-navy{ color:var(--gold); }
+  .link-more{
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--gold-dark);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:22px;
+  }
+  .link-more:hover{ text-decoration:underline; }
+  .link-more svg{ transition:transform .15s ease; }
+  .link-more:hover svg{ transform:translateX(3px); }
+
+  .section--alt{ background:#FAFAF8; }
+
+  /* =========================================================
+     ABOUT - texte à gauche (bleu, fond blanc) + photo à droite
+     ========================================================= */
+  .about{ padding:76px 0; }
+  .about__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about__body p{
+    color:var(--navy);
+    line-height:1.7;
+    font-size:1.1rem;
+    font-weight:400;
+    margin:0;
+  }
+  .about__body p + p{ margin-top:18px; }
+  .about__body strong{ font-weight:700; color:var(--navy); }
+  .about .link-more{ color:var(--gold-dark); }
+  .about__photo{
+    width:100%;
+    height:100%;
+    min-height:320px;
+    max-height:420px;
+    object-fit:cover;
+    border-radius:16px;
+  }
+
+  /* =========================================================
+     ATOUTS - deux cartes (indépendance / portée générale)
+     ========================================================= */
+  .traits__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .trait-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-top:3px solid var(--gold-dark);
+    border-radius:14px;
+    padding:34px 32px;
+  }
+  .trait-card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:12px;
+  }
+  .trait-card p{
+    color:var(--navy-muted-on-white);
+    line-height:1.65;
+    font-size:1rem;
+    font-weight:400;
+    margin:0;
+  }
+
+  /* =========================================================
+     GALERIE - LEA sur le terrain
+     ========================================================= */
+  .gallery__grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+  }
+  .gallery__item{ display:block; }
+  .gallery__item img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:14px;
+    display:block;
+  }
+  .gallery__caption{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin-top:12px;
+  }
+  .gallery__caption-date{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--gold-dark);
+    white-space:nowrap;
+  }
+  .gallery__caption-text{
+    font-size:14px;
+    color:var(--navy-muted-on-white);
+    line-height:1.4;
+  }
+
+  /* =========================================================
+     STATS - bande navy, chiffres clés
+     ========================================================= */
+  .stats-band{ background:var(--navy); color:var(--white); }
+  .stats-band__grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:32px;
+    padding:20px 0 8px;
+  }
+  .stat{ border-left:2px solid var(--line-on-navy); padding-left:20px; }
+  .stat__number{
+    font-size:clamp(2rem,4vw,2.6rem);
+    font-weight:800;
+    color:var(--gold);
+    line-height:1;
+  }
+  .stat__label{
+    margin-top:10px;
+    color:var(--white-muted-on-navy);
+    font-size:.95rem;
+    line-height:1.5;
+  }
+
+  /* =========================================================
+     TIMELINE - genèse de LEA
+     ========================================================= */
+  .timeline{ border-top:1px solid var(--line-on-white); }
+  .timeline-item{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:28px;
+    padding:30px 0;
+    border-bottom:1px solid var(--line-on-white);
+  }
+  .timeline-item__date{
+    font-weight:600;
+    font-size:14px;
+    color:var(--gold-dark);
+    padding-top:2px;
+  }
+  .timeline-item__title{
+    font-size:1.1rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:8px;
+  }
+  .timeline-item__desc{
+    color:var(--navy-muted-on-white);
+    line-height:1.65;
+    font-size:1rem;
+    font-weight:400;
+    margin:0;
+  }
+
+  /* =========================================================
+     CTA BAND
+     ========================================================= */
+  .cta-band{ background:var(--navy); color:var(--white); padding:0; }
+  .cta-band__grid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+    padding:56px 0;
+  }
+  .cta-band h2{
+    color:var(--white);
+    font-size:clamp(1.5rem,3vw,2rem);
+    font-weight:700;
+    max-width:20ch;
+  }
+  .cta-band p{
+    color:var(--white);
+    font-weight:400;
+    margin-top:10px;
+    max-width:42ch;
+    font-size:15px;
+  }
+  .cta-band .btn--primary{ background:var(--gold); color:var(--navy); }
+  .cta-band .btn--primary:hover{ background:#e6b200; }
+  .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
+  .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  .site-footer {
+    background-color: #242E63;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    text-align: center;
+  }
+  .site-footer__logo { display: block; width: 300px; height: auto; max-width: 90vw; margin: 0 0 20px 0; }
+  .site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+  .site-footer__link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 500; }
+  .site-footer__link:hover, .site-footer__link:focus { color: #FFC500; text-decoration: underline; }
+  .site-footer__separator { color: #FFC500; font-size: 14px; }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+
+  /* Tablette */
+  @media (max-width:900px){
+    .about{ padding:56px 0; }
+    .about__grid{ grid-template-columns:1fr; gap:32px; }
+    .about__photo{ min-height:240px; max-height:300px; }
+
+    .traits__grid{ grid-template-columns:1fr; }
+
+    .gallery__grid{ grid-template-columns:1fr 1fr; }
+
+    .stats-band__grid{ grid-template-columns:repeat(2, 1fr); row-gap:32px; }
+
+    .timeline-item{ grid-template-columns:1fr; gap:8px; }
+
+    .cta-band__grid{ padding:48px 0; }
+  }
+
+  /* Mobile */
+  @media (max-width:600px){
+    .wrap{ padding:0 18px; }
+    section{ padding:56px 0; }
+
+    .hero__ctas{ flex-direction:column; align-items:stretch; }
+    .hero__ctas .btn{ justify-content:center; }
+
+    .about{ padding:44px 0; }
+    .about__photo{ min-height:200px; max-height:240px; border-radius:12px; }
+
+    .trait-card{ padding:28px 24px; }
+
+    .gallery__grid{ grid-template-columns:1fr; }
+    .gallery__item img{ height:200px; }
+
+    .stats-band__grid{ grid-template-columns:1fr 1fr; gap:24px; }
+    .stat{ padding-left:16px; }
+
+    .timeline-item{ padding:24px 0; }
+
+    .cta-band__grid{ flex-direction:column; align-items:flex-start; padding:40px 0; }
+    .cta-band .hero__ctas{ width:100%; }
+    .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
+
+    .site-footer__logo{ width:220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER 1 — logo
+     ========================================================= -->
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<!-- =========================================================
+     HEADER 2 — navigation
+     ========================================================= -->
+<header class="sub-header">
+  <div class="sub-header__inner">
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a>
+      <a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     NOTRE HISTOIRE - texte à gauche, photo à droite
+     ========================================================= -->
+<section class="about">
+  <div class="wrap">
+    <div class="section-head section-head--lead">
+      <span class="eyebrow">Qui sommes-nous ?</span>
+      <h1>CIQ Luynes en action, la voix de tout le village</h1>
+      <p>Un collectif d'habitants indépendant, devenu Comité d'Intérêt de Quartier en juin 2026, qui porte les propositions de tous les Luynois auprès des élus et des collectivités.</p>
+    </div>
+    <div class="section-head">
+      <span class="eyebrow">Notre histoire</span>
+      <h2>D'un carrefour dangereux à la voix de tout un village</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__body">
+        <p>Le <strong>CIQ Luynes en action</strong> (CIQ LEA), anciennement Luynois en Action, est un collectif d'habitants du village de Luynes, né en <strong>mai 2021</strong> à l'origine pour alerter sur la dangerosité du carrefour de l'avenue des Libérateurs, de la RD7, route de Gardanne, et de la route de Bouc Bel Air en direction d'IBS. Déclaré association Loi 1901 à la Sous-Préfecture d'Istres depuis le 22 juillet 2021, il est devenu, en juin 2026, un Comité d'Intérêt de Quartier.</p>
+        <p>Constatant la multiplicité des CIQ (Comités d'Intérêt de Quartier) à Luynes, chacun limité à un périmètre spécifique, ses fondateurs ont choisi de créer une structure capable de traiter <strong>l'ensemble des problématiques du village</strong>, avec une portée générale jusqu'à ses limites administratives fixées par la commune d'Aix-en-Provence.</p>
+        <p>Le CIQ Luynes en action travaille en lien avec toutes les collectivités compétentes : la Mairie d'Aix-en-Provence, la Métropole Aix-Marseille Provence, le Département des Bouches-du-Rhône et la Région Sud PACA, pour porter les propositions des Luynois auprès des décideurs, élus et techniciens de ces collectivités. Afin de garantir son indépendance, <strong>il n'est subventionné par aucune collectivité.</strong></p>
+        <a class="link-more" href="https://ciq.13080.fr/moyens">
+          Découvrir nos moyens d'action
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <img src="https://actus.13080.fr/wp-content/uploads/2026/08/image-4.png" alt="Adhérents du CIQ Luynes en action réunis en salle" class="about__photo">
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CE QUI NOUS DISTINGUE - deux atouts
+     ========================================================= -->
+<section class="section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Notre identité</span>
+      <h2>Deux principes fondateurs</h2>
+    </div>
+    <div class="traits__grid">
+      <div class="trait-card">
+        <h3>Un CIQ indépendant</h3>
+        <p>Le CIQ Luynes en action n'est subventionné par aucune collectivité. Son financement repose exclusivement sur les adhésions de ses membres, ce qui lui garantit une totale liberté de parole face aux décideurs.</p>
+      </div>
+      <div class="trait-card">
+        <h3>Une portée générale</h3>
+        <p>Contrairement aux autres CIQ, chacun limité à un périmètre précis, le CIQ Luynes en action couvre l'ensemble des problématiques du village de Luynes, de la voirie aux petits tracas du quotidien.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     GALERIE - LEA sur le terrain
+     ========================================================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Sur le terrain</span>
+      <h2>Des habitants mobilisés, année après année</h2>
+    </div>
+    <div class="gallery__grid">
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2026/08/image-3.png" alt="Rencontre avec les élus de la Ville d'Aix-en-Provence">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Début 2023</span>
+          <span class="gallery__caption-text">Rencontre avec les élus de la Ville d'Aix-en-Provence</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2023/10/image.png" alt="Reportage presse sur la halte ferroviaire de Luynes">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Oct. 2023</span>
+          <span class="gallery__caption-text">Reportage presse sur le projet de halte ferroviaire</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2024/04/Floutage-547b68c2-38d5-4dfb-80ea-d5aaaa6227e7.png" alt="Partenariat entre le CIQ Luynes en action et le Lycée Georges Duby">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Avr. 2024</span>
+          <span class="gallery__caption-text">Partenariat avec le Lycée Georges Duby</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2026/08/image-2-1.png" alt="Interview sur le projet de halte ferroviaire à Luynes">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Juin 2024</span>
+          <span class="gallery__caption-text">Interview pour le projet de halte ferroviaire</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2024/11/IMG_9167-scaled-1.jpg" alt="Comptage de la circulation par les bénévoles du CIQ à Luynes">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Nov. 2024</span>
+          <span class="gallery__caption-text">Comptage de la circulation routière dans le village</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="https://actus.13080.fr/wp-content/uploads/2025/05/18-scaled.jpg" alt="Opération Chasse aux mégots à Luynes">
+        <figcaption class="gallery__caption">
+          <span class="gallery__caption-date">Mars 2025</span>
+          <span class="gallery__caption-text">Opération de protection de l'environnement « Chasse aux mégots »</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CHIFFRES CLÉS
+     ========================================================= -->
+<section class="stats-band">
+  <div class="wrap">
+    <div class="section-head section-head--on-navy" style="margin-bottom:0;">
+      <span class="eyebrow eyebrow--on-navy">LEA en 2025</span>
+      <h2>Un engagement qui prend de l'ampleur</h2>
+    </div>
+    <div class="stats-band__grid">
+      <div class="stat">
+        <div class="stat__number">+67k</div>
+        <div class="stat__label">vues sur nos sites web en 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">+1k</div>
+        <div class="stat__label">abonnés sur notre page Facebook</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">+3200</div>
+        <div class="stat__label">contacts à nos adresses e-mail</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">Centaines</div>
+        <div class="stat__label">d'adhérents qui soutiennent LEA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     NOTRE GENÈSE - comment tout a commencé
+     ========================================================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Notre genèse</span>
+      <h2>Comment tout a commencé</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-item__date">Sept. 2020</div>
+        <div>
+          <div class="timeline-item__title">Une voie verte, mais un carrefour toujours dangereux</div>
+          <p class="timeline-item__desc">Une voie verte est construite entre le carrefour de la RD7 / avenue des Libérateurs et le rond-point du Casino, sans résoudre la dangerosité du carrefour pour les riverains et les cyclistes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item__date">Avr. 2021</div>
+        <div>
+          <div class="timeline-item__title">L'alerte auprès des élus</div>
+          <p class="timeline-item__desc">Prises de contact avec le Département des Bouches-du-Rhône et la Mairie d'Aix-en-Provence, rendez-vous avec le Conseiller départemental et avec l'adjoint au Maire en charge du quartier de Luynes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item__date">Mai 2021</div>
+        <div>
+          <div class="timeline-item__title">Naissance de Luynois en Action</div>
+          <p class="timeline-item__desc">Un groupe d'habitants se structure, crée le site luynoisenaction.fr, engage les premiers échanges avec les CIQ du village, lance une pétition et publie un premier Livre Blanc.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item__date">Juil. 2021</div>
+        <div>
+          <div class="timeline-item__title">LEA devient une association Loi 1901</div>
+          <p class="timeline-item__desc">L'association est officiellement déclarée à la Sous-Préfecture d'Istres le 22 juillet 2021, marquant la structuration officielle du collectif.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-item__date">Juin 2026</div>
+        <div>
+          <div class="timeline-item__title">Luynois en Action - LEA devient un CIQ</div>
+          <p class="timeline-item__desc">Par modification de ses statuts, l'association prend une nouvelle dénomination : Comité d'Intérêt de Quartier - Luynes en action (CIQ Luynes en action / CIQ de Luynes / CIQ LEA).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA - Adhérer
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2>Plus vous vous engagez, plus Luynes avance.</h2>
+      <p>Adhérer, c'est soutenir les projets qui améliorent le quotidien du village.</p>
+    </div>
+    <div class="hero__ctas">
+      <a href="https://ciq.13080.fr/adherer" class="btn btn--primary">Adhérer / renouveler</a>
+      <a href="https://ciq.13080.fr/contact" class="btn btn--ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+</body>
+</html>
