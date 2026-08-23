@@ -219,36 +219,91 @@
   .link-more:hover svg{ transform:translateX(3px); }
 
   .section--alt{ background:#FAFAF8; }
-  .section--tight{ padding:52px 0; }
 
   /* =========================================================
-     BLOCS D'ACTION — "On dialogue / On sensibilise / On participe"
+     ON AGIT AU QUOTIDIEN — onglets interactifs (CSS pur, sans JS)
+     "On dialogue / On sensibilise / On participe"
      ========================================================= */
-  .action-block{
-    padding:20px 0;
-    border-bottom:1px solid var(--line-on-white);
+  .action-tabs__radio{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
   }
-  .action-block:last-child{ border-bottom:none; padding-bottom:0; }
-  .action-block:first-child{ padding-top:0; }
-  .action-block__title{
-    font-size:1.05rem;
-    font-weight:700;
-    color:var(--navy);
-    margin-bottom:4px;
+  .action-tabs__bar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:28px;
   }
-  .action-photos{
+  .action-tabs__btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    padding:11px 22px;
+    border-radius:999px;
+    background:var(--white);
+    border:1.5px solid var(--line-on-white);
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--navy-muted-on-white);
+    user-select:none;
+    transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .action-tabs__btn:hover{ border-color:var(--gold-dark); color:var(--navy); }
+  .action-panel{ display:none; }
+  #action-tab-1:checked ~ .action-tabs__panels #action-panel-1,
+  #action-tab-2:checked ~ .action-tabs__panels #action-panel-2,
+  #action-tab-3:checked ~ .action-tabs__panels #action-panel-3{
+    display:block;
+    animation:fadein .2s ease;
+  }
+  @keyframes fadein{ from{ opacity:0; transform:translateY(4px); } to{ opacity:1; transform:translateY(0); } }
+  #action-tab-1:checked ~ .action-tabs__bar label[for="action-tab-1"],
+  #action-tab-2:checked ~ .action-tabs__bar label[for="action-tab-2"],
+  #action-tab-3:checked ~ .action-tabs__bar label[for="action-tab-3"]{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:var(--white);
+  }
+  .action-panel__intro{
+    color:var(--navy-muted-on-white);
+    font-size:.98rem;
+    line-height:1.55;
+    margin:0 0 22px;
+    max-width:60ch;
+  }
+  .action-items{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));
-    gap:12px;
-    margin-top:12px;
+    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+    gap:16px;
   }
-  .action-photos img{
-    width:100%;
-    height:130px;
-    object-fit:cover;
+  .action-item{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
     border-radius:12px;
+    padding:10px;
   }
-  .action-photos--single{ grid-template-columns:minmax(170px, 240px); }
+  .action-item__photos{
+    display:flex;
+    gap:4px;
+    height:76px;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .action-item__photos img{
+    flex:1;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .action-item__label{
+    margin-top:10px;
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--navy);
+    line-height:1.3;
+  }
 
   /* =========================================================
      SCORE — bande navy, échelle A / B / C
@@ -419,7 +474,8 @@
     justify-content:space-between;
     gap:32px;
     flex-wrap:wrap;
-    padding:56px 0;
+    padding-top:56px;
+    padding-bottom:56px;
   }
   .cta-band h2{
     color:var(--white);
@@ -475,7 +531,7 @@
       padding-top:48px;
     }
 
-    .cta-band__grid{ padding:48px 0; }
+    .cta-band__grid{ padding-top:48px; padding-bottom:48px; }
   }
 
   /* Mobile */
@@ -486,15 +542,14 @@
     .hero__ctas{ flex-direction:column; align-items:stretch; }
     .hero__ctas .btn{ justify-content:center; }
 
-    .action-block{ padding:26px 0; }
-    .action-photos{ grid-template-columns:1fr; }
-    .action-photos img{ height:200px; }
+    .action-items{ grid-template-columns:repeat(2, 1fr); }
+    .action-tabs__btn{ padding:9px 16px; font-size:13.5px; }
 
     .score-scale{ padding:22px; }
 
     .flow-card{ padding:28px 24px; }
 
-    .cta-band__grid{ flex-direction:column; align-items:flex-start; padding:40px 0; }
+    .cta-band__grid{ flex-direction:column; align-items:flex-start; padding-top:40px; padding-bottom:40px; }
     .cta-band .hero__ctas{ width:100%; }
     .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
 
@@ -552,106 +607,105 @@
 </section>
 
 <!-- =========================================================
-     ON DIALOGUE
+     ON AGIT AU QUOTIDIEN — onglets interactifs (dialogue / sensibilisation / participation)
      ========================================================= -->
-<section class="section--alt section--tight">
+<section class="section--alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">01 · Le terrain</span>
-      <h2>On dialogue</h2>
-      <p>Nous échangeons en continu avec toutes les parties prenantes de la vie du village.</p>
+      <span class="eyebrow">Sur le terrain</span>
+      <h2>Comment on agit au quotidien</h2>
+      <p>Trois façons d'être présents dans la vie du village. Cliquez sur un onglet pour voir avec qui on échange.</p>
     </div>
 
-    <div class="action-block">
-      <div class="action-block__title">Avec nos adhérents</div>
-      <div class="action-photos">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210616-92f4d162-xx.webp" alt="Échange avec les adhérents du CIQ Luynes en action">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210618-454e39a1-xx.webp" alt="Rencontre avec les adhérents du CIQ Luynes en action">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145316-79da2406-xx.webp" alt="Temps d'échange avec les adhérents du CIQ Luynes en action">
+    <div class="action-tabs">
+      <input type="radio" name="action-tab" id="action-tab-1" class="action-tabs__radio" checked>
+      <input type="radio" name="action-tab" id="action-tab-2" class="action-tabs__radio">
+      <input type="radio" name="action-tab" id="action-tab-3" class="action-tabs__radio">
+
+      <div class="action-tabs__bar" role="tablist">
+        <label for="action-tab-1" class="action-tabs__btn">On dialogue</label>
+        <label for="action-tab-2" class="action-tabs__btn">On sensibilise</label>
+        <label for="action-tab-3" class="action-tabs__btn">On participe</label>
       </div>
-    </div>
 
-    <div class="action-block">
-      <div class="action-block__title">Avec les Luynois</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210622-8998c790-xx.webp" alt="Échange avec les habitants de Luynes">
-      </div>
-    </div>
+      <div class="action-tabs__panels">
 
-    <div class="action-block">
-      <div class="action-block__title">Avec les élus</div>
-      <div class="action-photos">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-307aeb3f-xx.webp" alt="Rencontre avec des élus locaux">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145315-41c8418a-xx.webp" alt="Échange avec des élus au sujet des dossiers du village">
-      </div>
-    </div>
+        <div class="action-panel" id="action-panel-1">
+          <p class="action-panel__intro">Nous échangeons en continu avec toutes les parties prenantes de la vie du village.</p>
+          <div class="action-items">
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210616-92f4d162-xx.webp" alt="Échange avec les adhérents du CIQ Luynes en action">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210618-454e39a1-xx.webp" alt="Rencontre avec les adhérents du CIQ Luynes en action">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145316-79da2406-xx.webp" alt="Temps d'échange avec les adhérents du CIQ Luynes en action">
+              </div>
+              <div class="action-item__label">Avec nos adhérents</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210622-8998c790-xx.webp" alt="Échange avec les habitants de Luynes">
+              </div>
+              <div class="action-item__label">Avec les Luynois</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-307aeb3f-xx.webp" alt="Rencontre avec des élus locaux">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145315-41c8418a-xx.webp" alt="Échange avec des élus au sujet des dossiers du village">
+              </div>
+              <div class="action-item__label">Avec les élus</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210623-b82e327d-la.webp" alt="Échange avec des techniciens et agents publics">
+              </div>
+              <div class="action-item__label">Avec des techniciens et agents publics</div>
+            </div>
+          </div>
+        </div>
 
-    <div class="action-block">
-      <div class="action-block__title">Avec des techniciens et agents publics</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210623-b82e327d-la.webp" alt="Échange avec des techniciens et agents publics">
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="action-panel" id="action-panel-2">
+          <p class="action-panel__intro">Nous menons des actions de sensibilisation auprès de tous les publics concernés par la vie du village.</p>
+          <div class="action-items">
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145318-109bfa76-xx.webp" alt="Action de sensibilisation auprès des élèves en milieu scolaire">
+              </div>
+              <div class="action-item__label">Les élèves en milieu scolaire</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210604-e815f957-xx.webp" alt="Action de sensibilisation auprès des automobilistes">
+              </div>
+              <div class="action-item__label">Les automobilistes</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210606-8695c237-xx.webp" alt="Action de sensibilisation auprès des usagers">
+              </div>
+              <div class="action-item__label">Les usagers</div>
+            </div>
+          </div>
+        </div>
 
-<!-- =========================================================
-     ON SENSIBILISE
-     ========================================================= -->
-<section class="section--tight">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">02 · La prévention</span>
-      <h2>On sensibilise</h2>
-      <p>Nous menons des actions de sensibilisation auprès de tous les publics concernés par la vie du village.</p>
-    </div>
+        <div class="action-panel" id="action-panel-3">
+          <p class="action-panel__intro">Nous prenons part aux temps organisés par les collectivités pour faire valoir la voix des Luynois.</p>
+          <div class="action-items">
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210616-aa802bcb-xx.webp" alt="Participation à un atelier public">
+                <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210617-b7baf8dc-xx.webp" alt="Participation à un atelier public sur les projets du village">
+              </div>
+              <div class="action-item__label">Aux ateliers publics</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photos">
+                <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-81ed0e49-xl.webp" alt="Participation à une réunion publique">
+              </div>
+              <div class="action-item__label">Aux réunions publiques</div>
+            </div>
+          </div>
+        </div>
 
-    <div class="action-block">
-      <div class="action-block__title">Les élèves en milieu scolaire</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145318-109bfa76-xx.webp" alt="Action de sensibilisation auprès des élèves en milieu scolaire">
-      </div>
-    </div>
-
-    <div class="action-block">
-      <div class="action-block__title">Les automobilistes</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210604-e815f957-xx.webp" alt="Action de sensibilisation auprès des automobilistes">
-      </div>
-    </div>
-
-    <div class="action-block">
-      <div class="action-block__title">Les usagers</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210606-8695c237-xx.webp" alt="Action de sensibilisation auprès des usagers">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     ON PARTICIPE
-     ========================================================= -->
-<section class="section--alt section--tight">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">03 · L'engagement</span>
-      <h2>On participe</h2>
-      <p>Nous prenons part aux temps organisés par les collectivités pour faire valoir la voix des Luynois.</p>
-    </div>
-
-    <div class="action-block">
-      <div class="action-block__title">Aux ateliers publics</div>
-      <div class="action-photos">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210616-aa802bcb-xx.webp" alt="Participation à un atelier public">
-        <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210617-b7baf8dc-xx.webp" alt="Participation à un atelier public sur les projets du village">
-      </div>
-    </div>
-
-    <div class="action-block">
-      <div class="action-block__title">Aux réunions publiques</div>
-      <div class="action-photos action-photos--single">
-        <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-81ed0e49-xl.webp" alt="Participation à une réunion publique">
       </div>
     </div>
   </div>
