@@ -1,1 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nous contacter - CIQ Luynes en action | ciq.13080.fr</title>
+<link rel="icon" href="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-carre-bleu.png">
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  :root{
+    --navy: #242E63;
+    --navy-deep: #171B41;
+    --gold: #FFC500;
+    --gold-dark: #AD8901;
+    --white: #FFFFFF;
+    --navy-muted-on-white: rgba(36,46,99,.62);
+    --white-muted-on-navy: rgba(255,255,255,.72);
+    --line-on-white: rgba(36,46,99,.12);
+    --line-on-navy: rgba(255,255,255,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.015em;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* =========================================================
+     HEADER 1 : bandeau logo
+     ========================================================= */
+  .site-header {
+    background-color: #242E63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .site-header__logo-link { display: block; line-height: 0; }
+  .site-header__logo {
+    display: block !important;
+    width: 300px !important;
+    height: auto !important;
+    max-width: 90vw !important;
+  }
+
+  /* =========================================================
+     HEADER 2 : navigation
+     ========================================================= */
+  .sub-header {
+    background-color: #242E63;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1000;
+  }
+  .sub-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .sub-header__brand { display: flex; align-items: center; gap: 16px; }
+  .sub-header__site-link {
+    color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; white-space: nowrap;
+  }
+  .sub-header__site-link:hover, .sub-header__site-link:focus { color: #FFC500; }
+  .sub-header__back-link {
+    color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 13px; font-weight: 400;
+    white-space: nowrap; transition: color 0.2s ease;
+  }
+  .sub-header__back-link:hover, .sub-header__back-link:focus { color: #FFC500; }
+  .sub-header__toggle { display: none; }
+  .sub-header__burger {
+    display: none; flex-direction: column; justify-content: space-between;
+    width: 26px; height: 18px; cursor: pointer; z-index: 1002;
+  }
+  .sub-header__burger span {
+    display: block; height: 2px; width: 100%; background-color: #FFFFFF; border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sub-header__nav { display: flex; align-items: center; gap: 24px; }
+  .sub-header__link { color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 400; white-space: nowrap; }
+  .sub-header__link:hover, .sub-header__link:focus { color: #FFC500; }
+  .sub-header__btn {
+    text-decoration: none; font-size: 15px; font-weight: 600; padding: 8px 18px; border-radius: 6px;
+    white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .sub-header__btn--primary { background-color: #FFC500; color: #242E63; }
+  .sub-header__btn--primary:hover, .sub-header__btn--primary:focus { background-color: #e6b100; }
+  .sub-header__btn--secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+  .sub-header__btn--secondary:hover, .sub-header__btn--secondary:focus { background-color: #FFFFFF; color: #242E63; }
+
+  @media (max-width: 860px) {
+    .sub-header__burger { display: flex; }
+    .sub-header__nav {
+      position: absolute; z-index: 1001; top: 100%; left: 0; right: 0; margin-top: 16px;
+      background-color: #242E63; flex-direction: column; align-items: flex-start; gap: 16px;
+      padding: 20px 24px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .sub-header__toggle:checked ~ .sub-header__nav { max-height: 400px; padding-top: 20px; padding-bottom: 20px; }
+    .sub-header__btn { width: 100%; text-align: center; box-sizing: border-box; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2) { opacity: 0; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+
+  /* =========================================================
+     BOUTONS
+     ========================================================= */
+  .hero__ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background-color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn--primary{ background:var(--gold); color:var(--navy); }
+  .btn--primary:hover{ background:#e6b200; }
+  .btn--ghost{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.6); }
+  .btn--ghost:hover{ background:rgba(255,255,255,.14); }
+  /* Sur fond clair : jamais de --gold (FFC500), on utilise --gold-dark avec texte blanc */
+  .btn--accent{ background:var(--gold-dark); color:var(--white); border:none; }
+  .btn--accent:hover{ background:#8f6f02; }
+  .btn--outline-navy{ background:transparent; color:var(--navy); border-color:rgba(36,46,99,.35); }
+  .btn--outline-navy:hover{ background:rgba(36,46,99,.06); }
+
+  /* =========================================================
+     SECTION SHARED
+     ========================================================= */
+  section{ padding:76px 0; }
+  .section-head{ max-width:640px; margin-bottom:36px; }
+  .section-head h2{
+    font-size:clamp(1.6rem,2.8vw,2.1rem);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .section-head p{
+    color:var(--navy-muted-on-white);
+    font-weight:400;
+    font-size:1rem;
+    line-height:1.6;
+    margin-top:12px;
+  }
+  .section-head--lead h1{
+    font-size:clamp(2rem,3.6vw,2.75rem);
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.1;
+  }
+  .section-head--lead p{
+    font-size:1.05rem;
+    line-height:1.6;
+    max-width:60ch;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    margin-bottom:14px;
+  }
+  .link-more{
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--gold-dark);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:22px;
+  }
+  .link-more:hover{ text-decoration:underline; }
+  .link-more svg{ transition:transform .15s ease; }
+  .link-more:hover svg{ transform:translateX(3px); }
+
+  .section--alt{ background:#FAFAF8; }
+
+  /* =========================================================
+     CARTES CONTACT (téléphone / e-mail)
+     ========================================================= */
+  .contact__grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
+    align-items:start;
+  }
+  .contact-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-top:3px solid var(--gold-dark);
+    border-radius:14px;
+    padding:34px 32px;
+  }
+  .contact-card__kicker{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    margin-bottom:8px;
+  }
+  .contact-card h3{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .contact-card__number{
+    display:inline-block;
+    margin-top:14px;
+    font-size:1.55rem;
+    font-weight:800;
+    color:var(--navy);
+    text-decoration:none;
+  }
+  .contact-card__number:hover{ color:var(--gold-dark); }
+  .contact-card__caption{
+    margin-top:4px;
+    font-size:.92rem;
+    color:var(--navy-muted-on-white);
+  }
+  .contact-card__hours{
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid var(--line-on-white);
+  }
+  .contact-card__hours-row{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    font-size:.95rem;
+    padding:6px 0;
+  }
+  .contact-card__hours-label{ color:var(--navy-muted-on-white); }
+  .contact-card__hours-value{ color:var(--navy); font-weight:600; text-align:right; }
+  .contact-card__note{
+    margin-top:20px;
+    font-size:.92rem;
+    color:var(--navy-muted-on-white);
+    line-height:1.55;
+  }
+
+  .outgoing-card{
+    background:#FAFAF8;
+    border:1px solid var(--line-on-white);
+    border-radius:14px;
+    padding:30px 28px;
+  }
+  .outgoing-card h3{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .outgoing-card p{
+    font-size:.92rem;
+    color:var(--navy-muted-on-white);
+    line-height:1.55;
+    margin:0 0 18px;
+  }
+  .outgoing-list{ border-top:1px solid var(--line-on-white); }
+  .outgoing-row{
+    padding:14px 0;
+    border-bottom:1px solid var(--line-on-white);
+  }
+  .outgoing-row__number{
+    font-size:1.02rem;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .outgoing-row__label{
+    margin-top:2px;
+    font-size:.86rem;
+    color:var(--navy-muted-on-white);
+  }
+
+  /* =========================================================
+     E-MAIL
+     ========================================================= */
+  .email-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    flex-wrap:wrap;
+    background:var(--navy);
+    color:var(--white);
+    border-radius:16px;
+    padding:38px 36px;
+    margin-top:28px;
+  }
+  .email-card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--white);
+  }
+  .email-card p{
+    margin-top:8px;
+    color:var(--white-muted-on-navy);
+    font-size:.95rem;
+    line-height:1.55;
+    max-width:48ch;
+  }
+  .press-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    flex-wrap:wrap;
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-radius:16px;
+    padding:36px 36px;
+  }
+  .press-card__body{ max-width:60ch; }
+  .press-list{
+    margin:16px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .press-list li{
+    position:relative;
+    padding-left:22px;
+    margin-top:8px;
+    color:var(--navy);
+    font-size:.98rem;
+    font-weight:500;
+  }
+  .press-list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:9px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--gold-dark);
+  }
+
+  /* =========================================================
+     CTA BAND
+     ========================================================= */
+  .cta-band{ background:var(--navy); color:var(--white); padding:0; }
+  .cta-band__grid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+    padding:56px 0;
+  }
+  .cta-band h2{
+    color:var(--white);
+    font-size:clamp(1.5rem,3vw,2rem);
+    font-weight:700;
+    max-width:20ch;
+  }
+  .cta-band p{
+    color:var(--white);
+    font-weight:400;
+    margin-top:10px;
+    max-width:42ch;
+    font-size:15px;
+  }
+  .cta-band .btn--primary{ background:var(--gold); color:var(--navy); }
+  .cta-band .btn--primary:hover{ background:#e6b200; }
+  .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
+  .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  .site-footer {
+    background-color: #242E63;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    text-align: center;
+  }
+  .site-footer__logo { display: block; width: 300px; height: auto; max-width: 90vw; margin: 0 0 20px 0; }
+  .site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+  .site-footer__link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 500; }
+  .site-footer__link:hover, .site-footer__link:focus { color: #FFC500; text-decoration: underline; }
+  .site-footer__separator { color: #FFC500; font-size: 14px; }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+
+  /* Tablette */
+  @media (max-width:900px){
+    .contact__grid{ grid-template-columns:1fr; }
+    .email-card, .press-card{ padding:30px; }
+    .cta-band__grid{ padding:48px 0; }
+  }
+
+  /* Mobile */
+  @media (max-width:600px){
+    .wrap{ padding:0 18px; }
+    section{ padding:56px 0; }
+
+    .hero__ctas{ flex-direction:column; align-items:stretch; }
+    .hero__ctas .btn{ justify-content:center; }
+
+    .contact-card, .outgoing-card{ padding:26px 22px; }
+    .contact-card__number{ font-size:1.3rem; }
+
+    .email-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
+    .email-card .btn{ width:100%; justify-content:center; }
+
+    .press-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
+    .press-card .btn{ width:100%; justify-content:center; }
+
+    .cta-band__grid{ flex-direction:column; align-items:flex-start; padding:40px 0; }
+    .cta-band .hero__ctas{ width:100%; }
+    .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
+
+    .site-footer__logo{ width:220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER 1 : logo
+     ========================================================= -->
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<!-- =========================================================
+     HEADER 2 : navigation
+     ========================================================= -->
+<header class="sub-header">
+  <div class="sub-header__inner">
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a>
+      <a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head section-head--lead">
+      <span class="eyebrow">Nous contacter</span>
+      <h1>Une question, une idée, un souci dans le village ?</h1>
+      <p>N'hésitez pas à nous contacter, nous sommes à votre disposition pour toute demande. Par téléphone, par courriel, ou via notre espace presse, notre équipe vous répond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TÉLÉPHONE
+     ========================================================= -->
+<section class="section--alt" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Téléphone</span>
+      <h2>Standard général</h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact-card">
+        <div class="contact-card__kicker">Standard général</div>
+        <h3>Appelez-nous</h3>
+        <a href="tel:+33484830901" class="contact-card__number">+33 (0)4.84.830.901</a>
+        <div class="contact-card__caption">Numéro principal, standard général</div>
+
+        <div class="contact-card__hours">
+          <div class="contact-card__hours-row">
+            <span class="contact-card__hours-label">Jours</span>
+            <span class="contact-card__hours-value">Lundi au Samedi<br>hors jours fériés et vacances scolaires</span>
+          </div>
+          <div class="contact-card__hours-row">
+            <span class="contact-card__hours-label">Horaires</span>
+            <span class="contact-card__hours-value">09h00 à 19h00</span>
+          </div>
+        </div>
+
+        <p class="contact-card__note">Si nous manquons votre appel, laissez-nous un message vocal ou écrivez-nous par courriel : nous vous rappellerons dès que possible.</p>
+      </div>
+
+      <div class="outgoing-card">
+        <h3>Numéros pouvant apparaître lors de nos appels sortants</h3>
+        <p>Si vous recevez un appel de notre équipe, il peut provenir de l'un de ces numéros.</p>
+        <div class="outgoing-list">
+          <div class="outgoing-row">
+            <div class="outgoing-row__number">Numéro masqué</div>
+          </div>
+          <div class="outgoing-row">
+            <div class="outgoing-row__number">+33 (0)4.84.830.901</div>
+            <div class="outgoing-row__label">Standard général</div>
+          </div>
+          <div class="outgoing-row" style="border-bottom:none;">
+            <div class="outgoing-row__number">+33 (0)4.12.39.51.20</div>
+            <div class="outgoing-row__label">Appels sortants et rendez-vous téléphoniques</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     E-MAIL
+     (adresse assemblée par JavaScript pour limiter la collecte
+     automatisée par des robots : rien n'apparaît en clair dans le
+     code source HTML)
+     ========================================================= -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Courriel</span>
+      <h2>Écrivez-nous</h2>
+    </div>
+
+    <div class="email-card">
+      <div>
+        <h3>Nous contacter par courriel</h3>
+        <p>Cliquez sur le bouton pour ouvrir votre messagerie. Notre équipe vous répond dès que possible.</p>
+      </div>
+      <button type="button" class="btn btn--primary" id="email-reveal-btn" onclick="window.__leaOpenMail && window.__leaOpenMail()">
+        ✉️ Nous écrire par courriel
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRESSE
+     ========================================================= -->
+<section class="section--alt" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Journalistes</span>
+      <h2>Espace presse</h2>
+    </div>
+
+    <div class="press-card">
+      <div class="press-card__body">
+        <h3 style="font-size:1.15rem; margin-bottom:4px;">Vous êtes journaliste ?</h3>
+        <p style="color:var(--navy-muted-on-white); margin-top:6px;">Retrouvez toutes nos ressources presse dans notre centre de publication.</p>
+        <ul class="press-list">
+          <li>Présentations générales et objectifs de LEA</li>
+          <li>Ressources web, logos et médias</li>
+          <li>Coordonnées presse directes</li>
+        </ul>
+      </div>
+      <a href="https://actus.13080.fr" target="_blank" rel="noopener" class="btn btn--accent">Accéder à l'espace presse</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA — Adhérer
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap cta-band__grid">
+    <div>
+      <h2>Plus vous vous engagez, plus Luynes avance.</h2>
+      <p>Adhérer, c'est soutenir les projets qui améliorent le quotidien du village.</p>
+    </div>
+    <div class="hero__ctas">
+      <a href="https://ciq.13080.fr/adherer" class="btn btn--primary">Adhérer / renouveler</a>
+      <a href="https://ciq.13080.fr/moyens" class="btn btn--ghost">Nos moyens d'action</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+<!-- =========================================================
+     SCRIPT — assemblage de l'adresse e-mail côté client
+     L'adresse n'apparaît jamais en clair dans le code source HTML :
+     elle est reconstruite à partir de fragments, au moment du clic,
+     pour limiter la collecte automatisée par des robots.
+     ========================================================= -->
+<script>
+(function () {
+  'use strict';
+  var u = ["c", "i", "q"].join("");
+  var d = ["1", "3", "0", "8", "0", ".", "f", "r"].join("");
+  window.__leaOpenMail = function () {
+    window.location.href = "mailto:" + u + "@" + d;
+  };
+})();
+</script>
+
+</body>
+</html>
