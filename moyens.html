@@ -275,31 +275,29 @@
   }
   .action-items{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
-    gap:16px;
+    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+    gap:20px;
   }
   .action-item{
     background:var(--white);
     border:1px solid var(--line-on-white);
-    border-radius:12px;
-    padding:10px;
-  }
-  .action-item__photos{
-    display:flex;
-    gap:4px;
-    height:76px;
-    border-radius:8px;
+    border-radius:14px;
     overflow:hidden;
   }
-  .action-item__photos img{
-    flex:1;
+  .action-item__photo{
+    height:180px;
+    background:var(--line-on-white);
+  }
+  .action-item__photo img{
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center;
+    display:block;
   }
   .action-item__label{
-    margin-top:10px;
-    font-size:.88rem;
+    padding:12px 16px 16px;
+    font-size:.95rem;
     font-weight:600;
     color:var(--navy);
     line-height:1.3;
@@ -542,7 +540,8 @@
     .hero__ctas{ flex-direction:column; align-items:stretch; }
     .hero__ctas .btn{ justify-content:center; }
 
-    .action-items{ grid-template-columns:repeat(2, 1fr); }
+    .action-items{ grid-template-columns:1fr 1fr; gap:14px; }
+    .action-item__photo{ height:150px; }
     .action-tabs__btn{ padding:9px 16px; font-size:13.5px; }
 
     .score-scale{ padding:22px; }
@@ -634,28 +633,43 @@
           <p class="action-panel__intro">Nous échangeons en continu avec toutes les parties prenantes de la vie du village.</p>
           <div class="action-items">
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210616-92f4d162-xx.webp" alt="Échange avec les adhérents du CIQ Luynes en action">
+              </div>
+              <div class="action-item__label">Avec nos adhérents</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210618-454e39a1-xx.webp" alt="Rencontre avec les adhérents du CIQ Luynes en action">
+              </div>
+              <div class="action-item__label">Avec nos adhérents</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145316-79da2406-xx.webp" alt="Temps d'échange avec les adhérents du CIQ Luynes en action">
               </div>
               <div class="action-item__label">Avec nos adhérents</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210622-8998c790-xx.webp" alt="Échange avec les habitants de Luynes">
               </div>
               <div class="action-item__label">Avec les Luynois</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-307aeb3f-xx.webp" alt="Rencontre avec des élus locaux">
+              </div>
+              <div class="action-item__label">Avec les élus</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145315-41c8418a-xx.webp" alt="Échange avec des élus au sujet des dossiers du village">
               </div>
               <div class="action-item__label">Avec les élus</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210623-b82e327d-la.webp" alt="Échange avec des techniciens et agents publics">
               </div>
               <div class="action-item__label">Avec des techniciens et agents publics</div>
@@ -667,19 +681,19 @@
           <p class="action-panel__intro">Nous menons des actions de sensibilisation auprès de tous les publics concernés par la vie du village.</p>
           <div class="action-items">
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/03/01/20260301145318-109bfa76-xx.webp" alt="Action de sensibilisation auprès des élèves en milieu scolaire">
               </div>
               <div class="action-item__label">Les élèves en milieu scolaire</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/02/28/20260228210604-e815f957-xx.webp" alt="Action de sensibilisation auprès des automobilistes">
               </div>
               <div class="action-item__label">Les automobilistes</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210606-8695c237-xx.webp" alt="Action de sensibilisation auprès des usagers">
               </div>
               <div class="action-item__label">Les usagers</div>
@@ -691,14 +705,19 @@
           <p class="action-panel__intro">Nous prenons part aux temps organisés par les collectivités pour faire valoir la voix des Luynois.</p>
           <div class="action-items">
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210616-aa802bcb-xx.webp" alt="Participation à un atelier public">
+              </div>
+              <div class="action-item__label">Aux ateliers publics</div>
+            </div>
+            <div class="action-item">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/i.php?/upload/2026/02/28/20260228210617-b7baf8dc-xx.webp" alt="Participation à un atelier public sur les projets du village">
               </div>
               <div class="action-item__label">Aux ateliers publics</div>
             </div>
             <div class="action-item">
-              <div class="action-item__photos">
+              <div class="action-item__photo">
                 <img src="https://lynx.13080.fr/_data/i/upload/2026/03/01/20260301145314-81ed0e49-xl.webp" alt="Participation à une réunion publique">
               </div>
               <div class="action-item__label">Aux réunions publiques</div>
