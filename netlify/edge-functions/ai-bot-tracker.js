@@ -51,7 +51,7 @@ export default async (request, context) => {
 
     const params = new URLSearchParams({
       idsite: MATOMO_SITE_ID,
-      rec: "1",
+      rec: "9",
       url: request.url,
       ua: ua,
       apiv: "1",
