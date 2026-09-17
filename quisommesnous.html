@@ -369,34 +369,78 @@
   }
 
   /* =========================================================
-     TIMELINE - genèse de LEA
+     TIMELINE - genèse de LEA (frise interactive)
      ========================================================= */
-  .timeline{ border-top:1px solid var(--line-on-white); }
-  .timeline-item{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:28px;
-    padding:30px 0;
-    border-bottom:1px solid var(--line-on-white);
+  .genesis{ padding-bottom:32px; }
+  .vtimeline{
+    position:relative;
+    padding-left:32px;
+    margin-top:4px;
   }
-  .timeline-item__date{
+  .vtimeline::before{
+    content:'';
+    position:absolute;
+    left:6px;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    background:var(--line-on-white);
+  }
+  .vtimeline__item{ position:relative; }
+  .vtimeline__item + .vtimeline__item{ border-top:1px solid var(--line-on-white); }
+  .vtimeline__item summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    padding:18px 0;
+    position:relative;
+  }
+  .vtimeline__item summary::-webkit-details-marker{ display:none; }
+  .vtimeline__item summary::marker{ content:''; }
+  .vtimeline__dot{
+    position:absolute;
+    left:-32px;
+    top:50%;
+    transform:translateY(-50%);
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--gold-dark);
+    box-shadow:0 0 0 3px var(--white);
+  }
+  .vtimeline__item[open] .vtimeline__dot{ background:var(--gold); }
+  .vtimeline__date{
     font-weight:600;
-    font-size:14px;
+    font-size:13px;
     color:var(--gold-dark);
-    padding-top:2px;
+    white-space:nowrap;
+    min-width:78px;
   }
-  .timeline-item__title{
-    font-size:1.1rem;
+  .vtimeline__title{
+    font-size:1.05rem;
     font-weight:700;
     color:var(--navy);
-    margin-bottom:8px;
+    flex:1;
+    min-width:180px;
   }
-  .timeline-item__desc{
+  .vtimeline__chevron{
+    width:18px;
+    height:18px;
+    color:var(--navy-muted-on-white);
+    transition:transform .2s ease;
+    flex-shrink:0;
+  }
+  .vtimeline__item[open] .vtimeline__chevron{ transform:rotate(90deg); }
+  .vtimeline__desc{
     color:var(--navy-muted-on-white);
     line-height:1.65;
     font-size:1rem;
     font-weight:400;
-    margin:0;
+    margin:0 0 22px;
+    padding-right:8px;
   }
 
   /* =========================================================
@@ -429,6 +473,33 @@
   .cta-band .btn--primary:hover{ background:#e6b200; }
   .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
   .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
+
+  /* =========================================================
+     BLOC RÉGLEMENTAIRE
+     ========================================================= */
+  .legal-band{ padding-top:32px; }
+  .legal-band__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .legal-card{
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-radius:14px;
+    padding:28px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .legal-card__text{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .legal-card .link-more{ margin-top:0; white-space:nowrap; }
 
   /* =========================================================
      FOOTER
@@ -464,9 +535,10 @@
 
     .stats-band__grid{ grid-template-columns:repeat(2, 1fr); row-gap:32px; }
 
-    .timeline-item{ grid-template-columns:1fr; gap:8px; }
 
     .cta-band__grid{ padding-top:48px; padding-bottom:48px; }
+
+    .legal-band__grid{ grid-template-columns:1fr; }
   }
 
   /* Mobile */
@@ -488,11 +560,15 @@
     .stats-band__grid{ grid-template-columns:1fr 1fr; gap:24px; }
     .stat{ padding-left:16px; }
 
-    .timeline-item{ padding:24px 0; }
+    .vtimeline{ padding-left:26px; }
+    .vtimeline__dot{ left:-26px; }
+    .vtimeline__item summary{ padding:14px 0; }
 
     .cta-band__grid{ flex-direction:column; align-items:flex-start; padding-top:40px; padding-bottom:40px; }
     .cta-band .hero__ctas{ width:100%; }
     .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
+
+    .legal-card{ flex-direction:column; align-items:flex-start; }
 
     .site-footer__logo{ width:220px; }
   }
@@ -674,52 +750,92 @@
 <!-- =========================================================
      NOTRE GENÈSE - comment tout a commencé
      ========================================================= -->
-<section>
+<section class="genesis">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Notre genèse</span>
       <h2>Comment tout a commencé</h2>
+      <p>Cliquez sur une étape pour en découvrir le détail.</p>
     </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-item__date">Sept. 2020</div>
-        <div>
-          <div class="timeline-item__title">Une voie verte, mais un carrefour toujours dangereux</div>
-          <p class="timeline-item__desc">Une voie verte est construite entre le carrefour de la RD7 / avenue des Libérateurs et le rond-point du Casino, sans résoudre la dangerosité du carrefour pour les riverains et les cyclistes.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-item__date">Avr. 2021</div>
-        <div>
-          <div class="timeline-item__title">L'alerte auprès des élus</div>
-          <p class="timeline-item__desc">Prises de contact avec le Département des Bouches-du-Rhône et la Mairie d'Aix-en-Provence, rendez-vous avec le Conseiller départemental et avec l'adjoint au Maire en charge du quartier de Luynes.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-item__date">Mai 2021</div>
-        <div>
-          <div class="timeline-item__title">Naissance de Luynois en Action</div>
-          <p class="timeline-item__desc">Un groupe d'habitants se structure, crée le site luynoisenaction.fr, engage les premiers échanges avec les CIQ du village, lance une pétition et publie un premier Livre Blanc.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-item__date">Juil. 2021</div>
-        <div>
-          <div class="timeline-item__title">LEA devient une association Loi 1901</div>
-          <p class="timeline-item__desc">L'association est officiellement déclarée à la Sous-Préfecture d'Istres le 22 juillet 2021, marquant la structuration officielle du collectif.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-item__date">Juin 2026</div>
-        <div>
-          <div class="timeline-item__title">Luynois en Action - LEA devient un CIQ</div>
-          <p class="timeline-item__desc">Par modification de ses statuts, l'association prend une nouvelle dénomination : Comité d'Intérêt de Quartier - Luynes en action (CIQ Luynes en action / CIQ de Luynes / CIQ LEA).</p>
-        </div>
-      </div>
+    <div class="vtimeline">
+      <details class="vtimeline__item">
+        <summary>
+          <span class="vtimeline__dot" aria-hidden="true"></span>
+          <span class="vtimeline__date">Sept. 2020</span>
+          <span class="vtimeline__title">Une voie verte, mais un carrefour toujours dangereux</span>
+          <svg class="vtimeline__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </summary>
+        <p class="vtimeline__desc">Une voie verte est construite entre le carrefour de la RD7 / avenue des Libérateurs et le rond-point du Casino, sans résoudre la dangerosité du carrefour pour les riverains et les cyclistes.</p>
+      </details>
+      <details class="vtimeline__item">
+        <summary>
+          <span class="vtimeline__dot" aria-hidden="true"></span>
+          <span class="vtimeline__date">Avr. 2021</span>
+          <span class="vtimeline__title">L'alerte auprès des élus</span>
+          <svg class="vtimeline__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </summary>
+        <p class="vtimeline__desc">Prises de contact avec le Département des Bouches-du-Rhône et la Mairie d'Aix-en-Provence, rendez-vous avec le Conseiller départemental et avec l'adjoint au Maire en charge du quartier de Luynes.</p>
+      </details>
+      <details class="vtimeline__item">
+        <summary>
+          <span class="vtimeline__dot" aria-hidden="true"></span>
+          <span class="vtimeline__date">Mai 2021</span>
+          <span class="vtimeline__title">Naissance de Luynois en Action</span>
+          <svg class="vtimeline__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </summary>
+        <p class="vtimeline__desc">Un groupe d'habitants se structure, crée le site luynoisenaction.fr, engage les premiers échanges avec les CIQ du village, lance une pétition et publie un premier Livre Blanc.</p>
+      </details>
+      <details class="vtimeline__item">
+        <summary>
+          <span class="vtimeline__dot" aria-hidden="true"></span>
+          <span class="vtimeline__date">Juil. 2021</span>
+          <span class="vtimeline__title">LEA devient une association Loi 1901</span>
+          <svg class="vtimeline__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </summary>
+        <p class="vtimeline__desc">L'association est officiellement déclarée à la Sous-Préfecture d'Istres le 22 juillet 2021, marquant la structuration officielle du collectif.</p>
+      </details>
+      <details class="vtimeline__item" open>
+        <summary>
+          <span class="vtimeline__dot" aria-hidden="true"></span>
+          <span class="vtimeline__date">Juin 2026</span>
+          <span class="vtimeline__title">Luynois en Action - LEA devient un CIQ</span>
+          <svg class="vtimeline__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </summary>
+        <p class="vtimeline__desc">Par modification de ses statuts, l'association prend une nouvelle dénomination : Comité d'Intérêt de Quartier - Luynes en action (CIQ Luynes en action / CIQ de Luynes / CIQ LEA).</p>
+      </details>
     </div>
   </div>
 </section>
   
+<!-- =========================================================
+     BLOC RÉGLEMENTAIRE - JO et statuts
+     ========================================================= -->
+<section class="legal-band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cadre réglementaire</span>
+      <h2>Transparence associative</h2>
+      <p>Retrouvez les documents officiels du CIQ Luynes en action, association Loi 1901.</p>
+    </div>
+    <div class="legal-band__grid">
+      <div class="legal-card">
+        <span class="legal-card__text">Parution au Journal Officiel</span>
+        <a class="link-more" href="https://www.journal-officiel.gouv.fr/pages/associations-detail-annonce/?q.id=id:202300520271" target="_blank" rel="noopener">
+          Consulter
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="legal-card">
+        <span class="legal-card__text">Statuts de l'association</span>
+        <a class="link-more" href="https://13080.sharepoint.com/:b:/s/atlas/IQC19LTRYsd0Rb1VUrPp6WJ0AZFSc-rVpayHDv-dZJtrk88?e=u84NLj" target="_blank" rel="noopener">
+          Consulter
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- =========================================================
      CTA - Adhérer
      ========================================================= -->
