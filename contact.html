@@ -317,6 +317,18 @@
     color:var(--navy-muted-on-white);
     line-height:1.55;
   }
+  .contact-card__ext{
+    margin-top:22px;
+    padding:16px 18px;
+    background:#FAFAF8;
+    border:1px solid var(--line-on-white);
+    border-left:3px solid var(--gold-dark);
+    border-radius:10px;
+    font-size:.93rem;
+    line-height:1.55;
+    color:var(--navy);
+  }
+  .contact-card__ext strong{ font-weight:700; }
 
   .outgoing-card{
     background:#FAFAF8;
@@ -350,6 +362,7 @@
     margin-top:2px;
     font-size:.86rem;
     color:var(--navy-muted-on-white);
+    line-height:1.5;
   }
 
   /* =========================================================
@@ -416,6 +429,51 @@
   }
 
   /* =========================================================
+     SIGNALEMENTS (DOLÉ'US arrêté → Je signale)
+     ========================================================= */
+  .notice-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    flex-wrap:wrap;
+    background:var(--white);
+    border:1px solid var(--line-on-white);
+    border-top:3px solid var(--gold-dark);
+    border-radius:16px;
+    padding:36px 36px;
+  }
+  .notice-card__body{ max-width:62ch; }
+  .notice-card__body h3{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:8px;
+  }
+  .notice-card__body p{
+    margin:0 0 12px;
+    font-size:.97rem;
+    line-height:1.6;
+    color:var(--navy);
+  }
+  .notice-card__body p:last-child{ margin-bottom:0; }
+  .notice-card__body .notice-card__muted{
+    color:var(--navy-muted-on-white);
+    font-size:.92rem;
+  }
+  .notice-card__body a.inline-link{
+    color:var(--gold-dark);
+    font-weight:600;
+    text-decoration:underline;
+  }
+  .notice-card__ctas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:stretch;
+  }
+
+  /* =========================================================
      WHATSAPP
      ========================================================= */
   .whatsapp-card{
@@ -431,7 +489,7 @@
     padding:34px 36px;
     margin-top:28px;
   }
-  .whatsapp-card__body{ max-width:56ch; }
+  .whatsapp-card__body{ max-width:58ch; }
   .whatsapp-card h3{
     font-size:1.15rem;
     font-weight:700;
@@ -443,6 +501,30 @@
     font-size:.95rem;
     line-height:1.55;
     color:var(--navy-muted-on-white);
+  }
+  .whatsapp-card__list{
+    margin:14px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .whatsapp-card__list li{
+    position:relative;
+    padding-left:22px;
+    margin-top:7px;
+    font-size:.95rem;
+    font-weight:500;
+    color:var(--navy);
+    line-height:1.5;
+  }
+  .whatsapp-card__list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#1DA851;
   }
   .whatsapp-card__ctas{
     display:flex;
@@ -506,7 +588,7 @@
   /* Tablette */
   @media (max-width:900px){
     .contact__grid{ grid-template-columns:1fr; }
-    .email-card, .press-card, .whatsapp-card{ padding:30px; }
+    .email-card, .press-card, .whatsapp-card, .notice-card{ padding:30px; }
     .cta-band__grid{ padding-top:48px; padding-bottom:48px; }
   }
 
@@ -526,6 +608,10 @@
 
     .press-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
     .press-card .btn{ width:100%; justify-content:center; }
+
+    .notice-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
+    .notice-card__ctas{ width:100%; }
+    .notice-card__ctas .btn{ width:100%; justify-content:center; }
 
     .whatsapp-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
     .whatsapp-card__ctas{ width:100%; }
@@ -602,7 +688,7 @@
       <div class="contact-card">
         <div class="contact-card__kicker">Standard</div>
         <h3>Appelez-nous</h3>
-        <a href="tel:+33484830901" class="contact-card__number">+33 (0)4.84.83.09.01</a>
+        <a href="tel:+33484830901" class="contact-card__number">04 84 83 09 01</a>
         <div class="contact-card__caption">Numéro principal</div>
 
         <div class="contact-card__hours">
@@ -616,6 +702,12 @@
           </div>
         </div>
 
+        <div class="contact-card__ext">
+          <strong>Vous connaissez le numéro de poste de votre interlocuteur ?</strong>
+          Pendant les jours et heures d'ouverture du standard, vous pouvez joindre directement une personne en composant son numéro de poste à 5 chiffres commençant par 35 (si elle en a un).
+          Sinon, le standard reste disponible via le choix 0.
+        </div>
+
         <p class="contact-card__note">Si nous manquons votre appel, laissez-nous un message vocal ou écrivez-nous par courriel : nous vous rappellerons dès que possible.</p>
       </div>
 
@@ -625,14 +717,15 @@
         <div class="outgoing-list">
           <div class="outgoing-row">
             <div class="outgoing-row__number">Numéro masqué</div>
+            <div class="outgoing-row__label">Apparaît généralement lorsque nous appelons vers une ligne mobile</div>
           </div>
           <div class="outgoing-row">
-            <div class="outgoing-row__number">+33 (0)4.84.83.09.01</div>
-            <div class="outgoing-row__label">Standard</div>
+            <div class="outgoing-row__number">04 84 83 09 01</div>
+            <div class="outgoing-row__label">Standard. C'est en principe ce numéro qui peut s'afficher lorsque nous appelons vers une ligne fixe</div>
           </div>
           <div class="outgoing-row" style="border-bottom:none;">
-            <div class="outgoing-row__number">+33 (0)4.12.39.51.20</div>
-            <div class="outgoing-row__label">Appels sortants, réunions et rendez-vous téléphoniques</div>
+            <div class="outgoing-row__number">04 12 39 51 20</div>
+            <div class="outgoing-row__label">Généralement utilisé uniquement pour les appels sortants lors de réunions ou de rendez-vous téléphoniques, et parfois pour des rappels</div>
           </div>
         </div>
       </div>
@@ -640,11 +733,16 @@
 
     <div class="whatsapp-card">
       <div class="whatsapp-card__body">
-        <h3>Contactez-nous aussi sur WhatsApp</h3>
-        <p>Appel ou message, comme vous préférez : ouvrez la discussion WhatsApp et choisissez d'appeler ou d'écrire directement depuis l'application.</p>
+        <h3>Le moyen le plus simple de nous joindre : WhatsApp</h3>
+        <p>Pas besoin de chercher un numéro ni d'attendre l'ouverture d'une messagerie. Une seule discussion suffit, depuis l'application que vous utilisez déjà tous les jours.</p>
+        <ul class="whatsapp-card__list">
+          <li>Un appel vocal gratuit via WhatsApp, en un seul geste</li>
+          <li>Ou un simple message écrit, quand vous avez le temps</li>
+          <li>Photos et précisions faciles à joindre pour illustrer votre demande</li>
+        </ul>
       </div>
       <div class="whatsapp-card__ctas">
-        <a href="https://wa.me/33484830901" target="_blank" rel="noopener" class="btn btn--whatsapp">💬 Ouvrir WhatsApp</a>
+        <a href="https://wa.me/33484830901" target="_blank" rel="noopener" class="btn btn--whatsapp">💬 Lancer la discussion sur WhatsApp</a>
       </div>
     </div>
   </div>
@@ -676,9 +774,33 @@
 </section>
 
 <!-- =========================================================
-     PRESSE
+     SIGNALEMENTS : DOLÉ'US n'est plus en service
      ========================================================= -->
 <section class="section--alt" style="padding-top:32px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Signalements du quotidien</span>
+      <h2>Un problème sur la voie publique ?</h2>
+    </div>
+
+    <div class="notice-card">
+      <div class="notice-card__body">
+        <h3>Notre dispositif DOLÉ'US n'est plus en service</h3>
+        <p>DOLÉ'US était la plateforme dédiée du CIQ LEA pour recevoir et traiter les signalements du quotidien. Ce dispositif a été arrêté.</p>
+        <p>Pour signaler une anomalie du quotidien, nous vous invitons désormais à passer directement par le dispositif <strong>« Je signale »</strong> de la Mairie d'Aix-en-Provence.</p>
+      </div>
+      <div class="notice-card__ctas">
+        <a href="https://www.aixenprovence.fr/Signaler-une-anomalie-sur-la-voie-publique-209" target="_blank" rel="noopener" class="btn btn--accent">Faire un signalement (« Je signale »)</a>
+        <a href="https://actus.13080.fr/2026/08/arret-du-dispositif-doleus-de-lea/" target="_blank" rel="noopener" class="btn btn--outline-navy">Lire l'information</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRESSE
+     ========================================================= -->
+<section style="padding-top:32px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Journalistes</span>
