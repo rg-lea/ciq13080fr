@@ -392,6 +392,54 @@
     line-height:1.55;
     max-width:48ch;
   }
+
+  /* --- Repli : affichage de l'adresse si le clic n'a rien ouvert --- */
+  .email-fallback{ flex-basis:100%; }
+  .email-fallback__link{
+    background:none;
+    border:none;
+    padding:0;
+    color:var(--white-muted-on-navy);
+    font-size:.9rem;
+    text-decoration:underline;
+    cursor:pointer;
+  }
+  .email-fallback__link:hover{ color:var(--gold); }
+  .email-fallback__box{
+    margin-top:14px;
+    padding:18px 20px;
+    background:rgba(255,255,255,.08);
+    border:1px solid var(--line-on-navy);
+    border-radius:10px;
+  }
+  .email-fallback__box[hidden]{ display:none; }
+  .email-card .email-fallback__text{
+    margin:0 0 12px;
+    max-width:none;
+    font-size:.92rem;
+  }
+  .email-fallback__row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .email-fallback__addr{
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--white);
+    user-select:all;
+    -webkit-user-select:all;
+    word-break:break-all;
+  }
+  .email-fallback__copy{ padding:10px 18px; font-size:14px; }
+  .email-card .email-fallback__status{
+    margin:10px 0 0;
+    min-height:1.2em;
+    font-size:.88rem;
+    color:var(--gold);
+  }
+
   .press-card{
     display:flex;
     align-items:center;
@@ -605,6 +653,7 @@
 
     .email-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
     .email-card .btn{ width:100%; justify-content:center; }
+    .email-fallback__copy{ width:100%; justify-content:center; }
 
     .press-card{ flex-direction:column; align-items:flex-start; padding:28px 24px; }
     .press-card .btn{ width:100%; justify-content:center; }
@@ -769,6 +818,21 @@
       <button type="button" class="btn btn--primary" id="email-reveal-btn" onclick="window.__leaOpenMail && window.__leaOpenMail()">
         ✉️ Nous écrire par courriel
       </button>
+
+      <!-- Repli : affichage de l'adresse (injectée par JS uniquement à la demande) -->
+      <div class="email-fallback">
+        <button type="button" class="email-fallback__link" id="email-show-btn" onclick="window.__leaShowMail && window.__leaShowMail()">
+          Rien ne s'est ouvert ? Afficher l'adresse E-Mail
+        </button>
+        <div class="email-fallback__box" id="email-fallback-box" hidden aria-live="polite">
+          <p class="email-fallback__text">Votre logiciel de messagerie ne s'est pas ouvert ? Voici notre adresse, à copier dans votre messagerie ou votre webmail :</p>
+          <div class="email-fallback__row">
+            <span class="email-fallback__addr" id="email-fallback-addr"></span>
+            <button type="button" class="btn btn--primary email-fallback__copy" id="email-copy-btn" onclick="window.__leaCopyMail && window.__leaCopyMail()">Copier l'adresse</button>
+          </div>
+          <p class="email-fallback__status" id="email-copy-status" role="status"></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -855,16 +919,69 @@
 <!-- =========================================================
      SCRIPT — assemblage de l'adresse e-mail côté client
      L'adresse n'apparaît jamais en clair dans le code source HTML :
-     elle est reconstruite à partir de fragments, au moment du clic,
-     pour limiter la collecte automatisée par des robots.
+     elle est reconstruite à partir de fragments, uniquement au moment
+     du clic ou de l'affichage de secours, pour limiter la collecte
+     automatisée par des robots.
      ========================================================= -->
 <script>
 (function () {
   'use strict';
   var u = ["c", "i", "q"].join("");
   var d = ["1", "3", "0", "8", "0", ".", "f", "r"].join("");
+  function addr() { return u + "@" + d; }
+
+  function $(id) { return document.getElementById(id); }
+
+  // Affiche l'adresse (injectée dans le DOM seulement à ce moment-là)
+  function showAddress() {
+    var el = $('email-fallback-addr');
+    if (el && !el.textContent) { el.textContent = addr(); }
+    var wrap = $('email-fallback-box');
+    if (wrap) { wrap.hidden = false; }
+    var link = $('email-show-btn');
+    if (link) { link.style.display = 'none'; }
+  }
+
+  window.__leaShowMail = showAddress;
+
+  // Ouvre le logiciel de messagerie ; si rien ne se passe, affiche l'adresse
   window.__leaOpenMail = function () {
-    window.location.href = "mailto:" + u + "@" + d;
+    var left = false;
+    function onLeave() { left = true; }
+    window.addEventListener('blur', onLeave);
+    document.addEventListener('visibilitychange', onLeave);
+
+    window.location.href = "mailto:" + addr();
+
+    // Si la page n'a pas perdu le focus, aucun client mail ne s'est ouvert
+    setTimeout(function () {
+      window.removeEventListener('blur', onLeave);
+      document.removeEventListener('visibilitychange', onLeave);
+      if (!left) { showAddress(); }
+    }, 1800);
+  };
+
+  // Copie de l'adresse dans le presse-papiers
+  window.__leaCopyMail = function () {
+    var status = $('email-copy-status');
+    function ok() { if (status) { status.textContent = "Adresse copiée ✔"; } }
+    function ko() {
+      // Dernier recours : sélectionner le texte pour copie manuelle
+      var el = $('email-fallback-addr');
+      if (el && window.getSelection) {
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+      }
+      if (status) { status.textContent = "Adresse sélectionnée : faites Ctrl+C (ou appui long sur mobile)."; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr()).then(ok, ko);
+    } else {
+      ko();
+    }
   };
 })();
 </script>
