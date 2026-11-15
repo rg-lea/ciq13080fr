@@ -444,30 +444,39 @@
   }
 
   $("#chip-edit").onclick=function(){ show("tarif",true); };
+
+  /* nettoyage de l'URL : retire les paramètres une fois lus */
+  function cleanUrl(){ try{ history.replaceState(null,"",location.pathname); }catch(e){} }
+
   /* retour de HelloAsso */
   var q = new URLSearchParams(location.search), type = q.get("type"), cid = q.get("checkoutIntentId");
-  $("#retry").onclick=function(){ history.replaceState(null,"",location.pathname); if(S.adresse&&S.tarif&&S.email){ buildRecap(); show("recap"); } else show("tarif"); };
+  $("#retry").onclick=function(){ if(S.adresse&&S.tarif&&S.email){ buildRecap(); show("recap"); } else show("tarif"); };
   function init(){
     if(type==="return" && cid){
-      if(q.get("code") && q.get("code")!=="succeeded"){ return show("cancel"); }
+      if(q.get("code") && q.get("code")!=="succeeded"){ cleanUrl(); return show("cancel"); }
       var doneKey = "ciq_done_"+cid, already=false; try{already=localStorage.getItem(doneKey);}catch(e){}
-      if(already){ history.replaceState(null,"",location.pathname); return show("done"); }
+      if(already){ cleanUrl(); return show("done"); }
       show("wait");
       var body = Object.assign(payload(),{action:"confirmer",checkoutIntentId:cid});
       post(body).then(function(j){
-        if(j.envoye){ try{localStorage.setItem(doneKey,"1"); localStorage.removeItem(KEY);}catch(e){} history.replaceState(null,"",location.pathname); $("#done-txt").textContent="Votre paiement est confirmé et un e-mail de confirmation vient d'être envoyé à "+(j.mail||"votre adresse")+". Votre dossier va être traité par notre équipe : vous serez informé(e) par e-mail dès qu'il sera traité ou mis à jour."; show("done"); }
+        cleanUrl();
+        if(j.envoye){ try{localStorage.setItem(doneKey,"1"); localStorage.removeItem(KEY);}catch(e){} $("#done-txt").textContent="Votre paiement est confirmé et un e-mail de confirmation vient d'être envoyé à "+(j.mail||"votre adresse")+". Votre dossier va être traité par notre équipe : vous serez informé(e) par e-mail dès qu'il sera traité ou mis à jour."; show("done"); }
         else if(j.paye){ $("#done-txt").textContent="Votre paiement est bien confirmé. L'e-mail de confirmation n'a pas pu être envoyé : pas d'inquiétude, nous vous contactons rapidement (ciq@13080.fr)."; show("done"); }
         else { $("#cancel-h").textContent="Paiement non constaté"; $("#cancel-txt").textContent="Nous n'avons pas pu constater votre paiement. S'il a été débité, contactez-nous : ciq@13080.fr."; show("cancel"); }
-      }).catch(function(){ $("#cancel-h").textContent="Vérification impossible"; $("#cancel-txt").textContent="Votre paiement a peut-être abouti. Écrivez-nous à ciq@13080.fr et nous vérifierons."; show("cancel"); });
+      }).catch(function(){
+        cleanUrl();
+        $("#cancel-h").textContent="Vérification impossible"; $("#cancel-txt").textContent="Votre paiement a peut-être abouti. Écrivez-nous à ciq@13080.fr et nous vérifierons."; show("cancel");
+      });
       return;
     }
     if(type==="back"||type==="error"){
+      cleanUrl();
       if(type==="error"){ $("#cancel-h").textContent="Le paiement a échoué"; }
       return show("cancel");
     }
     var t = q.get("tarif");
-    if(t && Object.prototype.hasOwnProperty.call(TARIFS,t)){ S.tarif=t; sync(); return show("identite"); }
-    sync(); show("tarif");
+    if(t && Object.prototype.hasOwnProperty.call(TARIFS,t)){ S.tarif=t; cleanUrl(); sync(); return show("identite"); }
+    cleanUrl(); sync(); show("tarif");
   }
   init();
 })();
