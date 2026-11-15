@@ -117,6 +117,7 @@
   .field input{width:100%;font:inherit;font-size:1.1rem;color:var(--navy);padding:16px 18px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);transition:border-color .15s,box-shadow .15s;}
   .field input::placeholder{color:rgba(36,46,99,.38);}
   .field input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(36,46,99,.12);}
+  .field input#nom{text-transform:uppercase;}
   .field input.bad{border-color:var(--err);}
   .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .error{color:var(--err);font-size:.9rem;font-weight:500;margin:6px 0 0;min-height:1.2em;}
@@ -201,8 +202,9 @@
     <h1>💪 Choisissez votre cotisation</h1>
     <p class="step__sub">Plus l'engagement est long, plus le tarif annuel est avantageux. Aucune subvention : chaque adhésion compte.</p>
     <div class="choices" role="radiogroup" aria-label="Cotisation">
-      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="1an"><span class="choice__txt"><strong>1 an</strong><span>Pour essayer</span></span><span class="choice__price">10 €</span></button>
+      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="1an"><span class="choice__txt"><strong>1 an</strong><span>Simple et sans engagement</span></span><span class="choice__price">10 €</span></button>
       <button type="button" class="choice choice--best" role="radio" aria-checked="false" data-tarif="4ans"><span class="choice__badge">Meilleur rapport</span><span class="choice__txt"><strong>4 ans</strong><span>soit 7,50 €/an</span></span><span class="choice__price">30 €</span></button>
+      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="test" id="choice-test" style="display:none"><span class="choice__txt"><strong>Tarif d'essai</strong><span>Réservé aux tests</span></span><span class="choice__price">0,50 €</span></button>
       <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="10ans"><span class="choice__txt"><strong>10 ans</strong><span>soit 5 €/an</span></span><span class="choice__price">50 €</span></button>
     </div>
   </section>
@@ -303,9 +305,9 @@
 <script>
 (function(){
   /* >>> À RENSEIGNER : URL de déclenchement HTTP du flux Power Automate (voir README) <<< */
-  var FLOW_URL = "https://default403611541d9141c3b14ddd403256e1.be.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/13/workflows/f81b23661cd24f04a024b1ab21693609/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8TqVaXKGT148YyPCGOMvmW1Vvs-auxGcZU-lY3FI5PA";
+  var FLOW_URL = "COLLER_ICI_L_URL_HTTP_DU_FLUX";
 
-  var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"}};
+  var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"},"test":{l:"essai",p:"0,50 €"}};
   var FLOW = ["tarif","identite","email","tel","adresse","recap"];
   var KEY = "ciq_adhesion_v1";
   var S = {tarif:"",civilite:"",prenom:"",nom:"",email:"",email2:"",tel:"",tel2:"",adresse:null};
@@ -349,6 +351,7 @@
   }
   function refresh(){ var id = FLOW[cur]; if(id) next.disabled = busy || !!problem(id); }
 
+  if(/[?&]test=1/.test(location.search)) $("#choice-test").style.display="flex";
   /* tarif + civilité */
   $$("[data-tarif]").forEach(function(b){ b.onclick=function(){ S.tarif=b.dataset.tarif; sync(); }; });
   $$("[data-civ]").forEach(function(b){ b.onclick=function(){ S.civilite=b.dataset.civ; sync(); }; });
@@ -360,7 +363,7 @@
   /* champs texte */
   ["prenom","nom","email","email2","tel","tel2"].forEach(function(k){
     var i = $("#"+k); i.value = S[k]||"";
-    i.addEventListener("input",function(){ S[k]=i.value; i.classList.remove("bad"); $("#err-"+FLOW[cur]).textContent=""; refresh(); save(); });
+    i.addEventListener("input",function(){ if(k==="nom"){ var c=i.selectionStart; i.value=i.value.toUpperCase(); try{i.setSelectionRange(c,c);}catch(e){} } S[k]=i.value; i.classList.remove("bad"); $("#err-"+FLOW[cur]).textContent=""; refresh(); save(); });
   });
   $$("[data-extra]").forEach(function(b){ b.onclick=function(){ $("#"+b.dataset.extra).classList.add("open"); b.style.display="none"; var f=$("input",$("#"+b.dataset.extra)); f.focus(); }; });
   if(S.email2){ $("#extra-email").classList.add("open"); $('[data-extra="extra-email"]').style.display="none"; }
@@ -398,7 +401,7 @@
   /* récapitulatif */
   function buildRecap(){
     var r = $("#recap"); r.innerHTML="";
-    var rows = [["Cotisation","tarif","Valable "+TARIFS[S.tarif].l],["Civilité","identite",S.civilite],["Prénom(s)","identite",S.prenom.trim()],["Nom","identite",S.nom.trim()],["E-mail","email",S.email.trim()]];
+    var rows = [["Cotisation","tarif","Valable "+TARIFS[S.tarif].l],["Civilité","identite",S.civilite],["Prénom(s)","identite",S.prenom.trim()],["Nom","identite",S.nom.trim().toUpperCase()],["E-mail","email",S.email.trim()]];
     if(S.email2.trim()) rows.push(["Autre e-mail","email",S.email2.trim()]);
     rows.push(["Téléphone","tel",fmtTel(S.tel)]); if(S.tel2.trim()) rows.push(["Autre numéro","tel",fmtTel(S.tel2)]);
     rows.push(["Adresse","adresse",S.adresse.label]);
@@ -428,7 +431,7 @@
     return fetch(FLOW_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify(payload)})
       .then(function(r){ return r.json().catch(function(){return {};}).then(function(j){ j._status=r.status; return j; }); });
   }
-  function payload(){ return {action:"commande",tarif:S.tarif,civilite:S.civilite,prenom:S.prenom.trim(),nom:S.nom.trim(),email:S.email.trim(),email2:S.email2.trim(),tel:fmtTel(S.tel),tel2:S.tel2.trim()?fmtTel(S.tel2):"",adresse:S.adresse}; }
+  function payload(){ return {action:"commande",tarif:S.tarif,civilite:S.civilite,prenom:S.prenom.trim(),nom:S.nom.trim().toUpperCase(),email:S.email.trim(),email2:S.email2.trim(),tel:fmtTel(S.tel),tel2:S.tel2.trim()?fmtTel(S.tel2):"",adresse:S.adresse}; }
   function pay(){
     var e=$("#err-recap"); e.textContent="";
     if(FLOW_URL.indexOf("http")!==0){ e.textContent="Le paiement n'est pas encore configuré (URL du flux manquante)."; return; }
