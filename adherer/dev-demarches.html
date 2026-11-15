@@ -204,7 +204,6 @@
     <div class="choices" role="radiogroup" aria-label="Cotisation">
       <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="1an"><span class="choice__txt"><strong>1 an</strong><span>Simple et sans engagement</span></span><span class="choice__price">10 €</span></button>
       <button type="button" class="choice choice--best" role="radio" aria-checked="false" data-tarif="4ans"><span class="choice__badge">Meilleur rapport</span><span class="choice__txt"><strong>4 ans</strong><span>soit 7,50 €/an</span></span><span class="choice__price">30 €</span></button>
-      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="test" id="choice-test" style="display:none"><span class="choice__txt"><strong>Tarif d'essai</strong><span>Réservé aux tests</span></span><span class="choice__price">0,50 €</span></button>
       <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="10ans"><span class="choice__txt"><strong>10 ans</strong><span>soit 5 €/an</span></span><span class="choice__price">50 €</span></button>
     </div>
   </section>
@@ -274,9 +273,9 @@
   <!-- Retour paiement -->
   <section class="step center" data-id="wait"><div class="spinner"></div><h2>Un instant…</h2><p class="step__sub" id="wait-txt">Nous finalisons votre adhésion.</p></section>
   <section class="step center" data-id="done">
-    <div class="step__emoji">🎉</div><h2>Bienvenue au CIQ Luynes en action !</h2>
-    <p class="step__sub" id="done-txt">Votre paiement est confirmé. Un e-mail de confirmation vient de vous être envoyé.</p>
-    <a class="btn btn--next" href="https://adherents.13080.fr" style="display:flex">Accéder à mon espace adhérent →</a>
+    <div class="step__emoji">🎉</div><h2>Merci pour votre adhésion !</h2>
+    <p class="step__sub" id="done-txt">Votre paiement est confirmé et un e-mail de confirmation vient de vous être envoyé. Votre dossier va être traité par notre équipe : vous serez informé(e) par e-mail dès qu'il sera traité ou mis à jour.</p>
+    <a class="btn btn--next" href="https://ciq.13080.fr" style="display:flex">Retour à l'accueil</a>
   </section>
   <section class="step center" data-id="cancel">
     <div class="step__emoji">↩️</div><h2 id="cancel-h">Paiement non finalisé</h2>
@@ -305,9 +304,9 @@
 <script>
 (function(){
   /* >>> À RENSEIGNER : URL de déclenchement HTTP du flux Power Automate (voir README) <<< */
-  var FLOW_URL = "https://default403611541d9141c3b14ddd403256e1.be.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/13/workflows/f81b23661cd24f04a024b1ab21693609/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8TqVaXKGT148YyPCGOMvmW1Vvs-auxGcZU-lY3FI5PA";
+  var FLOW_URL = "COLLER_ICI_L_URL_HTTP_DU_FLUX";
 
-  var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"},"test":{l:"essai",p:"0,50 €"}};
+  var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"}};
   var FLOW = ["tarif","identite","email","tel","adresse","recap"];
   var KEY = "ciq_adhesion_v1";
   var S = {tarif:"",civilite:"",prenom:"",nom:"",email:"",email2:"",tel:"",tel2:"",adresse:null};
@@ -351,7 +350,6 @@
   }
   function refresh(){ var id = FLOW[cur]; if(id) next.disabled = busy || !!problem(id); }
 
-  if(/[?&]test=1/.test(location.search)) $("#choice-test").style.display="flex";
   /* tarif + civilité */
   $$("[data-tarif]").forEach(function(b){ b.onclick=function(){ S.tarif=b.dataset.tarif; sync(); }; });
   $$("[data-civ]").forEach(function(b){ b.onclick=function(){ S.civilite=b.dataset.civ; sync(); }; });
@@ -453,7 +451,7 @@
       show("wait");
       var body = Object.assign(payload(),{action:"confirmer",checkoutIntentId:cid});
       post(body).then(function(j){
-        if(j.envoye){ try{localStorage.setItem(doneKey,"1"); localStorage.removeItem(KEY);}catch(e){} history.replaceState(null,"",location.pathname); $("#done-txt").textContent="Votre paiement est confirmé. Un e-mail de confirmation vient d'être envoyé à "+(j.mail||"votre adresse")+"."; show("done"); }
+        if(j.envoye){ try{localStorage.setItem(doneKey,"1"); localStorage.removeItem(KEY);}catch(e){} history.replaceState(null,"",location.pathname); $("#done-txt").textContent="Votre paiement est confirmé et un e-mail de confirmation vient d'être envoyé à "+(j.mail||"votre adresse")+". Votre dossier va être traité par notre équipe : vous serez informé(e) par e-mail dès qu'il sera traité ou mis à jour."; show("done"); }
         else if(j.paye){ $("#done-txt").textContent="Votre paiement est bien confirmé. L'e-mail de confirmation n'a pas pu être envoyé : pas d'inquiétude, nous vous contactons rapidement (ciq@13080.fr)."; show("done"); }
         else { $("#cancel-h").textContent="Paiement non constaté"; $("#cancel-txt").textContent="Nous n'avons pas pu constater votre paiement. S'il a été débité, contactez-nous : ciq@13080.fr."; show("cancel"); }
       }).catch(function(){ $("#cancel-h").textContent="Vérification impossible"; $("#cancel-txt").textContent="Votre paiement a peut-être abouti. Écrivez-nous à ciq@13080.fr et nous vérifierons."; show("cancel"); });
