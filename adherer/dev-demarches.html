@@ -120,6 +120,7 @@
   .field input#nom{text-transform:uppercase;}
   .field input.bad{border-color:var(--err);}
   .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .chip{display:inline-flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:99px;padding:8px 16px;font-size:.92rem;font-weight:600;margin-bottom:22px;}
   .error{color:var(--err);font-size:.9rem;font-weight:500;margin:6px 0 0;min-height:1.2em;}
   .addlink{all:unset;cursor:pointer;color:var(--gold-dark);font-weight:600;font-size:.95rem;}
   .addlink:hover{text-decoration:underline;}
@@ -210,6 +211,7 @@
 
   <!-- 2. Identité -->
   <section class="step" data-id="identite">
+    <div class="chip" id="chip"><span id="chip-txt"></span><button type="button" class="addlink" id="chip-edit">Modifier</button></div>
     <div class="step__emoji">👋</div>
     <h2>Faisons connaissance</h2>
     <p class="step__sub">Comment devons-nous vous appeler ?</p>
@@ -304,7 +306,7 @@
 <script>
 (function(){
   /* >>> À RENSEIGNER : URL de déclenchement HTTP du flux Power Automate (voir README) <<< */
-  var FLOW_URL = "https://default403611541d9141c3b14ddd403256e1.be.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/13/workflows/f81b23661cd24f04a024b1ab21693609/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8TqVaXKGT148YyPCGOMvmW1Vvs-auxGcZU-lY3FI5PA";
+  var FLOW_URL = "COLLER_ICI_L_URL_HTTP_DU_FLUX";
 
   var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"}};
   var FLOW = ["tarif","identite","email","tel","adresse","recap"];
@@ -330,6 +332,7 @@
     $("#nav").style.display = i<0 ? "none" : "flex";
     prev.hidden = i<=0;
     next.textContent = id==="recap" ? "Payer " + TARIFS[S.tarif].p + " 🔒" : "Continuer";
+    if(id==="identite") $("#chip-txt").textContent = "Cotisation : "+TARIFS[S.tarif].l+" · "+TARIFS[S.tarif].p;
     refresh();
     var f = $("input:not([type=hidden])", el); if(f && i>=0 && id!=="tarif" && id!=="recap") setTimeout(function(){f.focus({preventScroll:true});},60);
     window.scrollTo({top:0,behavior:"smooth"});
@@ -440,6 +443,7 @@
     }).catch(function(){ busy=false; next.disabled=false; next.textContent="Payer "+TARIFS[S.tarif].p+" 🔒"; e.textContent="Impossible de lancer le paiement pour le moment. Réessayez ou contactez ciq@13080.fr."; });
   }
 
+  $("#chip-edit").onclick=function(){ show("tarif",true); };
   /* retour de HelloAsso */
   var q = new URLSearchParams(location.search), type = q.get("type"), cid = q.get("checkoutIntentId");
   $("#retry").onclick=function(){ history.replaceState(null,"",location.pathname); if(S.adresse&&S.tarif&&S.email){ buildRecap(); show("recap"); } else show("tarif"); };
@@ -461,6 +465,8 @@
       if(type==="error"){ $("#cancel-h").textContent="Le paiement a échoué"; }
       return show("cancel");
     }
+    var t = q.get("tarif");
+    if(t && Object.prototype.hasOwnProperty.call(TARIFS,t)){ S.tarif=t; sync(); return show("identite"); }
     sync(); show("tarif");
   }
   init();
