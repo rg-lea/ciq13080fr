@@ -21,7 +21,7 @@
   })();
 </script>
 <!-- End Matomo Code -->
-  
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1ZCPKJ1TB"></script>
 <script>
@@ -39,7 +39,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "y7givzu010");
 </script>
-  
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -85,9 +85,7 @@
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
   }
 
-  /* =========================================================
-     HEADER 1 — bandeau logo
-     ========================================================= */
+  /* HEADER 1 — bandeau logo */
   .site-header {
     background-color: #242E63;
     display: flex;
@@ -103,9 +101,7 @@
     max-width: 90vw !important;
   }
 
-  /* =========================================================
-     HEADER 2 — navigation
-     ========================================================= */
+  /* HEADER 2 — navigation */
   .sub-header {
     background-color: #242E63;
     padding: 16px 24px;
@@ -167,9 +163,7 @@
     .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   }
 
-  /* =========================================================
-     BOUTONS
-     ========================================================= */
+  /* BOUTONS */
   .hero__ctas{ display:flex; gap:14px; flex-wrap:wrap; }
 
   .btn{
@@ -195,9 +189,7 @@
   .btn--accent{ background:var(--gold-dark); color:var(--white); }
   .btn--accent:hover{ background:#8f6f02; }
 
-  /* =========================================================
-     SECTION SHARED
-     ========================================================= */
+  /* SECTION SHARED */
   section{ padding:76px 0; }
   .section-head{ max-width:640px; margin-bottom:36px; }
   .section-head h2{
@@ -252,9 +244,7 @@
 
   .section--alt{ background:#FAFAF8; }
 
-  /* =========================================================
-     HERO ADHÉRER
-     ========================================================= */
+  /* HERO ADHÉRER */
   .join-hero{ padding:76px 0 56px; }
   .join-hero__grid{
     display:grid;
@@ -278,9 +268,7 @@
     border-radius:16px;
   }
 
-  /* =========================================================
-     RAISONS D'ADHÉRER
-     ========================================================= */
+  /* RAISONS D'ADHÉRER */
   .reasons__grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -314,9 +302,7 @@
   }
   .reason-card p strong{ color:var(--navy); font-weight:700; }
 
-  /* =========================================================
-     TARIFS
-     ========================================================= */
+  /* TARIFS */
   .pricing__grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -392,14 +378,10 @@
   .pricing-card__btn:hover{ opacity:.88; }
   /* Carte claire (fond blanc) : jamais de --gold, on utilise --gold-dark + texte blanc */
   .pricing-card__btn--main{ background:var(--gold-dark); color:var(--white); }
-  .pricing-card__btn--pay{ background:transparent; color:var(--gold-dark); border-color:var(--gold-dark); }
   /* Carte mise en avant (fond navy = fond sombre) : --gold autorisé */
   .pricing-card--featured .pricing-card__btn--main{ background:var(--gold); color:var(--navy); }
-  .pricing-card--featured .pricing-card__btn--pay{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.5); }
 
-  /* =========================================================
-     AVANTAGES ADHÉRENT (bande navy)
-     ========================================================= */
+  /* AVANTAGES ADHÉRENT (bande navy) */
   .perks-band{ background:var(--navy); color:var(--white); }
   .perks__grid{
     display:grid;
@@ -421,9 +403,7 @@
     line-height:1.5;
   }
 
-  /* =========================================================
-     CTA BAND
-     ========================================================= */
+  /* CTA BAND */
   .cta-band{ background:var(--navy); color:var(--white); padding:0; }
   .cta-band__grid{
     display:flex;
@@ -452,9 +432,7 @@
   .cta-band .btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--white); }
   .cta-band .btn--ghost:hover{ background:rgba(255,255,255,.12); }
 
-  /* =========================================================
-     ESPACE ADHÉRENT
-     ========================================================= */
+  /* ESPACE ADHÉRENT */
   .member-area{ padding:60px 0; }
   .member-area__card{
     display:flex;
@@ -480,9 +458,7 @@
     max-width:52ch;
   }
 
-  /* =========================================================
-     FOOTER
-     ========================================================= */
+  /* FOOTER */
   .site-footer {
     background-color: #242E63;
     color: #FFFFFF;
@@ -498,71 +474,48 @@
   .site-footer__link:hover, .site-footer__link:focus { color: #FFC500; text-decoration: underline; }
   .site-footer__separator { color: #FFC500; font-size: 14px; }
 
-  /* =========================================================
-     RESPONSIVE
-     ========================================================= */
-
-  /* Tablette */
+  /* RESPONSIVE */
   @media (max-width:900px){
     .join-hero{ padding:56px 0 40px; }
     .join-hero__grid{ grid-template-columns:1fr; gap:32px; }
     .join-hero__photo{ min-height:240px; max-height:300px; }
-
     .reasons__grid{ grid-template-columns:1fr 1fr; }
-
     .pricing__grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
-
     .perks__grid{ grid-template-columns:repeat(2, 1fr); row-gap:32px; }
-
     .cta-band__grid{ padding-top:48px; padding-bottom:48px; }
-
     .member-area__card{ padding:30px; }
   }
-
-  /* Mobile */
   @media (max-width:600px){
     .wrap{ padding:0 18px; }
     section{ padding:56px 0; }
-
     .hero__ctas{ flex-direction:column; align-items:stretch; }
     .hero__ctas .btn{ justify-content:center; }
-
     .join-hero{ padding:44px 0 32px; }
     .join-hero__photo{ min-height:200px; max-height:240px; border-radius:12px; }
-
     .reasons__grid{ grid-template-columns:1fr; }
     .reason-card{ padding:26px 22px; }
-
     .pricing-card{ padding:28px 24px; }
-
     .perks__grid{ grid-template-columns:1fr 1fr; gap:24px; }
     .perk{ padding-left:16px; }
-
     .cta-band__grid{ flex-direction:column; align-items:flex-start; padding-top:40px; padding-bottom:40px; }
     .cta-band .hero__ctas{ width:100%; }
     .cta-band .hero__ctas .btn{ width:100%; justify-content:center; }
-
     .member-area__card{ flex-direction:column; align-items:flex-start; }
     .member-area .btn{ width:100%; justify-content:center; }
-
     .site-footer__logo{ width:220px; }
   }
 </style>
 </head>
 <body>
 
-<!-- =========================================================
-     HEADER 1 — logo
-     ========================================================= -->
+<!-- HEADER 1 — logo -->
 <header class="site-header">
   <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
     <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
   </a>
 </header>
 
-<!-- =========================================================
-     HEADER 2 — navigation
-     ========================================================= -->
+<!-- HEADER 2 — navigation -->
 <header class="sub-header">
   <div class="sub-header__inner">
     <div class="sub-header__brand">
@@ -585,9 +538,7 @@
   </div>
 </header>
 
-<!-- =========================================================
-     HERO - passez à l'action
-     ========================================================= -->
+<!-- HERO - passez à l'action -->
 <section class="join-hero">
   <div class="wrap">
     <div class="section-head section-head--lead">
@@ -608,9 +559,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     5 BONNES RAISONS D'ADHÉRER
-     ========================================================= -->
+<!-- 5 BONNES RAISONS D'ADHÉRER -->
 <section class="section--alt">
   <div class="wrap">
     <div class="section-head">
@@ -642,9 +591,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     TARIFS D'ADHÉSION
-     ========================================================= -->
+<!-- TARIFS D'ADHÉSION -->
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -658,8 +605,7 @@
         <div class="pricing-card__duration">valable 1 an</div>
         <div class="pricing-card__spacer">
           <div class="pricing-card__actions">
-            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
-            <a href="https://pay.brevo.com/5ddb3aa0-520c-4d6e-9c96-0ba3631505ed" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+            <a href="https://ciq.13080.fr/adherer/demarches?tarif=1an" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
           </div>
         </div>
       </div>
@@ -670,8 +616,7 @@
         <div class="pricing-card__note">soit 7,50 €/an</div>
         <div class="pricing-card__spacer">
           <div class="pricing-card__actions">
-            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
-            <a href="https://pay.brevo.com/2889b17c-4cf9-4e51-aac8-8475ec44f244" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+            <a href="https://ciq.13080.fr/adherer/demarches?tarif=4ans" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
           </div>
         </div>
       </div>
@@ -681,8 +626,7 @@
         <div class="pricing-card__note">soit 5 €/an</div>
         <div class="pricing-card__spacer">
           <div class="pricing-card__actions">
-            <a href="https://ciq.13080.fr/adherer/demarches" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
-            <a href="https://pay.brevo.com/3ab6374f-7420-433d-abb7-dbca68f4010b" class="pricing-card__btn pricing-card__btn--pay"> Payer avec Apple Pay</a>
+            <a href="https://ciq.13080.fr/adherer/demarches?tarif=10ans" class="pricing-card__btn pricing-card__btn--main">Adhérer</a>
           </div>
         </div>
       </div>
@@ -696,9 +640,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     CE QUE VOTRE ADHÉSION FINANCE (bande navy)
-     ========================================================= -->
+<!-- CE QUE VOTRE ADHÉSION FINANCE (bande navy) -->
 <section class="perks-band">
   <div class="wrap">
     <div class="section-head section-head--on-navy" style="margin-bottom:0;">
@@ -726,9 +668,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     ESPACE ADHÉRENT
-     ========================================================= -->
+<!-- ESPACE ADHÉRENT -->
 <section class="member-area">
   <div class="wrap">
     <div class="member-area__card">
@@ -741,9 +681,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     CTA - Contact
-     ========================================================= -->
+<!-- CTA - Contact -->
 <section class="cta-band">
   <div class="wrap cta-band__grid">
     <div>
@@ -757,9 +695,7 @@
   </div>
 </section>
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
   <nav class="site-footer__links" aria-label="Liens du pied de page">
