@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Régler ma cotisation - CIQ Luynes en action | ciq.13080.fr</title>
+<link rel="icon" href="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-carre-bleu.png">
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//vigie.siweb.13080.fr/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '9']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W1ZCPKJ1TB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W1ZCPKJ1TB');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y7givzu010");
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+  :root{
+    --navy:#242E63; --gold:#FFC500; --gold-dark:#AD8901; --white:#FFFFFF;
+    --muted:rgba(36,46,99,.62); --line:rgba(36,46,99,.14); --err:#B3261E;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--navy);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  h1,h2{font-family:'Outfit',sans-serif;font-weight:700;margin:0;letter-spacing:-0.015em;}
+  :focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}}
+
+  /* ===== HEADERS (identiques au site) ===== */
+  .site-header{background:#242E63;display:flex;justify-content:center;align-items:center;padding:16px 0;}
+  .site-header__logo-link{display:block;line-height:0;}
+  .site-header__logo{display:block !important;width:300px !important;height:auto !important;max-width:90vw !important;}
+  .sub-header{background:#242E63;padding:16px 24px;position:relative;z-index:1000;}
+  .sub-header__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;position:relative;}
+  .sub-header__brand{display:flex;align-items:center;gap:16px;}
+  .sub-header__site-link{color:#FFF;text-decoration:none;font-weight:600;font-size:16px;white-space:nowrap;}
+  .sub-header__site-link:hover,.sub-header__site-link:focus{color:#FFC500;}
+  .sub-header__back-link{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;white-space:nowrap;transition:color .2s ease;}
+  .sub-header__back-link:hover,.sub-header__back-link:focus{color:#FFC500;}
+  .sub-header__toggle{display:none;}
+  .sub-header__burger{display:none;flex-direction:column;justify-content:space-between;width:26px;height:18px;cursor:pointer;z-index:1002;}
+  .sub-header__burger span{display:block;height:2px;width:100%;background:#FFF;border-radius:2px;transition:transform .3s ease,opacity .3s ease;}
+  .sub-header__nav{display:flex;align-items:center;gap:24px;}
+  .sub-header__link{color:#FFF;text-decoration:none;font-size:15px;white-space:nowrap;}
+  .sub-header__link:hover,.sub-header__link:focus{color:#FFC500;}
+  .sub-header__btn{text-decoration:none;font-size:15px;font-weight:600;padding:8px 18px;border-radius:6px;white-space:nowrap;transition:background-color .2s ease,color .2s ease;}
+  .sub-header__btn--primary{background:#FFC500;color:#242E63;}
+  .sub-header__btn--primary:hover,.sub-header__btn--primary:focus{background:#e6b100;}
+  .sub-header__btn--secondary{background:transparent;color:#FFF;border:1px solid #FFF;}
+  .sub-header__btn--secondary:hover,.sub-header__btn--secondary:focus{background:#FFF;color:#242E63;}
+  @media (max-width:860px){
+    .sub-header__burger{display:flex;}
+    .sub-header__nav{position:absolute;z-index:1001;top:100%;left:0;right:0;margin-top:16px;background:#242E63;flex-direction:column;align-items:flex-start;gap:16px;padding:0 24px;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.25);max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;}
+    .sub-header__toggle:checked ~ .sub-header__nav{max-height:400px;padding-top:20px;padding-bottom:20px;}
+    .sub-header__btn{width:100%;text-align:center;}
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2){opacity:0;}
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  }
+
+  /* ===== ASSISTANT ===== */
+  .setup{padding:48px 20px 72px;min-height:calc(100vh - 220px);display:flex;flex-direction:column;align-items:center;}
+  .setup__box{width:100%;max-width:560px;}
+  .progress{display:flex;gap:8px;justify-content:center;margin-bottom:40px;}
+  .progress i{height:5px;flex:1;max-width:56px;border-radius:99px;background:var(--line);transition:background .3s ease;}
+  .progress i.on{background:var(--gold-dark);}
+  .step{display:none;animation:in .38s cubic-bezier(.2,.8,.2,1);}
+  .step.active{display:block;}
+  .step.back{animation-name:inBack;}
+  @keyframes in{from{opacity:0;transform:translateX(36px);}to{opacity:1;transform:none;}}
+  @keyframes inBack{from{opacity:0;transform:translateX(-36px);}to{opacity:1;transform:none;}}
+  .step__emoji{font-size:3rem;line-height:1;margin-bottom:16px;}
+  .step h1,.step h2{font-size:clamp(1.7rem,4.6vw,2.2rem);font-weight:800;line-height:1.15;}
+  .step__sub{color:var(--muted);line-height:1.6;margin:12px 0 28px;font-size:1.02rem;}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px;}
+
+  .choices{display:grid;gap:12px;}
+  .choice{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;border:1.5px solid var(--line);border-radius:14px;position:relative;transition:border-color .15s,box-shadow .15s,transform .15s;}
+  .choice:hover{border-color:rgba(36,46,99,.4);}
+  .choice:active{transform:scale(.99);}
+  .choice[aria-checked=true]{border-color:var(--navy);box-shadow:0 0 0 1px var(--navy);}
+  .choice__price{font-size:2rem;font-weight:800;line-height:1;}
+  .choice__txt strong{display:block;font-size:1.05rem;}
+  .choice__txt span{color:var(--muted);font-size:.92rem;}
+  .choice__badge{position:absolute;top:-11px;right:18px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:99px;}
+  .choice--best[aria-checked=true]{background:var(--navy);color:var(--white);}
+  .choice--best[aria-checked=true] .choice__txt span{color:rgba(255,255,255,.75);}
+  .choice--best[aria-checked=true] .choice__price{color:var(--gold);}
+  .civ{grid-template-columns:repeat(3,1fr);margin-bottom:22px;}
+  .civ .choice{justify-content:center;padding:16px 8px;font-weight:600;text-align:center;}
+
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:8px;}
+  .field input{width:100%;font:inherit;font-size:1.1rem;color:var(--navy);padding:16px 18px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);transition:border-color .15s,box-shadow .15s;}
+  .field input::placeholder{color:rgba(36,46,99,.38);}
+  .field input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(36,46,99,.12);}
+  .field input.bad{border-color:var(--err);}
+  .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .error{color:var(--err);font-size:.9rem;font-weight:500;margin:6px 0 0;min-height:1.2em;}
+  .addlink{all:unset;cursor:pointer;color:var(--gold-dark);font-weight:600;font-size:.95rem;}
+  .addlink:hover{text-decoration:underline;}
+  .extra{display:none;margin-top:16px;}
+  .extra.open{display:block;}
+
+  .ban{position:relative;}
+  .ban__list{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;z-index:20;background:var(--white);border:1.5px solid var(--line);border-radius:12px;box-shadow:0 12px 28px rgba(36,46,99,.16);max-height:280px;overflow:auto;}
+  .ban__list li button{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;padding:12px 14px;border-radius:8px;font-size:.98rem;}
+  .ban__list li button:hover,.ban__list li button[aria-selected=true]{background:rgba(36,46,99,.07);}
+  .ban__list small{display:block;color:var(--muted);}
+  .ban__ok{display:none;margin-top:10px;font-weight:600;color:var(--navy);}
+  .ban__ok.show{display:block;}
+  .ban__ok::before{content:"✓ ";color:var(--gold-dark);}
+
+  .recap{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+  .recap__row{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);}
+  .recap__row:last-child{border-bottom:0;}
+  .recap__k{color:var(--muted);font-size:.9rem;flex:0 0 38%;}
+  .recap__v{font-weight:600;text-align:right;word-break:break-word;}
+  .recap__edit{all:unset;cursor:pointer;color:var(--gold-dark);font-size:.85rem;font-weight:600;margin-left:10px;}
+  .total{display:flex;justify-content:space-between;align-items:baseline;padding:18px 20px;background:var(--navy);color:var(--white);border-radius:14px;margin-bottom:8px;}
+  .total strong{font-size:1.9rem;color:var(--gold);}
+  .legal{font-size:.85rem;color:var(--muted);line-height:1.5;margin:14px 0 0;}
+
+  .nav{display:flex;gap:12px;margin-top:32px;}
+  .btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 28px;border-radius:12px;font-weight:700;font-size:1.02rem;transition:opacity .15s,transform .15s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn--next{flex:1;background:var(--gold-dark);color:var(--white);}
+  .btn--next[disabled]{opacity:.35;cursor:not-allowed;transform:none;}
+  .btn--prev{border:1.5px solid var(--line);color:var(--navy);}
+  .btn--prev[hidden]{display:none;}
+  .center{text-align:center;}
+  .spinner{width:44px;height:44px;border:4px solid var(--line);border-top-color:var(--gold-dark);border-radius:50%;margin:0 auto 24px;animation:spin .9s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ===== FOOTER (identique au site) ===== */
+  .site-footer{background:#242E63;color:#FFF;display:flex;flex-direction:column;align-items:center;padding:32px 16px;text-align:center;}
+  .site-footer__logo{display:block;width:300px;height:auto;max-width:90vw;margin:0 0 20px 0;}
+  .site-footer__links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;}
+  .site-footer__link{color:#FFF;text-decoration:none;font-size:14px;font-weight:500;}
+  .site-footer__link:hover,.site-footer__link:focus{color:#FFC500;text-decoration:underline;}
+  .site-footer__separator{color:#FFC500;font-size:14px;}
+  @media (max-width:600px){.site-footer__logo{width:220px;}.field.row2{grid-template-columns:1fr;}.setup{padding-top:32px;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<header class="sub-header">
+  <div class="sub-header__inner">
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a>
+      <a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></label>
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="setup">
+<div class="setup__box">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- 1. Formule -->
+  <section class="step" data-id="tarif">
+    <span class="eyebrow">Adhésion particuliers</span>
+    <h1>💪 Choisissez votre cotisation</h1>
+    <p class="step__sub">Plus l'engagement est long, plus le tarif annuel est avantageux. Aucune subvention : chaque adhésion compte.</p>
+    <div class="choices" role="radiogroup" aria-label="Cotisation">
+      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="1an"><span class="choice__txt"><strong>1 an</strong><span>Pour essayer</span></span><span class="choice__price">10 €</span></button>
+      <button type="button" class="choice choice--best" role="radio" aria-checked="false" data-tarif="4ans"><span class="choice__badge">Meilleur rapport</span><span class="choice__txt"><strong>4 ans</strong><span>soit 7,50 €/an</span></span><span class="choice__price">30 €</span></button>
+      <button type="button" class="choice" role="radio" aria-checked="false" data-tarif="10ans"><span class="choice__txt"><strong>10 ans</strong><span>soit 5 €/an</span></span><span class="choice__price">50 €</span></button>
+    </div>
+  </section>
+
+  <!-- 2. Identité -->
+  <section class="step" data-id="identite">
+    <div class="step__emoji">👋</div>
+    <h2>Faisons connaissance</h2>
+    <p class="step__sub">Comment devons-nous vous appeler ?</p>
+    <div class="choices civ" role="radiogroup" aria-label="Civilité">
+      <button type="button" class="choice" role="radio" aria-checked="false" data-civ="M.">M.</button>
+      <button type="button" class="choice" role="radio" aria-checked="false" data-civ="Mme.">Mme.</button>
+      <button type="button" class="choice" role="radio" aria-checked="false" data-civ="M. et Mme.">M. et Mme.</button>
+    </div>
+    <div class="field"><label for="prenom">Prénom(s)</label><input id="prenom" autocomplete="given-name" placeholder="Ex. : Jean" maxlength="80"></div>
+    <div class="field"><label for="nom">Nom de famille</label><input id="nom" autocomplete="family-name" placeholder="Ex. : Dupont" maxlength="80"></div>
+    <p class="error" id="err-identite"></p>
+  </section>
+
+  <!-- 3. E-mail -->
+  <section class="step" data-id="email">
+    <div class="step__emoji">✉️</div>
+    <h2>Votre adresse e-mail</h2>
+    <p class="step__sub">Vous y recevrez la confirmation de votre adhésion.</p>
+    <div class="field"><label for="email">Adresse e-mail</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="prenom.nom@exemple.fr" maxlength="120"></div>
+    <button type="button" class="addlink" data-extra="extra-email">＋ Ajouter une autre adresse e-mail (conjoint…)</button>
+    <div class="extra" id="extra-email"><div class="field"><label for="email2">Seconde adresse e-mail</label><input id="email2" type="email" inputmode="email" placeholder="conjoint@exemple.fr" maxlength="120"></div></div>
+    <p class="error" id="err-email"></p>
+  </section>
+
+  <!-- 4. Téléphone -->
+  <section class="step" data-id="tel">
+    <div class="step__emoji">📱</div>
+    <h2>Un numéro pour vous joindre</h2>
+    <p class="step__sub">Uniquement pour les échanges liés à l'association.</p>
+    <div class="field"><label for="tel">Numéro de téléphone</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" maxlength="25"></div>
+    <button type="button" class="addlink" data-extra="extra-tel">＋ Ajouter un autre numéro (conjoint, ligne fixe…)</button>
+    <div class="extra" id="extra-tel"><div class="field"><label for="tel2">Second numéro</label><input id="tel2" type="tel" inputmode="tel" placeholder="04 42 00 00 00" maxlength="25"></div></div>
+    <p class="error" id="err-tel"></p>
+  </section>
+
+  <!-- 5. Adresse -->
+  <section class="step" data-id="adresse">
+    <div class="step__emoji">🏡</div>
+    <h2>Où habitez-vous ?</h2>
+    <p class="step__sub">Commencez à saisir votre adresse, puis choisissez la bonne proposition dans la liste.</p>
+    <div class="field ban">
+      <label for="adr">Adresse postale</label>
+      <input id="adr" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="adr-list" placeholder="Ex. : 12 rue de la Mairie, Luynes">
+      <ul class="ban__list" id="adr-list" role="listbox" hidden></ul>
+      <div class="ban__ok" id="adr-ok"></div>
+    </div>
+    <p class="error" id="err-adresse"></p>
+  </section>
+
+  <!-- 6. Récapitulatif -->
+  <section class="step" data-id="recap">
+    <div class="step__emoji">✅</div>
+    <h2>Tout est bon ?</h2>
+    <p class="step__sub">Vérifiez vos informations avant de passer au paiement sécurisé.</p>
+    <div class="recap" id="recap"></div>
+    <div class="total"><span>Total à régler</span><strong id="total"></strong></div>
+    <p class="legal">Paiement 100 % sécurisé par HelloAsso (carte bancaire, Apple Pay…). Vous recevrez un e-mail de confirmation avec ces informations. Pour un règlement par chèque ou en espèces, <a href="https://ciq.13080.fr/contact">contactez-nous</a>.</p>
+    <p class="error" id="err-recap"></p>
+  </section>
+
+  <!-- Retour paiement -->
+  <section class="step center" data-id="wait"><div class="spinner"></div><h2>Un instant…</h2><p class="step__sub" id="wait-txt">Nous finalisons votre adhésion.</p></section>
+  <section class="step center" data-id="done">
+    <div class="step__emoji">🎉</div><h2>Bienvenue au CIQ Luynes en action !</h2>
+    <p class="step__sub" id="done-txt">Votre paiement est confirmé. Un e-mail de confirmation vient de vous être envoyé.</p>
+    <a class="btn btn--next" href="https://adherents.13080.fr" style="display:flex">Accéder à mon espace adhérent →</a>
+  </section>
+  <section class="step center" data-id="cancel">
+    <div class="step__emoji">↩️</div><h2 id="cancel-h">Paiement non finalisé</h2>
+    <p class="step__sub" id="cancel-txt">Aucun montant n'a été débité. Vos informations sont conservées : vous pouvez reprendre quand vous le souhaitez.</p>
+    <button type="button" class="btn btn--next" id="retry" style="display:flex">Reprendre mon adhésion</button>
+  </section>
+
+  <div class="nav" id="nav">
+    <button type="button" class="btn btn--prev" id="prev" hidden>← Retour</button>
+    <button type="button" class="btn btn--next" id="next" disabled>Continuer</button>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  /* >>> À RENSEIGNER : URL de déclenchement HTTP du flux Power Automate (voir README) <<< */
+  var FLOW_URL = "https://default403611541d9141c3b14ddd403256e1.be.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/13/workflows/f81b23661cd24f04a024b1ab21693609/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8TqVaXKGT148YyPCGOMvmW1Vvs-auxGcZU-lY3FI5PA";
+
+  var TARIFS = {"1an":{l:"1 an",p:"10 €"},"4ans":{l:"4 ans",p:"30 €"},"10ans":{l:"10 ans",p:"50 €"}};
+  var FLOW = ["tarif","identite","email","tel","adresse","recap"];
+  var KEY = "ciq_adhesion_v1";
+  var S = {tarif:"",civilite:"",prenom:"",nom:"",email:"",email2:"",tel:"",tel2:"",adresse:null};
+  var cur = 0, busy = false;
+  var $ = function(s,c){return (c||document).querySelector(s);};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+  var next = $("#next"), prev = $("#prev");
+
+  try{ var sv = JSON.parse(localStorage.getItem(KEY)||"null"); if(sv) S = Object.assign(S,sv); }catch(e){}
+  function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+
+  /* progression */
+  var pg = $("#progress"); FLOW.forEach(function(){pg.appendChild(document.createElement("i"));});
+
+  function show(id, back){
+    $$(".step").forEach(function(s){ s.classList.remove("active","back"); });
+    var el = $('.step[data-id="'+id+'"]'); el.classList.add("active"); if(back) el.classList.add("back");
+    var i = FLOW.indexOf(id); cur = i;
+    $$("#progress i").forEach(function(b,k){ b.classList.toggle("on", i>=0 && k<=i); });
+    pg.style.display = i<0 ? "none" : "flex";
+    $("#nav").style.display = i<0 ? "none" : "flex";
+    prev.hidden = i<=0;
+    next.textContent = id==="recap" ? "Payer " + TARIFS[S.tarif].p + " 🔒" : "Continuer";
+    refresh();
+    var f = $("input:not([type=hidden])", el); if(f && i>=0 && id!=="tarif" && id!=="recap") setTimeout(function(){f.focus({preventScroll:true});},60);
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  /* validations */
+  var reMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function cleanTel(v){ return v.replace(/[\s.\-()]/g,""); }
+  function telOk(v){ var t = cleanTel(v); if(/^0\d{9}$/.test(t)) return true; return /^(\+|00)\d{9,15}$/.test(t); }
+  function fmtTel(v){ var t = cleanTel(v); if(/^0\d{9}$/.test(t)) return t.replace(/(\d{2})(?=\d)/g,"$1 "); if(/^(\+33|0033)\d{9}$/.test(t)) return "0"+t.replace(/^(\+33|0033)/,"").replace(/(\d{2})(?=\d)/g,"$1 ").replace(/^(\d) /,"$1"); return t; }
+  function problem(id){
+    if(id==="tarif") return S.tarif ? "" : "x";
+    if(id==="identite"){ if(!S.civilite) return "Choisissez votre civilité."; if(!S.prenom.trim()) return "Indiquez votre ou vos prénom(s)."; if(!S.nom.trim()) return "Indiquez votre nom de famille."; return ""; }
+    if(id==="email"){ if(!reMail.test(S.email.trim())) return "Cette adresse e-mail semble incorrecte."; if(S.email2.trim() && !reMail.test(S.email2.trim())) return "La seconde adresse e-mail semble incorrecte."; return ""; }
+    if(id==="tel"){ if(!telOk(S.tel)) return "Saisissez un numéro valide (ex. 06 12 34 56 78)."; if(S.tel2.trim() && !telOk(S.tel2)) return "Le second numéro semble incorrect."; return ""; }
+    if(id==="adresse") return S.adresse ? "" : "Sélectionnez une adresse dans la liste proposée.";
+    return "";
+  }
+  function refresh(){ var id = FLOW[cur]; if(id) next.disabled = busy || !!problem(id); }
+
+  /* tarif + civilité */
+  $$("[data-tarif]").forEach(function(b){ b.onclick=function(){ S.tarif=b.dataset.tarif; sync(); }; });
+  $$("[data-civ]").forEach(function(b){ b.onclick=function(){ S.civilite=b.dataset.civ; sync(); }; });
+  function sync(){
+    $$("[data-tarif]").forEach(function(b){ b.setAttribute("aria-checked", b.dataset.tarif===S.tarif); });
+    $$("[data-civ]").forEach(function(b){ b.setAttribute("aria-checked", b.dataset.civ===S.civilite); });
+    refresh(); save();
+  }
+  /* champs texte */
+  ["prenom","nom","email","email2","tel","tel2"].forEach(function(k){
+    var i = $("#"+k); i.value = S[k]||"";
+    i.addEventListener("input",function(){ S[k]=i.value; i.classList.remove("bad"); $("#err-"+FLOW[cur]).textContent=""; refresh(); save(); });
+  });
+  $$("[data-extra]").forEach(function(b){ b.onclick=function(){ $("#"+b.dataset.extra).classList.add("open"); b.style.display="none"; var f=$("input",$("#"+b.dataset.extra)); f.focus(); }; });
+  if(S.email2){ $("#extra-email").classList.add("open"); $('[data-extra="extra-email"]').style.display="none"; }
+  if(S.tel2){ $("#extra-tel").classList.add("open"); $('[data-extra="extra-tel"]').style.display="none"; }
+
+  /* BAN — Base Adresse Nationale */
+  var adr = $("#adr"), list = $("#adr-list"), ok = $("#adr-ok"), timer, ctl;
+  function setAdr(a){ S.adresse=a; ok.textContent = a ? a.label : ""; ok.classList.toggle("show",!!a); if(a) adr.value=a.label; refresh(); save(); }
+  if(S.adresse) setAdr(S.adresse);
+  function closeList(){ list.hidden=true; list.innerHTML=""; adr.setAttribute("aria-expanded","false"); }
+  adr.addEventListener("input",function(){
+    if(S.adresse){ setAdr(null); }
+    $("#err-adresse").textContent=""; clearTimeout(timer);
+    var q = adr.value.trim(); if(q.length<3){ closeList(); return; }
+    timer = setTimeout(function(){
+      if(ctl) ctl.abort(); ctl = new AbortController();
+      fetch("https://api-adresse.data.gouv.fr/search/?limit=6&autocomplete=1&q="+encodeURIComponent(q),{signal:ctl.signal})
+        .then(function(r){return r.json();}).then(function(j){
+          list.innerHTML="";
+          (j.features||[]).forEach(function(f){
+            var p=f.properties, li=document.createElement("li"), b=document.createElement("button");
+            b.type="button"; b.setAttribute("role","option");
+            b.innerHTML="<span></span><small></small>"; b.firstChild.textContent=p.name; b.lastChild.textContent=p.postcode+" "+p.city;
+            b.onclick=function(){ setAdr({label:p.label,rue:p.name,cp:p.postcode,ville:p.city,ban:p.id}); closeList(); };
+            li.appendChild(b); list.appendChild(li);
+          });
+          list.hidden = !list.children.length; adr.setAttribute("aria-expanded",String(!list.hidden));
+        }).catch(function(){});
+    },250);
+  });
+  adr.addEventListener("keydown",function(e){ if(e.key==="ArrowDown"&&!list.hidden){ e.preventDefault(); $("button",list).focus(); } });
+  list.addEventListener("keydown",function(e){ var b=document.activeElement; if(e.key==="ArrowDown"){e.preventDefault(); var n=b.parentNode.nextSibling; if(n)n.firstChild.focus();} if(e.key==="ArrowUp"){e.preventDefault(); var p=b.parentNode.previousSibling; (p?p.firstChild:adr).focus();} if(e.key==="Escape"){closeList();adr.focus();} });
+  document.addEventListener("click",function(e){ if(!e.target.closest(".ban")) closeList(); });
+
+  /* récapitulatif */
+  function buildRecap(){
+    var r = $("#recap"); r.innerHTML="";
+    var rows = [["Cotisation","tarif","Valable "+TARIFS[S.tarif].l],["Civilité","identite",S.civilite],["Prénom(s)","identite",S.prenom.trim()],["Nom","identite",S.nom.trim()],["E-mail","email",S.email.trim()]];
+    if(S.email2.trim()) rows.push(["Autre e-mail","email",S.email2.trim()]);
+    rows.push(["Téléphone","tel",fmtTel(S.tel)]); if(S.tel2.trim()) rows.push(["Autre numéro","tel",fmtTel(S.tel2)]);
+    rows.push(["Adresse","adresse",S.adresse.label]);
+    rows.forEach(function(x){
+      var d=document.createElement("div"); d.className="recap__row";
+      d.innerHTML='<span class="recap__k"></span><span class="recap__v"><span></span><button type="button" class="recap__edit">Modifier</button></span>';
+      d.firstChild.textContent=x[0]; d.lastChild.firstChild.textContent=x[2];
+      d.lastChild.lastChild.onclick=function(){ show(x[1],true); };
+      r.appendChild(d);
+    });
+    $("#total").textContent = TARIFS[S.tarif].p;
+  }
+
+  /* navigation */
+  function go(){
+    var id = FLOW[cur]; if(!id || busy) return;
+    var p = problem(id);
+    if(p){ var e=$("#err-"+id); if(e) e.textContent=p; return; }
+    if(id==="recap") return pay();
+    var nx = FLOW[cur+1]; if(nx==="recap") buildRecap(); show(nx);
+  }
+  next.onclick = go; prev.onclick = function(){ if(cur>0) show(FLOW[cur-1],true); };
+  document.addEventListener("keydown",function(e){ if(e.key==="Enter" && e.target.tagName==="INPUT" && e.target.id!=="adr"){ e.preventDefault(); go(); } });
+
+  /* paiement HelloAsso via Power Automate */
+  function post(payload){
+    return fetch(FLOW_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify(payload)})
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(j){ j._status=r.status; return j; }); });
+  }
+  function payload(){ return {action:"commande",tarif:S.tarif,civilite:S.civilite,prenom:S.prenom.trim(),nom:S.nom.trim(),email:S.email.trim(),email2:S.email2.trim(),tel:fmtTel(S.tel),tel2:S.tel2.trim()?fmtTel(S.tel2):"",adresse:S.adresse}; }
+  function pay(){
+    var e=$("#err-recap"); e.textContent="";
+    if(FLOW_URL.indexOf("http")!==0){ e.textContent="Le paiement n'est pas encore configuré (URL du flux manquante)."; return; }
+    busy=true; next.disabled=true; next.textContent="Redirection vers HelloAsso…"; save();
+    post(payload()).then(function(j){
+      if(j.url){ window.location.href=j.url; return; }
+      throw new Error("no url");
+    }).catch(function(){ busy=false; next.disabled=false; next.textContent="Payer "+TARIFS[S.tarif].p+" 🔒"; e.textContent="Impossible de lancer le paiement pour le moment. Réessayez ou contactez ciq@13080.fr."; });
+  }
+
+  /* retour de HelloAsso */
+  var q = new URLSearchParams(location.search), type = q.get("type"), cid = q.get("checkoutIntentId");
+  $("#retry").onclick=function(){ history.replaceState(null,"",location.pathname); if(S.adresse&&S.tarif&&S.email){ buildRecap(); show("recap"); } else show("tarif"); };
+  function init(){
+    if(type==="return" && cid){
+      if(q.get("code") && q.get("code")!=="succeeded"){ return show("cancel"); }
+      var doneKey = "ciq_done_"+cid, already=false; try{already=localStorage.getItem(doneKey);}catch(e){}
+      if(already){ history.replaceState(null,"",location.pathname); return show("done"); }
+      show("wait");
+      var body = Object.assign(payload(),{action:"confirmer",checkoutIntentId:cid});
+      post(body).then(function(j){
+        if(j.envoye){ try{localStorage.setItem(doneKey,"1"); localStorage.removeItem(KEY);}catch(e){} history.replaceState(null,"",location.pathname); $("#done-txt").textContent="Votre paiement est confirmé. Un e-mail de confirmation vient d'être envoyé à "+(j.mail||"votre adresse")+"."; show("done"); }
+        else if(j.paye){ $("#done-txt").textContent="Votre paiement est bien confirmé. L'e-mail de confirmation n'a pas pu être envoyé : pas d'inquiétude, nous vous contactons rapidement (ciq@13080.fr)."; show("done"); }
+        else { $("#cancel-h").textContent="Paiement non constaté"; $("#cancel-txt").textContent="Nous n'avons pas pu constater votre paiement. S'il a été débité, contactez-nous : ciq@13080.fr."; show("cancel"); }
+      }).catch(function(){ $("#cancel-h").textContent="Vérification impossible"; $("#cancel-txt").textContent="Votre paiement a peut-être abouti. Écrivez-nous à ciq@13080.fr et nous vérifierons."; show("cancel"); });
+      return;
+    }
+    if(type==="back"||type==="error"){
+      if(type==="error"){ $("#cancel-h").textContent="Le paiement a échoué"; }
+      return show("cancel");
+    }
+    sync(); show("tarif");
+  }
+  init();
+})();
+</script>
+</body>
+</html>
