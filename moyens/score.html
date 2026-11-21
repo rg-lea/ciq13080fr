@@ -1684,7 +1684,7 @@ window.LS_DOSSIERS = [
   }
 
   /* ---------- Vue 2 : fiche ---------- */
-  function followKey(d) { return "ciqlea_follow_" + d.slug; }
+  function followKey(d) { return "ciqlea_interet_" + d.slug; }
 
   function renderDetail(d) {
     var meta = [esc(themeOf(d))];
@@ -1716,7 +1716,7 @@ window.LS_DOSSIERS = [
           '<span class="eyebrow eyebrow--on-navy">Luynes\'Score</span>' +
           '<div class="ls-badges">' + badges(d) + '</div>' +
           '<div class="ls-hero__top"><h1>' + esc(d.name) + '</h1>' +
-            '<button type="button" class="btn btn--primary ls-follow" id="ls-follow" aria-pressed="false"></button></div>' +
+            '<button type="button" class="btn btn--primary ls-follow" id="ls-follow" aria-pressed="false" title="Indique au CIQ Luynes en action que ce dossier vous intéresse. Aucune inscription, aucun envoi d\'e-mail."></button></div>' +
           '<div class="ls-hero__meta">' + meta.join(" · ") + '</div>' +
         '</header>' +
         '<div class="ls-body">' + secs.join("") + '</div>' +
@@ -1731,18 +1731,18 @@ window.LS_DOSSIERS = [
       var on = store(followKey(d)) === "1";
       btn.classList.toggle("is-on", on);
       btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.textContent = on ? "✓ Suivi" : "Suivre ce dossier";
+      btn.textContent = on ? "✓ Intérêt noté, merci" : "Ce dossier m'intéresse";
     }
     paint();
     btn.addEventListener("click", function () {
       var on = store(followKey(d)) === "1";
       if (on) {
         store(followKey(d), null);
-        track("trackEvent", "Dossiers", "Ne plus suivre", d.name);
+        track("trackEvent", "Dossiers", "Intérêt retiré", d.name);
       } else {
         store(followKey(d), "1");
-        track("trackEvent", "Dossiers", "Suivre", d.name);
-        if (typeof window.clarity === "function") window.clarity("event", "suivre_dossier");
+        track("trackEvent", "Dossiers", "Intérêt", d.name);
+        if (typeof window.clarity === "function") window.clarity("event", "interet_dossier");
       }
       paint();
     });
@@ -1805,7 +1805,7 @@ window.LS_DOSSIERS = [
         { header: "Score", key: "score", width: 9 },
         { header: "Tendance", key: "trend", width: 15 },
         { header: "Année de début", key: "year", width: 15 },
-        { header: "Suivis", key: "followers", width: 9 },
+        { header: "Intérêts", key: "followers", width: 10 },
         { header: "Description", key: "desc", width: 70 },
         { header: "Situation en cours", key: "situation", width: 70 },
         { header: "Intervenants", key: "iv", width: 40 }
