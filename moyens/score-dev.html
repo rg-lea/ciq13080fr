@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Dossiers de quartier | Luynes'Score - CIQ Luynes en action</title>
+<link rel="icon" href="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-carre-bleu.png">
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//vigie.siweb.13080.fr/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '9']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y7givzu010");
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  :root{
+    --navy: #242E63;
+    --navy-deep: #171B41;
+    --gold: #FFC500;
+    --gold-dark: #AD8901;
+    --score-green: #3E8E63;
+    --score-red: #C1443B;
+    --white: #FFFFFF;
+    --navy-muted-on-white: rgba(36,46,99,.62);
+    --white-muted-on-navy: rgba(255,255,255,.72);
+    --line-on-white: rgba(36,46,99,.12);
+    --line-on-navy: rgba(255,255,255,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.015em;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* =========================================================
+     HEADER 1 — bandeau logo
+     ========================================================= */
+  .site-header {
+    background-color: #242E63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+  }
+  .site-header__logo-link { display: block; line-height: 0; }
+  .site-header__logo {
+    display: block !important;
+    width: 300px !important;
+    height: auto !important;
+    max-width: 90vw !important;
+  }
+
+  /* =========================================================
+     HEADER 2 — navigation
+     ========================================================= */
+  .sub-header {
+    background-color: #242E63;
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1000;
+  }
+  .sub-header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .sub-header__brand { display: flex; align-items: center; gap: 16px; }
+  .sub-header__site-link {
+    color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; white-space: nowrap;
+  }
+  .sub-header__site-link:hover, .sub-header__site-link:focus { color: #FFC500; }
+  .sub-header__back-link {
+    color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 13px; font-weight: 400;
+    white-space: nowrap; transition: color 0.2s ease;
+  }
+  .sub-header__back-link:hover, .sub-header__back-link:focus { color: #FFC500; }
+  .sub-header__toggle { display: none; }
+  .sub-header__burger {
+    display: none; flex-direction: column; justify-content: space-between;
+    width: 26px; height: 18px; cursor: pointer; z-index: 1002;
+  }
+  .sub-header__burger span {
+    display: block; height: 2px; width: 100%; background-color: #FFFFFF; border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sub-header__nav { display: flex; align-items: center; gap: 24px; }
+  .sub-header__link { color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 400; white-space: nowrap; }
+  .sub-header__link:hover, .sub-header__link:focus { color: #FFC500; }
+  .sub-header__btn {
+    text-decoration: none; font-size: 15px; font-weight: 600; padding: 8px 18px; border-radius: 6px;
+    white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .sub-header__btn--primary { background-color: #FFC500; color: #242E63; }
+  .sub-header__btn--primary:hover, .sub-header__btn--primary:focus { background-color: #e6b100; }
+  .sub-header__btn--secondary { background-color: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; }
+  .sub-header__btn--secondary:hover, .sub-header__btn--secondary:focus { background-color: #FFFFFF; color: #242E63; }
+
+  @media (max-width: 860px) {
+    .sub-header__burger { display: flex; }
+    .sub-header__nav {
+      position: absolute; z-index: 1001; top: 100%; left: 0; right: 0; margin-top: 16px;
+      background-color: #242E63; flex-direction: column; align-items: flex-start; gap: 16px;
+      padding: 20px 24px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .sub-header__toggle:checked ~ .sub-header__nav { max-height: 400px; padding-top: 20px; padding-bottom: 20px; }
+    .sub-header__btn { width: 100%; text-align: center; box-sizing: border-box; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(2) { opacity: 0; }
+    .sub-header__toggle:checked ~ .sub-header__burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  .site-footer {
+    background-color: #242E63;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    text-align: center;
+  }
+  .site-footer__logo { display: block; width: 300px; height: auto; max-width: 90vw; margin: 0 0 20px 0; }
+  .site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+  .site-footer__link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 500; }
+  .site-footer__link:hover, .site-footer__link:focus { color: #FFC500; text-decoration: underline; }
+  .site-footer__separator { color: #FFC500; font-size: 14px; }
+  @media (max-width:600px){
+    .wrap{ padding:0 18px; }
+    .site-footer__logo{ width:220px; }
+  }
+
+  /* =========================================================
+     LUYNES'SCORE : consultation des dossiers de quartier
+     ========================================================= */
+  .ls{
+    --ls-bg:#F4F6F9; --ls-line:#E2E8F0; --ls-text:#282828; --ls-muted:#64748B;
+    --ls-gold:#AD8901; --ls-yellow:#FFC300;
+    background:var(--ls-bg);
+    color:var(--ls-text);
+    padding:40px 0 72px;
+    min-height:60vh;
+  }
+  .ls .wrap{ max-width:1100px; }
+  .ls-card{ background:#fff; border:1px solid var(--ls-line); border-radius:16px; }
+
+  .ls-intro{ margin-bottom:24px; }
+  .ls-intro .eyebrow{ margin-bottom:8px; }
+  .ls-title{ font-size:24px; font-weight:700; color:var(--navy); line-height:1.25; }
+  .ls-lead{ margin:8px 0 0; color:var(--ls-muted); font-size:15px; line-height:1.55; max-width:70ch; }
+
+  /* Badges */
+  .ls-badges{ display:flex; flex-wrap:wrap; gap:6px; }
+  .ls-badge{
+    display:inline-flex; align-items:center; padding:3px 10px; border-radius:999px;
+    font-size:12px; font-weight:600; line-height:1.5; white-space:nowrap;
+  }
+  .ls-badge--green{ background:#DCFCE7; color:#15803D; }
+  .ls-badge--amber{ background:#FEF3C7; color:#B45309; }
+  .ls-badge--red{ background:#FEE2E2; color:#991B1B; }
+  .ls-badge--grey{ background:#F1F5F9; color:#64748B; }
+
+  /* Filtres */
+  .ls-filters{
+    padding:16px; display:grid; gap:12px;
+    grid-template-columns:minmax(0,2fr) repeat(3, minmax(0,1fr));
+  }
+  .ls-input, .ls-select{
+    width:100%; font:inherit; font-size:15px; color:var(--ls-text);
+    border:1px solid var(--ls-line); border-radius:10px; background:#fff;
+    padding:10px 12px; min-height:44px;
+  }
+  .ls-select{ cursor:pointer; }
+  .ls-input:focus, .ls-select:focus{ outline:2px solid var(--ls-gold); outline-offset:1px; border-color:var(--ls-gold); }
+
+  /* Synthèse */
+  .ls-stats{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0 8px; }
+  .ls-stat{ padding:18px 20px; }
+  .ls-stat h2{ font-size:14px; font-weight:700; color:var(--navy); margin-bottom:12px; letter-spacing:0; }
+  .ls-stat__row{ display:grid; grid-template-columns:130px 1fr 44px; align-items:center; gap:12px; padding:5px 0; font-size:14px; }
+  .ls-stat__label{ color:var(--ls-text); }
+  .ls-stat__track{ height:8px; border-radius:999px; background:#EEF2F6; overflow:hidden; }
+  .ls-stat__fill{ height:100%; border-radius:999px; transition:width .25s ease; }
+  .ls-stat__pct{ text-align:right; font-weight:600; color:var(--ls-muted); font-variant-numeric:tabular-nums; }
+
+  /* Barre d'actions (exports) */
+  .ls-toolbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:20px 0 4px; }
+  .ls-count{ color:var(--ls-muted); font-size:14px; }
+  .ls-actions{ display:flex; gap:8px; flex-wrap:wrap; }
+  .ls-btn{
+    display:inline-flex; align-items:center; gap:8px; font:inherit; font-size:14px; font-weight:600;
+    padding:9px 16px; border-radius:8px; cursor:pointer; border:1.5px solid rgba(36,46,99,.25);
+    background:#fff; color:var(--navy); transition:background-color .15s ease, border-color .15s ease;
+  }
+  .ls-btn:hover{ border-color:var(--ls-gold); background:#FFFBEB; }
+  .ls-btn[disabled]{ opacity:.55; cursor:wait; }
+  .ls-btn svg{ flex:none; }
+
+  /* Liste */
+  .ls-group{ margin-top:28px; }
+  .ls-group__title{
+    font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase;
+    letter-spacing:.06em; margin:0 0 10px;
+  }
+  .ls-list{ display:grid; gap:10px; }
+  .ls-row{
+    display:block; padding:16px 18px; text-decoration:none; color:inherit;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .ls-row:hover, .ls-row:focus-visible{ border-color:var(--ls-gold); box-shadow:0 2px 10px rgba(36,46,99,.06); }
+  .ls-row__top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+  .ls-row__name{ font-weight:700; color:var(--navy); font-size:16px; line-height:1.35; }
+  .ls-row__meta{ margin-top:6px; font-size:13px; color:var(--ls-muted); }
+  .ls-empty{ padding:32px 20px; text-align:center; color:var(--ls-muted); margin-top:20px; }
+
+  /* Fiche */
+  .ls-back{
+    display:inline-flex; align-items:center; gap:6px; color:var(--navy); font-weight:600; font-size:14px;
+    text-decoration:none; margin-bottom:16px;
+  }
+  .ls-back:hover{ color:var(--ls-gold); }
+  .ls-detail{ overflow:hidden; }
+  .ls-hero{ background:var(--navy); color:#fff; padding:28px 28px 26px; }
+  .ls-hero__top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-top:14px; }
+  .ls-hero h1{ font-size:clamp(24px,3vw,30px); font-weight:700; color:#fff; line-height:1.2; }
+  .ls-hero__meta{ margin-top:10px; color:rgba(255,255,255,.72); font-size:14px; }
+  .ls-follow{
+    flex:none; font:inherit; font-size:14px; font-weight:600; cursor:pointer; border:none;
+    padding:10px 18px; border-radius:8px; background:var(--ls-yellow); color:var(--navy);
+    display:inline-flex; align-items:center; gap:8px; transition:background-color .15s ease;
+  }
+  .ls-follow:hover{ background:#e6b000; }
+  .ls-follow.is-on{ background:rgba(255,255,255,.16); color:#fff; }
+  .ls-follow.is-on:hover{ background:rgba(255,255,255,.24); }
+  .ls-body{ padding:8px 28px 28px; }
+  .ls-sec{ padding:22px 0; border-bottom:1px solid var(--ls-line); }
+  .ls-sec:last-child{ border-bottom:none; }
+  .ls-sec h2{
+    font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--navy); margin-bottom:12px;
+  }
+  .ls-text{ white-space:pre-line; line-height:1.65; font-size:15.5px; margin:0; }
+  .ls-checks{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+  .ls-checks li{ display:grid; grid-template-columns:22px 1fr; gap:8px; line-height:1.55; font-size:15px; white-space:pre-line; }
+  .ls-mark{ font-weight:700; text-align:center; }
+  .ls-mark--done{ color:var(--ls-gold); }
+  .ls-mark--todo{ color:#94A3B8; }
+  .ls-checks li.is-done .ls-checks__t{ text-decoration:line-through; color:var(--ls-muted); }
+  .ls-timeline{ list-style:none; margin:0; padding:0 0 0 18px; border-left:2px solid var(--ls-line); display:grid; gap:16px; }
+  .ls-timeline li{ position:relative; line-height:1.55; font-size:15px; }
+  .ls-timeline li::before{
+    content:""; position:absolute; left:-24px; top:6px; width:10px; height:10px; border-radius:50%;
+    background:#fff; border:2px solid var(--ls-gold);
+  }
+  .ls-timeline__date{ display:block; font-weight:700; color:var(--ls-gold); font-size:14px; margin-bottom:2px; }
+  .ls-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .ls-chip{ background:#F1F5F9; color:var(--navy); border-radius:999px; padding:5px 12px; font-size:13.5px; font-weight:500; }
+  .ls-detail__actions{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .ls-notfound{ padding:32px 24px; text-align:center; }
+
+  .ls-toast{
+    position:fixed; left:50%; bottom:24px; transform:translateX(-50%); z-index:2000;
+    background:var(--navy); color:#fff; padding:12px 18px; border-radius:10px; font-size:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,.2); max-width:calc(100vw - 32px);
+  }
+
+  /* Zone de rendu PDF, hors écran */
+  .ls-pdf-stage{ position:fixed; left:-10000px; top:0; width:794px; pointer-events:none; }
+
+  @media (max-width:860px){
+    .ls-filters{ grid-template-columns:1fr 1fr; }
+    .ls-filters .ls-input{ grid-column:1 / -1; }
+  }
+  @media (max-width:600px){
+    .ls{ padding:28px 0 56px; }
+    .ls-filters{ grid-template-columns:1fr; }
+    .ls-stats{ grid-template-columns:1fr; }
+    .ls-stat__row{ grid-template-columns:110px 1fr 40px; gap:10px; font-size:13.5px; }
+    .ls-hero{ padding:22px 18px; }
+    .ls-hero__top{ flex-direction:column; }
+    .ls-follow{ width:100%; justify-content:center; }
+    .ls-body{ padding:4px 18px 20px; }
+    .ls-actions, .ls-detail__actions{ width:100%; }
+    .ls-actions .ls-btn, .ls-detail__actions .ls-btn{ flex:1 1 auto; justify-content:center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER 1 — logo
+     ========================================================= -->
+<header class="site-header">
+  <a href="https://ciq.13080.fr" class="site-header__logo-link" aria-label="Retour à l'accueil">
+    <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa Actus" class="site-header__logo">
+  </a>
+</header>
+
+<!-- =========================================================
+     HEADER 2 — navigation
+     ========================================================= -->
+<header class="sub-header">
+  <div class="sub-header__inner">
+    <div class="sub-header__brand">
+      <a href="https://ciq.13080.fr/" class="sub-header__site-link">ciq.13080.fr</a>
+      <a href="https://13080.fr" class="sub-header__back-link" aria-label="Retour vers 13080.fr">← 13080.fr</a>
+    </div>
+
+    <input type="checkbox" id="sub-header-toggle" class="sub-header__toggle" />
+    <label for="sub-header-toggle" class="sub-header__burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="sub-header__nav" aria-label="Menu principal">
+      <a href="https://ciq.13080.fr/" class="sub-header__link">Accueil</a>
+      <a href="https://ciq.13080.fr/quisommesnous" class="sub-header__link">Qui sommes-nous ?</a>
+      <a href="https://ciq.13080.fr/moyens" class="sub-header__link">Nos moyens d'action</a>
+      <a href="https://ciq.13080.fr/adherer" class="sub-header__btn sub-header__btn--primary">Adhérer</a>
+      <a href="https://ciq.13080.fr/contact" class="sub-header__btn sub-header__btn--secondary">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     LUYNES'SCORE : liste et fiches des dossiers (données embarquées)
+     ========================================================= -->
+<main class="ls">
+  <div class="wrap" id="ls-app">
+    <noscript>Activez JavaScript pour consulter les dossiers de quartier.</noscript>
+  </div>
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <img src="https://actus.13080.fr/wp-content/uploads/2026/08/CIQ-LEA-Logo-rectangulaire-blanc.png" alt="CIQ Léa" class="site-footer__logo">
+  <nav class="site-footer__links" aria-label="Liens du pied de page">
+    <a href="https://13080.fr" class="site-footer__link">Retour sur 13080.fr</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://13080.fr/mentions-legales" class="site-footer__link">Mentions légales</a>
+    <span class="site-footer__separator">•</span>
+    <a href="https://ciq.13080.fr/contact" class="site-footer__link">Nous contacter</a>
+  </nav>
+</footer>
+
+<script>
+/* Dossiers Luynes'Score : export du 21/11/2026, injecté tel quel. */
+window.LS_DOSSIERS = [
+ {
+  "name": "Relations de la Ville avec le CIQ Luynes en action",
+  "slug": "relations-de-la-ville-avec-le-ciq-lea",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "",
+  "description": "Ce dossier suit les relations entre la Ville et le CIQ Luynes en action. Il s'agit des relations que nous entretenons avec les élus de la Ville : échanges, rencontres et suivi des sujets du quartier.",
+  "current_situation": "Nous attendons de savoir comment s'articule la répartition des missions entre l'élu titulaire délégué à notre quartier et sa suppléante : comment ils sont, ou vont être, organisés pour assurer le suivi du quartier et répondre à nos sollicitations.",
+  "next_steps": [
+   {
+    "text": "Remettre en route le principe de rendez-vous réguliers avec l'élu délégué à notre quartier et sa suppléante, pour suivre ensemble l'avancement des dossiers.",
+    "done": false
+   }
+  ],
+  "actions_done": [],
+  "decision_history": [],
+  "intervenants": [],
+  "followers": 0,
+  "created_date": "2026-10-20T19:56:00",
+  "updated_date": "2026-10-20T20:00:00"
+ },
+ {
+  "name": "Offre sportive à Luynes",
+  "slug": "offre-sportive-a-luynes",
+  "theme": "Culture & sport",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2026",
+  "description": "Constat partagé par de nombreux Luynois : l'offre sportive sur le quartier reste faible. Le soutien public est quasi exclusivement orienté vers certaines associations établies, sans accompagnement réel pour les nouvelles structures. Aucune démarche de développement de l'offre n'est engagée.",
+  "current_situation": "Faiblesse de l'offre sportive à Luynes. Soutien quasi exclusif accordé à certaines associations déjà en place, sans aide aux nouvelles associations. Absence de développement de l'offre sportive sur le quartier.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Ouverture du dossier en 2026 sur la base des retours d'habitants",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-10-19T20:28:00",
+  "updated_date": "2026-10-19T20:42:00"
+ },
+ {
+  "name": "Médiabus / Bibliobus à Luynes",
+  "slug": "mediabus-bibliobus-a-luynes",
+  "theme": "Culture & sport",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2026",
+  "description": "Pendant longtemps, Luynes bénéficiait du Médiabus (ou bibliobus) : un véhicule emblématique qui proposait les services des bibliothèques Méjanes d'Aix-en-Provence aux différents quartiers et villages. Il satisfaisait de nombreux usagers (enfants, adolescents, adultes). Depuis plusieurs années, l'emplacement destiné au Médiabus à Luynes (Place de la Libération, face à la Mairie annexe) reste inoccupé. L'explication donnée à l'époque : conduire l'engin exigeait un permis poids lourd, mais aucun agent ne le possédait. En conséquence, le service a été suspendu partout à Aix-en-Provence.",
+  "current_situation": "Par l'arrêté n°A2026-2700 du 25 août 2026, la Ville d'Aix-en-Provence abroge intégralement trois précédents arrêtés (2014, 2016 et 2022) qui réglementaient onze emplacements de stationnement réservés au Médiabus dans divers quartiers. Cette décision abandonne manifestement le service du Médiabus Aixois. Actuellement, les Luynois se déplacent au centre-ville d'Aix-en-Provence, au Jas de Bouffan ou aux Milles pour emprunter, restituer ou consulter des ressources. Le CIQ Luynes en action souhaite qu'une solution de substitution soit diligentée, à l'image du point lecture inauguré à Puyricard en 2025. C'est ce qui a été défendu lors du rendez-vous avec Madame le Maire le 21 juin 2025 : tout est une question de volonté !",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Rendez-vous avec Madame le Maire le 21 juin 2025 : défense du retour d'une solution de lecture à Luynes",
+    "done": true
+   },
+   {
+    "text": "Suite à notre article web, courrier adressé au Maire pour renouveler la demande",
+    "done": true
+   }
+  ],
+  "decision_history": [
+   {
+    "date": "2026-08-25T00:00:00",
+    "text": "Arrêté n°A2026-2700 du 25 août 2026 : abrogation des arrêtés de 2014, 2016 et 2022 réglementant les emplacements réservés au Médiabus à Aix-en-Provence."
+   }
+  ],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Bibliothèque Méjanes"
+  ],
+  "followers": 0,
+  "created_date": "2026-10-19T20:28:00",
+  "updated_date": "2026-10-19T20:41:00"
+ },
+ {
+  "name": "Propreté et entretien du village",
+  "slug": "proprete-et-entretien-du-village",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "degrading",
+  "start_year": "2022",
+  "description": "Besoin d'entretien plus régulier : balayage, végétation, trottoirs parfois impraticables. Certains secteurs se dégradent rapidement.",
+  "current_situation": "Sous l'ancienne mandature, les relations avec le service de la propreté urbaine avaient très favorablement progressé, aboutissant en 2022-2023 à une réorganisation jugée positive de l'entretien du quartier. Avec la nouvelle mandature, c'est l'inverse : la relation sur ce dossier est hautement dégradée. Végétation non maîtrisée, manque de réponse sur le planning d'intervention.",
+  "next_steps": [
+   {
+    "text": "En attente d'un calendrier prévisionnel des prochaines interventions à Luynes",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Discussions régulières en 2023 avec le service de la propreté urbaine, ayant abouti à une meilleure réorganisation de l'entretien de notre quartier depuis",
+    "done": true
+   }
+  ],
+  "decision_history": [
+   {
+    "date": "2025-05-30T00:00:00",
+    "text": "Maintien mais surveillance renforcée"
+   },
+   {
+    "date": "2025-11-07T00:00:00",
+    "text": "Dégradation de la tendance à neutre car nous ne recevons pas le planning d'entretien demandé."
+   }
+  ],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-10-01T11:10:00",
+  "updated_date": "2026-10-19T20:40:00"
+ },
+ {
+  "name": "Concertation des Luynois",
+  "slug": "concertation-des-luynois",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2023",
+  "description": "Plusieurs habitants expriment le besoin d'être réellement associés aux décisions. Attente d'être écoutés et de voir des suites concrètes aux remarques transmises. Un sentiment de plus en plus répandu : Luynes serait traitée en \"deuxième zone\" par rapport à d'autres communes de la Métropole, avec des délais de réponse et d'action sensiblement plus longs. Les Luynois rencontrent une réelle difficulté à rencontrer les élus et les décideurs ; le dialogue est de mauvaise qualité et très insuffisant.",
+  "current_situation": "Conseil de quartier une fois par an, ouvert aux seuls présidents de certaines associations. Sentiment de concertation incomplète. Les habitants éprouvent une grande difficulté à rencontrer les élus et les décideurs. Le dialogue est de mauvaise qualité et très insuffisant.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Sondages et études en ligne réguliers par Luynois en Action",
+    "done": true
+   },
+   {
+    "text": "Présence à chaque réunion possible",
+    "done": true
+   },
+   {
+    "text": "Réflexion amorcée sur un cadre de concertation",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-19T20:29:00"
+ },
+ {
+  "name": "Avenue Henri Rodari",
+  "slug": "avenue-henri-rodari",
+  "theme": "Réintégration de voies en agglomération",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2023",
+  "description": "Luynois en Action a été alerté par plusieurs riverains de l'Av. H. Rodari qui subissent les mêmes problématiques que le Ch. de la Commanderie. Par ailleurs, des riverains signalent des faits de prostitution à proximité du collège, situation préoccupante qui appelle une réponse renforcée.",
+  "current_situation": "La Mairie a pris note de notre demande pour faire appliquer la limitation de vitesse à 30 km/h, et mettre le virage (côté carrefour A51) en sens unique.\nPar ailleurs, une pétition pour mobiliser les riverains est en cours.\n\nPar ailleurs, des faits de prostitution sont signalés à proximité du collège, une situation préoccupante pour les riverains et les familles qui appelle une réponse renforcée.",
+  "next_steps": [
+   {
+    "text": "En attente du retour de la Commune suite à nos derniers échanges sur ce sujet",
+    "done": false
+   },
+   {
+    "text": "Établir et maintenir une mobilisation sous réserve de la participation des riverains",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Ouverture d'un sondage sur la sécurisation de l'avenue en Décembre 2024",
+    "done": true
+   },
+   {
+    "text": "Demande de passage en sens unique formulée lors de la réunion avec Éric CHEVALIER le 03 Avril 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-19T20:28:00"
+ },
+ {
+  "name": "Axe central du village - voirie, trottoirs et lisibilité",
+  "slug": "axe-central-du-village---voirie-trottoirs-et-lisibilite",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "",
+  "description": "L'axe principal traversant le village concentre plusieurs difficultés : voies étroites peu adaptées à un trafic croissant, trottoirs sous-dimensionnés et non conformes aux exigences PMR.",
+  "current_situation": "Ce sujet est insuffisamment traité dans les ateliers de circulation en cours. Il constitue pourtant un enjeu quotidien pour l'ensemble des usagers du village.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Sujet porté lors des ateliers de circulation 2025. La problématique PMR n'a pas encore fait l'objet d'un traitement spécifique.",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 1,
+  "created_date": "2026-10-01T11:10:00",
+  "updated_date": "2026-10-02T14:00:00"
+ },
+ {
+  "name": "Circulation routière et futur plan",
+  "slug": "circulation-routiere-et-futur-plan",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2022",
+  "description": "Plusieurs rues de Luynes supportent désormais un trafic nettement plus dense. Vitesses excessives, croisements difficiles, stationnements gênant la visibilité. La pression va s'accentuer avec les nouvelles constructions en cours dans l'enclave entre Luynes et Pont-de-l'Arc, rendant indispensable une réflexion sur les flux de transit en amont du village.",
+  "current_situation": "En 2025 et 2026, plusieurs ateliers ont eu lieu sous l'égide de la Mairie et l'Agence d'Urbanisme du Pays d'Aix (mai, juillet, octobre, décembre). Les mêmes points noirs ressortent systématiquement. Restitution globale prévue fin 2026.",
+  "next_steps": [
+   {
+    "text": "Participation à la restitution des ateliers de l'AUPA prévue fin 2026",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Réunion avec Éric CHEVALIER le 03 Avril 2025 : annonce ne pas vouloir partager le dossier avec LEA, et une réunion publique vers Juin 2025",
+    "done": true
+   },
+   {
+    "text": "Parution d'un communiqué de LEA le 14 Avril 2025",
+    "done": true
+   },
+   {
+    "text": "Sortie d'un formulaire pour s'inscrire en ligne aux ateliers de concertation de 2025",
+    "done": true
+   },
+   {
+    "text": "Participation à la réunion de l'AUPA et de la Ville du 18 juillet 2025",
+    "done": true
+   },
+   {
+    "text": "Participation à l'atelier de l'AUPA du 4 octobre 2025",
+    "done": true
+   },
+   {
+    "text": "Participation à l'atelier de l'AUPA du 6 décembre 2025",
+    "done": true
+   },
+   {
+    "text": "Participation à l'atelier de l'AUPA du 7 février 2026",
+    "done": true
+   },
+   {
+    "text": "Participation à l'atelier de l'AUPA du 27 juin 2026",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:23:00"
+ },
+ {
+  "name": "Animation du village",
+  "slug": "animation-du-village",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2022",
+  "description": "Depuis 2022, les habitants expriment l'envie d'un village plus vivant. Plusieurs animations avaient disparu ou s'essoufflaient.",
+  "current_situation": "La situation reste compliquée avec une inflation d'associations d'animations dans le quartier.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Fête de la Musique en 2022",
+    "done": true
+   },
+   {
+    "text": "Téléthon en 2022",
+    "done": true
+   },
+   {
+    "text": "Impulsion d'un nouveau comité des fêtes en 2023",
+    "done": true
+   },
+   {
+    "text": "Téléthon 2023",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-10-01T11:10:00",
+  "updated_date": "2026-10-01T11:22:00"
+ },
+ {
+  "name": "Transports en commun",
+  "slug": "transports-en-commun",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2021",
+  "description": "Bus trop espacés, correspondances difficiles, service irrégulier. Beaucoup dépendent des transports publics pour se rendre à Aix, Marseille ou sur les pôles scolaires.",
+  "current_situation": "Deux réunions avec la Métropole (2021 et 2024). Étude spécifique en octobre 2025. Le niveau de service n'a pas encore évolué.",
+  "next_steps": [
+   {
+    "text": "Nouvel entretien à planifier avec la Métropole",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Réunion avec la Métropole Mobilité en 2021",
+    "done": true
+   },
+   {
+    "text": "Réunion avec la Métropole Mobilité en 2024",
+    "done": true
+   },
+   {
+    "text": "Étude sur les transports en commun en Octobre 2025, pilotée par Luynois en Action",
+    "done": true
+   },
+   {
+    "text": "Entretien avec la Métropole le 30 mars 2026",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Métropole Aix-Marseille Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Compostage",
+  "slug": "compostage",
+  "theme": "Environnement",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2023",
+  "description": "Des habitants demandent depuis plusieurs années une solution pour réduire les déchets organiques, en cohérence avec la loi AGEC de 2020.",
+  "current_situation": "Début septembre 2025 : des bacs collectifs ont été installés à Luynes.\nCette mise en place répond à une attente ancienne et a été bien accueillie.\nÀ voir s'il faut développer davantage le dispositif.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Réunion d'information en Novembre 2022.",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Métropole Aix-Marseille Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Trois Pigeons / Rampelin",
+  "slug": "trois-pigeons-rampelin",
+  "theme": "Réintégration de voies en agglomération",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2024",
+  "description": "Insécurité importante : vitesse excessive, stationnements anarchiques lors des manifestations à l'Arena, difficultés de circulation.",
+  "current_situation": "Courrier au maire le 1er décembre 2025 avec pétition, relancé en janvier 2026. La commune a transféré la demande au Département.",
+  "next_steps": [
+   {
+    "text": "En attente d'une réaction des pouvoirs publics",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Rencontre avec les riverains courant 2024",
+    "done": true
+   },
+   {
+    "text": "Fusion avec un groupement de riverains début 2025",
+    "done": true
+   },
+   {
+    "text": "Courrier au Maire envoyé le 1er décembre 2025 sur les problématiques du secteur, avec ouverture d'une pétition en ligne, relancé plusieurs fois en 2026",
+    "done": true
+   },
+   {
+    "text": "Courrier au Préfet envoyé en septembre 2026",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Gestion des doléances du quotidien",
+  "slug": "gestion-des-doleances-du-quotidien",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "degrading",
+  "start_year": "2024",
+  "description": "Depuis fin 2024, de nombreux habitants utilisent doleus.13080.fr pour signaler des problèmes du quotidien : voirie, propreté, éclairage, sécurité, stationnement.",
+  "current_situation": "Des discussions devaient être établies et maintenues avec le Département Numérique de la Ville d'Aix-en-Provence pour échanger sur leur application \"Je signale\". Toutefois, aucune suite n'est donnée à nos demandes pour les poursuivre.",
+  "next_steps": [
+   {
+    "text": "Conception d'une enquête sur l'application \"Je signale\" portée par la Ville",
+    "done": false
+   },
+   {
+    "text": "En attente d'un rendez-vous entre le Département Numérique de la Ville et la Mission Relation Usagers de la Ville",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Ouverture d'une plateforme unique gérée par Luynois en Action",
+    "done": true
+   },
+   {
+    "text": "Établissement d'une collaboration étroite et productive avec l'assistant technique de notre quartier, et la Mission Relation Usagers de la Mairie d'Aix-en-Provence",
+    "done": true
+   },
+   {
+    "text": "Janvier 2026 : Rencontre avec le chef de département systèmes d'information et innovations numériques : excellente discussion, perspective de collaboration sur ce sujet très encourageantes et à mettre en place",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Métropole Aix-Marseille Provence",
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Développement des mobilités actives",
+  "slug": "developpement-des-mobilites-actives",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "B",
+  "tendance": "degrading",
+  "start_year": "2021",
+  "description": "LEA souhaite remédier aux discontinuités de pistes cyclables, dans une logique de sécurité, et éviter des ruptures sur le réseau.",
+  "current_situation": "Le sujet dépend du futur plan de circulation et des projets du Département (RD8n, RD7). Les itinéraires restent morcelés. Rien n'a évolué sur le terrain.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Fête du Vélo à Luynes (co-organisée avec l'Union Cycliste de Luynes) en 2023",
+    "done": true
+   },
+   {
+    "text": "Sondage sur la mobilité active ouvert depuis 2024",
+    "done": true
+   },
+   {
+    "text": "Participation aux réunions semestrielles avec le Département",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Franchissement du pont ferroviaire - Av. Fortuné Ferrini",
+  "slug": "franchissement-du-pont-ferroviaire---av-fortune-ferrini",
+  "theme": "Sécurité",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2022",
+  "description": "Pont ferroviaire avec trottoirs de moins de 40 cm. Passage dangereux pour piétons, enfants, seniors et cyclistes, emprunté quotidiennement.",
+  "current_situation": "La Ville expérimente, à compter du 24 avril et pour une durée de 6 mois, une écluse à feux. Des travaux de réfection de chaussée et d'aménagement d'une piste cyclable sont également en cours sur ce secteur. L'éclairage public de la portion entre le pont ferroviaire et le carrefour du Chemin de la Blaque et de la Rue Robert Malus a également été suspendu.",
+  "next_steps": [
+   {
+    "text": "Surveiller la situation sur l'éclairage public",
+    "done": false
+   },
+   {
+    "text": "En attente de la fin de l'expérimentation en cours de l'écluse à feux menée par la ville",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Sujet relancé en réunion avec Madame le Maire le 21 Mai 2025",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion publique le 27 Mai 2025",
+    "done": true
+   },
+   {
+    "text": "Courrier LRAR envoyé à l'adjoint de quartier de Luynes le 15 Septembre 2025",
+    "done": true
+   },
+   {
+    "text": "Courrier LRAR envoyé au Préfet 13 le 16 octobre 2025",
+    "done": true
+   },
+   {
+    "text": "Ouverture d'un sondage pour recueillir les recours sur l'expérimentation d'une écluse à feux par la Ville",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "SNCF"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Axe central du village : voirie, trottoirs et lisibilité",
+  "slug": "axe-central-du-village-voirie-trottoirs-et-lisibilite",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2026",
+  "description": "L'axe principal traversant le village concentre plusieurs difficultés : voies étroites peu adaptées à un trafic croissant, trottoirs sous-dimensionnés et non conformes aux exigences PMR.",
+  "current_situation": "Ce sujet est insuffisamment traité dans les ateliers de circulation en cours. Il constitue pourtant un enjeu quotidien pour l'ensemble des usagers du village.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Sujet porté lors des ateliers de circulation 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Valorisation et piétonnisation des bords de la Luynes",
+  "slug": "valorisation-et-pietonnisation-des-bords-de-la-luynes",
+  "theme": "Environnement",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2025",
+  "description": "La rivière Luynes constitue un atout naturel et paysager majeur pour la commune. Des habitants expriment l'envie de pouvoir se promener le long de son cours dans de bonnes conditions : accès sécurisé, cheminement piéton aménagé, mise en valeur du cadre naturel.",
+  "current_situation": "Les parcours piétons existants sont fragmentés et incomplets. Aucun projet d'ensemble n'a été présenté publiquement. Il n'est pas établi que la municipalité envisage actuellement un aménagement de cet axe.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Sortie d'un quizz \"Connaissez-vous notre rivière, La Luynes ?\"",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Hameau de Turin",
+  "slug": "hameau-de-turin",
+  "theme": "Réintégration de voies en agglomération",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2021",
+  "description": "Voie étroite, mal entretenue, générant un risque réel. Difficultés de croisement, bordures abîmées, absence d'intervention claire.",
+  "current_situation": "La mairie refuse implicitement de reprendre la gestion de cette voie. Aucun engagement concret communiqué, aucune amélioration réalisée.",
+  "next_steps": [
+   {
+    "text": "Établir et maintenir une mobilisation sous réserve de la participation des riverains",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Dialogue avec les riverains entre 2021 et 2022",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Nuisances autour de l'Arena",
+  "slug": "nuisances-autour-de-larena",
+  "theme": "Sécurité",
+  "status": "open",
+  "score": "B",
+  "tendance": "encouraging",
+  "start_year": "2025",
+  "description": "Les soirs de spectacles, des riverains signalent des difficultés liées au stationnement, au bruit et à l'accès à leur domicile.",
+  "current_situation": "Un dialogue a été engagé avec la mairie et EDEIS depuis fin 2025. Une première rencontre a eu lieu en décembre 2025, et des réunions sont prévues en 2026 pour avancer vers des solutions concrètes visant à atténuer les nuisances.",
+  "next_steps": [
+   {
+    "text": "Nouveaux entretiens de suivi avec l'Arena à planifier prochainement",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Novembre 2025 : création du dossier",
+    "done": true
+   },
+   {
+    "text": "23 novembre 2025 : courriers envoyés au Maire et à EDEIS en leur demandant un entretien pour parler des nuisances autour de l'ARENA, avec pétition en ligne",
+    "done": true
+   },
+   {
+    "text": "Décembre 2025 : l'Arena a reçu l'équipe du CIQ Saint Hilaire et de Luynois en Action",
+    "done": true
+   },
+   {
+    "text": "Organisation d'une réunion de cohabitation avec les riverains en septembre 2026",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Métropole Aix-Marseille Provence",
+   "Département des Bouches-du-Rhône"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Chemin de la Commanderie Saint Jean de Malte",
+  "slug": "chemin-de-la-commanderie-saint-jean-de-malte",
+  "theme": "Réintégration de voies en agglomération",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2022",
+  "description": "Trafic devenu dense sur une voie très étroite, bordée de murs et d'un fossé dont certaines bordures sont fragilisées. Absence de trottoirs et de cheminement sécurisé pour piétons et vélos. Le chemin est utilisé comme itinéraire de contournement de la RD7, générant des croisements dangereux. La limitation à 30 km/h est peu respectée.",
+  "current_situation": "La mairie indique le 3 avril 2025 avoir pris note des demandes et confirme la limitation à 30 km/h sur l'ensemble du chemin. Malgré les échanges depuis 2023, aucun retour concret n'a été apporté et plusieurs panneaux manquants ne sont toujours pas installés.\nLe sujet est abordé au cours des ateliers de l'AUPA : en attente de la prise en compte de la problématique dans le futur plan de circulation.",
+  "next_steps": [
+   {
+    "text": "En attente de l'intégration des problématiques dans le futur plan de circulation de Luynes",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Sondage sur une expérimentation de fermeture temporaire ouvert depuis début 2024",
+    "done": true
+   },
+   {
+    "text": "Réunion spéciale d'information en Mai 2024",
+    "done": true
+   },
+   {
+    "text": "Parution dans la presse en Novembre 2024",
+    "done": true
+   },
+   {
+    "text": "Demande de passage en sens unique formulée lors de la réunion avec Éric CHEVALIER du 03 Avril 2025",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé par une habitante au conseil de quartier en Décembre 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Espace Ughetti - Parc Jacques Koren Melkonian",
+  "slug": "espace-ughetti---parc-jacques-koren-melkonian",
+  "theme": "Quotidien",
+  "status": "closed",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2022",
+  "description": "L'Espace Ughetti est l'un des principaux lieux de loisirs de Luynes. Les habitants signalaient le besoin d'un rafraîchissement et d'une meilleure sécurisation.",
+  "current_situation": "Présentation du projet le 28 mars 2025. Travaux lancés en avril 2025. Nouveau parc inauguré en janvier 2026.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Étude menée avec COGEBAT sur \"Ughetti 2.0\" en 2022",
+    "done": true
+   },
+   {
+    "text": "Participation à la réunion publique en Mars 2025",
+    "done": true
+   },
+   {
+    "text": "Livraison du chantier qui devait avoir lieu en Décembre 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Plan des déplacements des scolaires",
+  "slug": "plan-des-deplacements-des-scolaires",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2022",
+  "description": "Trajets compliqués autour des écoles : passages étroits, flux mal coordonnés, stationnements bouchant la visibilité aux abords immédiats des établissements scolaires.",
+  "current_situation": "Après une visite de quartier fin 2022, aucune suite opérationnelle n'a été donnée. En 2025, LEA a relancé le sujet à plusieurs reprises. Aucune avancée concrète.",
+  "next_steps": [
+   {
+    "text": "Nouvel entretien (avec suites) avec le Policier Municipal en charge de la sécurité routière et prévention scolaire, avec qui nous avions travaillé fin 2022",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Visite du quartier avec un agent de la Police Municipale spécialisé dans la sécurité routière, en 2022",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion avec Éric CHEVALIER le 03 avril 2025",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion avec Madame le Maire le 21 Mai 2025",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion publique le 27 Mai 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Accessibilité des installations sportives",
+  "slug": "accessibilite-des-installations-sportives",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2023",
+  "description": "Plusieurs habitants s'interrogent sur l'accès réel au complexe sportif Laurent-Ruzzettu. Une brochure indique un accès libre, mais la réalité ne semble pas correspondre.",
+  "current_situation": "Aucune réponse concrète apportée par la mairie.",
+  "next_steps": [],
+  "actions_done": [],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Service postal",
+  "slug": "service-postal",
+  "theme": "Quotidien",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2024",
+  "description": "Retards importants dans la distribution depuis 2024. La fermeture du bureau de poste a aggravé la situation, remplacé par une LPAC jugée insuffisante.",
+  "current_situation": "LEA mène des tests sur les délais d'acheminement. Les habitants font parfois état de retards persistants.",
+  "next_steps": [
+   {
+    "text": "Surveiller périodiquement le délai d'acheminement moyen des courriers",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Pétition contre la fermeture du bureau de poste de Luynes entre Février et Septembre 2024",
+    "done": true
+   },
+   {
+    "text": "Sondage visant à identifier l'impact d'une dégradation dans la distribution des courriers ouvert en septembre 2024",
+    "done": true
+   },
+   {
+    "text": "Ouverture d'un concours du courrier le plus en retard en Janvier 2025",
+    "done": true
+   },
+   {
+    "text": "Grande médiatisation de la dégradation de la distribution début 2025",
+    "done": true
+   },
+   {
+    "text": "Plusieurs courriers de test envoyés en 2025 et 2026",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "La Poste"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Développement durable",
+  "slug": "developpement-durable",
+  "theme": "Environnement",
+  "status": "open",
+  "score": "B",
+  "tendance": "neutral",
+  "start_year": "2022",
+  "description": "Luynes dispose d'atouts naturels précieux mais plusieurs zones restent fragiles. Dépôts sauvages, mégots en quantité, besoin de mieux protéger le cours d'eau.",
+  "current_situation": "Les échanges se poursuivent et plusieurs initiatives locales prennent forme. Certaines actions de sensibilisation fonctionnent bien, mais sont à perfectionnre.",
+  "next_steps": [
+   {
+    "text": "Demander un entretien avec la direction développement durable de la Ville",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Opération « Nettoyons le Sud » en 2023",
+    "done": true
+   },
+   {
+    "text": "Convention de partenariat avec le Lycée Georges Duby en 2023, reconduite en 2024",
+    "done": true
+   },
+   {
+    "text": "Distribution de cendriers de poche dans les commerces Luynois en 2024",
+    "done": true
+   },
+   {
+    "text": "Opération « Nettoyons le Sud » en 2024",
+    "done": true
+   },
+   {
+    "text": "Convention de partenariat avec « Trash Spotter » en 2024",
+    "done": true
+   },
+   {
+    "text": "Opération « Les mégots tu chasseras, la Luynes te remerciera » tous les samedis de Mars 2025",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Lycée Georges Duby",
+   "ALCOME",
+   "Région Provence-Alpes-Côte d'Azur"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Sécurité du village",
+  "slug": "securite-du-village",
+  "theme": "Sécurité",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2021",
+  "description": "Demande de présence policière renforcée, caméras dans les zones sensibles, développement du dispositif de participation citoyenne.",
+  "current_situation": "Depuis janvier 2024, LEA n'est plus invitée au GPO. Les demandes ne peuvent plus être remontées efficacement. Aucune avancée notable. Ce sentiment d'un village traité différemment des autres communes de la Métropole revient régulièrement dans les retours des habitants.",
+  "next_steps": [],
+  "actions_done": [
+   {
+    "text": "Sondage sur la participation citoyenne en 2024.",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Police Nationale"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ },
+ {
+  "name": "Halte ferroviaire de proximité",
+  "slug": "halte-ferroviaire-de-proximite",
+  "theme": "Circulation & déplacements",
+  "status": "open",
+  "score": "C",
+  "tendance": "degrading",
+  "start_year": "2023",
+  "description": "72 trains traversent Luynes chaque jour sans s'y arrêter, alors qu'ils relient directement Aix-centre et Marseille.",
+  "current_situation": "LEA rencontre depuis plusieurs mois les différents acteurs (élus, État, SNCF, Région, Métropole). La commune n'a pas désigné de pilote interne. Signaux de relance en septembre 2025.",
+  "next_steps": [
+   {
+    "text": "Rendez-vous sur site avec le Sous-Préfet d'Aix-en-Provence, en présence du Député de notre circonscription",
+    "done": false
+   },
+   {
+    "text": "Amorçage du dossier par les collectivités compétentes",
+    "done": false
+   }
+  ],
+  "actions_done": [
+   {
+    "text": "Sondage de la population ouvert depuis Juin 2023, atteignant 75% de réponses favorables",
+    "done": true
+   },
+   {
+    "text": "Rencontre de nos députés du Pays d'Aix en 2024",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion avec Madame le Maire le 21 Mai 2025",
+    "done": true
+   },
+   {
+    "text": "Sujet relancé en réunion publique le 27 Mai 2025",
+    "done": true
+   },
+   {
+    "text": "On apprend début Octobre que le sujet semble relancé par la Ville",
+    "done": true
+   }
+  ],
+  "decision_history": [],
+  "intervenants": [
+   "Mairie d'Aix-en-Provence",
+   "Métropole Aix-Marseille Provence",
+   "Région Provence-Alpes-Côte d'Azur",
+   "SNCF"
+  ],
+  "followers": 0,
+  "created_date": "2026-09-29T14:05:00",
+  "updated_date": "2026-10-01T11:21:00"
+ }
+];
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var DOSSIERS = window.LS_DOSSIERS || [];
+  var SITE_TITLE = "Luynes'Score - CIQ Luynes en action";
+  var LIST_TITLE = "Dossiers de quartier | " + SITE_TITLE;
+  var LIB = {
+    xlsx: "score-lib/xlsx.mini.min.js",
+    jspdf: "score-lib/jspdf.umd.min.js",
+    h2c: "score-lib/html2canvas.min.js"
+  };
+
+  /* ---------- Libellés et couleurs ---------- */
+  var SCORE = {
+    A: { label: "A · Bien engagé", short: "Bien engagé", tone: "green", color: "#15803D" },
+    B: { label: "B · En cours", short: "En cours", tone: "amber", color: "#B45309" },
+    C: { label: "C · À l'arrêt", short: "À l'arrêt", tone: "red", color: "#991B1B" }
+  };
+  var TREND = {
+    encouraging: { label: "Encourageante", tone: "green", color: "#15803D" },
+    neutral: { label: "Neutre", tone: "amber", color: "#B45309" },
+    degrading: { label: "Dégradée", tone: "red", color: "#991B1B" }
+  };
+  var STATUS = {
+    open: { label: "Ouvert", tone: "green", color: "#15803D" },
+    closed: { label: "Fermé", tone: "grey", color: "#64748B" }
+  };
+  var MONTHS_LONG = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  /* ---------- Outils ---------- */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function norm(s) {
+    return String(s || "").toLocaleLowerCase("fr").normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  // Renvoie un objet Date si la chaîne est une date ISO complète, sinon null.
+  function parseDate(s) {
+    if (!s || !/^\d{4}-\d{2}-\d{2}/.test(String(s))) return null;
+    var m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/);
+    var d = new Date(+m[1], +m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0));
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function fmtShort(s) { // 21 nov. 2026
+    var d = parseDate(s);
+    if (!d) return String(s || "");
+    try { return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }); }
+    catch (e) { return String(s); }
+  }
+  function fmtNum(s) { // 21/11/2026
+    var d = parseDate(s);
+    if (!d) return String(s || "");
+    return pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + "/" + d.getFullYear();
+  }
+  function fmtLong(d) { return d.getDate() + " " + MONTHS_LONG[d.getMonth()] + " " + d.getFullYear(); }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function isoToday() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function badge(def) { return '<span class="ls-badge ls-badge--' + def.tone + '">' + esc(def.label) + '</span>'; }
+  function badges(d) { return badge(STATUS[d.status]) + badge(SCORE[d.score]) + badge(TREND[d.tendance]); }
+  function themeOf(d) { return d.theme || "Autres"; }
+  function byUpdatedDesc(a, b) { return String(b.updated_date || "").localeCompare(String(a.updated_date || "")); }
+  function sortThemes(list) {
+    return list.sort(function (a, b) {
+      if (a === "Autres") return 1;
+      if (b === "Autres") return -1;
+      return a.localeCompare(b, "fr", { sensitivity: "base" });
+    });
+  }
+  function track() {
+    window._paq = window._paq || [];
+    window._paq.push(Array.prototype.slice.call(arguments));
+  }
+  function store(key, val) {
+    try {
+      if (val === undefined) return window.localStorage.getItem(key);
+      if (val === null) window.localStorage.removeItem(key); else window.localStorage.setItem(key, val);
+    } catch (e) { return null; }
+  }
+  function toast(msg) {
+    var t = document.createElement("div");
+    t.className = "ls-toast"; t.setAttribute("role", "status"); t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 3500);
+  }
+  var libPromises = {};
+  function loadScript(src) {
+    if (!libPromises[src]) {
+      libPromises[src] = new Promise(function (resolve, reject) {
+        var s = document.createElement("script");
+        s.src = src; s.async = true;
+        s.onload = resolve;
+        s.onerror = function () { delete libPromises[src]; reject(new Error("Chargement impossible : " + src)); };
+        document.head.appendChild(s);
+      });
+    }
+    return libPromises[src];
+  }
+
+  var ICON_DL = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
+
+  /* ---------- État ---------- */
+  var app = document.getElementById("ls-app");
+  var filters = { q: "", theme: "", status: "", score: "" };
+  var lastListScroll = 0;
+
+  function filtered() {
+    var q = norm(filters.q.trim());
+    return DOSSIERS.filter(function (d) {
+      if (filters.theme && themeOf(d) !== filters.theme) return false;
+      if (filters.status && d.status !== filters.status) return false;
+      if (filters.score && d.score !== filters.score) return false;
+      if (q && norm(d.name + " " + d.description + " " + d.current_situation).indexOf(q) === -1) return false;
+      return true;
+    }).sort(byUpdatedDesc);
+  }
+
+  /* ---------- Vue 1 : liste ---------- */
+  function renderListShell() {
+    var themes = sortThemes(Array.from(new Set(DOSSIERS.map(themeOf))));
+    app.innerHTML =
+      '<div class="ls-intro">' +
+        '<span class="eyebrow">Luynes\'Score</span>' +
+        '<h1 class="ls-title">Dossiers de quartier</h1>' +
+        '<p class="ls-lead">L\'état d\'avancement des dossiers suivis par le CIQ Luynes en action, noté de A à C, avec la tendance du moment pour chacun.</p>' +
+      '</div>' +
+      '<div class="ls-card ls-filters" role="search">' +
+        '<input class="ls-input" id="ls-q" type="search" placeholder="Rechercher un dossier…" aria-label="Rechercher un dossier" value="' + esc(filters.q) + '">' +
+        '<select class="ls-select" id="ls-theme" aria-label="Filtrer par thème"><option value="">Tous les thèmes</option>' +
+          themes.map(function (t) { return '<option value="' + esc(t) + '">' + esc(t) + '</option>'; }).join("") + '</select>' +
+        '<select class="ls-select" id="ls-status" aria-label="Filtrer par état"><option value="">Tous les états</option>' +
+          '<option value="open">Ouvert</option><option value="closed">Fermé</option></select>' +
+        '<select class="ls-select" id="ls-score" aria-label="Filtrer par score"><option value="">Tous les scores</option>' +
+          ["A", "B", "C"].map(function (k) { return '<option value="' + k + '">' + esc(SCORE[k].label) + '</option>'; }).join("") + '</select>' +
+      '</div>' +
+      '<div class="ls-stats" id="ls-stats"></div>' +
+      '<div class="ls-toolbar">' +
+        '<span class="ls-count" id="ls-count" aria-live="polite"></span>' +
+        '<div class="ls-actions">' +
+          '<button type="button" class="ls-btn" id="ls-xlsx">' + ICON_DL + 'Excel</button>' +
+          '<button type="button" class="ls-btn" id="ls-pdf">' + ICON_DL + 'Rapport PDF</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="ls-results"></div>';
+
+    ["theme", "status", "score"].forEach(function (k) {
+      var el = document.getElementById("ls-" + k);
+      el.value = filters[k];
+      el.addEventListener("change", function () { filters[k] = el.value; renderResults(); });
+    });
+    var q = document.getElementById("ls-q");
+    q.addEventListener("input", function () { filters.q = q.value; renderResults(); });
+    document.getElementById("ls-xlsx").addEventListener("click", function () { exportXlsx(filtered(), this); });
+    document.getElementById("ls-pdf").addEventListener("click", function () { exportPdf(filtered(), this); });
+    renderResults();
+  }
+
+  function statCard(title, list, defs, key) {
+    var n = list.length;
+    var rows = Object.keys(defs).map(function (k) {
+      var c = list.filter(function (d) { return d[key] === k; }).length;
+      var pct = n ? Math.round(c * 100 / n) : 0;
+      return '<div class="ls-stat__row"><span class="ls-stat__label">' + esc(defs[k].label) + '</span>' +
+        '<span class="ls-stat__track"><span class="ls-stat__fill" style="width:' + pct + '%;background:' + defs[k].color + '"></span></span>' +
+        '<span class="ls-stat__pct">' + pct + ' %</span></div>';
+    }).join("");
+    return '<div class="ls-card ls-stat"><h2>' + esc(title) + ' (' + n + ' dossier' + (n > 1 ? 's' : '') + ')</h2>' + rows + '</div>';
+  }
+
+  function renderResults() {
+    var list = filtered();
+    document.getElementById("ls-stats").innerHTML =
+      statCard("Scores", list, SCORE, "score") + statCard("Tendances", list, TREND, "tendance");
+    document.getElementById("ls-count").textContent =
+      list.length + " dossier" + (list.length > 1 ? "s" : "") + " sur " + DOSSIERS.length;
+    document.getElementById("ls-xlsx").disabled = !list.length;
+    document.getElementById("ls-pdf").disabled = !list.length;
+
+    var res = document.getElementById("ls-results");
+    if (!list.length) { res.innerHTML = '<div class="ls-card ls-empty">Aucun dossier pour ces critères.</div>'; return; }
+    var groups = {};
+    list.forEach(function (d) { (groups[themeOf(d)] = groups[themeOf(d)] || []).push(d); });
+    res.innerHTML = sortThemes(Object.keys(groups)).map(function (t) {
+      return '<section class="ls-group" style="padding:0" aria-label="' + esc(t) + '"><h2 class="ls-group__title">' + esc(t) + '</h2><div class="ls-list">' +
+        groups[t].map(function (d) {
+          return '<a class="ls-card ls-row" href="#/dossier/' + encodeURIComponent(d.slug) + '">' +
+            '<div class="ls-row__top"><span class="ls-row__name">' + esc(d.name) + '</span><span class="ls-badges">' + badges(d) + '</span></div>' +
+            '<div class="ls-row__meta">' + esc(themeOf(d)) + ' · Mis à jour le ' + esc(fmtShort(d.updated_date)) + '</div></a>';
+        }).join("") + '</div></section>';
+    }).join("");
+  }
+
+  /* ---------- Vue 2 : fiche ---------- */
+  function followKey(d) { return "ciqlea_follow_" + d.slug; }
+
+  function renderDetail(d) {
+    var meta = [esc(themeOf(d))];
+    if (d.start_year) meta.push("Depuis " + esc(d.start_year));
+    meta.push("Mis à jour le " + esc(fmtShort(d.updated_date)));
+
+    var secs = [];
+    if (d.description) secs.push(sec("Description", '<p class="ls-text">' + esc(d.description) + '</p>'));
+    if (d.current_situation) secs.push(sec("Situation en cours", '<p class="ls-text">' + esc(d.current_situation) + '</p>'));
+    if (d.next_steps && d.next_steps.length) secs.push(sec("Prochaines étapes", '<ul class="ls-checks">' +
+      d.next_steps.map(function (s) {
+        return '<li class="' + (s.done ? "is-done" : "") + '"><span class="ls-mark ' + (s.done ? "ls-mark--done" : "ls-mark--todo") + '" aria-label="' + (s.done ? "Réalisée" : "À venir") + '">' + (s.done ? "✓" : "○") + '</span><span class="ls-checks__t">' + esc(s.text) + '</span></li>';
+      }).join("") + '</ul>'));
+    if (d.actions_done && d.actions_done.length) secs.push(sec("Actions déjà mises en place", '<ul class="ls-checks">' +
+      d.actions_done.map(function (a) {
+        return '<li><span class="ls-mark ls-mark--done" aria-hidden="true">✓</span><span class="ls-checks__t">' + esc(a.text) + '</span></li>';
+      }).join("") + '</ul>'));
+    if (d.decision_history && d.decision_history.length) secs.push(sec("Historique des décisions", '<ol class="ls-timeline">' +
+      d.decision_history.map(function (h) {
+        return '<li><span class="ls-timeline__date">' + esc(fmtShort(h.date)) + '</span>' + esc(h.text) + '</li>';
+      }).join("") + '</ol>'));
+    if (d.intervenants && d.intervenants.length) secs.push(sec("Intervenants impliqués", '<div class="ls-chips">' +
+      d.intervenants.map(function (i) { return '<span class="ls-chip">' + esc(i) + '</span>'; }).join("") + '</div>'));
+
+    app.innerHTML =
+      '<a class="ls-back" href="#/">← Tous les dossiers</a>' +
+      '<article class="ls-card ls-detail">' +
+        '<header class="ls-hero">' +
+          '<div class="ls-badges">' + badges(d) + '</div>' +
+          '<div class="ls-hero__top"><h1>' + esc(d.name) + '</h1>' +
+            '<button type="button" class="ls-follow" id="ls-follow" aria-pressed="false"></button></div>' +
+          '<div class="ls-hero__meta">' + meta.join(" · ") + '</div>' +
+        '</header>' +
+        '<div class="ls-body">' + secs.join("") + '</div>' +
+      '</article>' +
+      '<div class="ls-detail__actions">' +
+        '<button type="button" class="ls-btn" id="ls-pdf1">' + ICON_DL + 'Fiche PDF</button>' +
+        '<button type="button" class="ls-btn" id="ls-xlsx1">' + ICON_DL + 'Excel</button>' +
+      '</div>';
+
+    var btn = document.getElementById("ls-follow");
+    function paint() {
+      var on = store(followKey(d)) === "1";
+      btn.classList.toggle("is-on", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.textContent = on ? "✓ Suivi" : "Suivre ce dossier";
+    }
+    paint();
+    btn.addEventListener("click", function () {
+      var on = store(followKey(d)) === "1";
+      if (on) {
+        store(followKey(d), null);
+        track("trackEvent", "Dossiers", "Ne plus suivre", d.name);
+      } else {
+        store(followKey(d), "1");
+        track("trackEvent", "Dossiers", "Suivre", d.name);
+        if (typeof window.clarity === "function") window.clarity("event", "suivre_dossier");
+      }
+      paint();
+    });
+    document.getElementById("ls-pdf1").addEventListener("click", function () { exportPdf([d], this); });
+    document.getElementById("ls-xlsx1").addEventListener("click", function () { exportXlsx([d], this); });
+  }
+  function sec(title, html) { return '<section class="ls-sec"><h2>' + esc(title) + '</h2>' + html + '</section>'; }
+
+  /* ---------- Routeur ---------- */
+  var firstRoute = true;
+  function route() {
+    var m = location.hash.match(/^#\/dossier\/([^\/?#]+)/);
+    var wasList = !!document.getElementById("ls-results");
+    if (m) {
+      if (wasList) lastListScroll = window.scrollY;
+      var slug = decodeURIComponent(m[1]);
+      var d = DOSSIERS.filter(function (x) { return x.slug === slug; })[0];
+      if (!d) {
+        document.title = "Dossier introuvable | " + SITE_TITLE;
+        app.innerHTML = '<a class="ls-back" href="#/">← Tous les dossiers</a><div class="ls-card ls-notfound">Ce dossier n\'existe pas ou a été retiré.</div>';
+      } else {
+        document.title = d.name + " | " + SITE_TITLE;
+        renderDetail(d);
+        track("trackEvent", "Dossiers", "Consultation", d.name);
+      }
+      scrollToApp();
+    } else {
+      document.title = LIST_TITLE;
+      renderListShell();
+      if (!firstRoute) window.scrollTo(0, lastListScroll);
+    }
+    // Page vue « virtuelle » dans Matomo pour chaque changement de vue (la première est envoyée par le code Matomo de la page).
+    if (!firstRoute) {
+      track("setCustomUrl", location.href);
+      track("setDocumentTitle", document.title);
+      track("trackPageView");
+    }
+    firstRoute = false;
+  }
+  function scrollToApp() {
+    if (firstRoute) return;
+    var top = app.getBoundingClientRect().top + window.scrollY - 16;
+    window.scrollTo(0, Math.max(0, top));
+  }
+
+  /* ---------- Export Excel ---------- */
+  function exportXlsx(list, btn) {
+    if (!list.length) return;
+    btn.disabled = true;
+    loadScript(LIB.xlsx).then(function () {
+      var header = ["Nom", "Slug", "Thème", "État", "Score", "Tendance", "Année de début", "Suivis", "Description", "Situation en cours", "Intervenants"];
+      var rows = list.map(function (d) {
+        return [d.name, d.slug, themeOf(d), STATUS[d.status].label, d.score, TREND[d.tendance].label,
+          d.start_year || "", d.followers || 0, d.description || "", d.current_situation || "", (d.intervenants || []).join(", ")];
+      });
+      var ws = XLSX.utils.aoa_to_sheet([header].concat(rows));
+      ws["!cols"] = [{ wch: 42 }, { wch: 36 }, { wch: 22 }, { wch: 9 }, { wch: 7 }, { wch: 14 }, { wch: 14 }, { wch: 8 }, { wch: 70 }, { wch: 70 }, { wch: 40 }];
+      ws["!autofilter"] = { ref: "A1:K" + (rows.length + 1) };
+      var wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Dossiers");
+      XLSX.writeFile(wb, "luynes-score-dossiers-" + isoToday() + ".xlsx");
+      track("trackEvent", "Dossiers", "Export Excel", list.length === 1 ? list[0].name : list.length + " dossiers");
+    }).catch(function () {
+      toast("Le téléchargement n'a pas pu être préparé. Réessayez dans un instant.");
+    }).then(function () { btn.disabled = false; });
+  }
+
+  /* ---------- Export PDF ---------- */
+  var PAGE_W = 794, PAGE_H = 1123, PAD_X = 64, PAD_TOP = 56, FOOT_H = 64;
+  var PDF_CSS =
+    '.pdf-page{width:794px;height:1123px;background:#fff;position:relative;overflow:hidden;font-family:Outfit,sans-serif;color:#1a1a1a;box-sizing:border-box;}' +
+    '.pdf-page *{box-sizing:border-box;}' +
+    '.pdf-content{position:absolute;left:' + PAD_X + 'px;right:' + PAD_X + 'px;top:' + PAD_TOP + 'px;bottom:' + FOOT_H + 'px;overflow:hidden;}' +
+    '.pdf-foot{position:absolute;left:' + PAD_X + 'px;right:' + PAD_X + 'px;bottom:26px;display:grid;grid-template-columns:1fr 1fr 1fr;font-size:9px;color:#94A3B8;border-top:1px solid #E2E8F0;padding-top:8px;}' +
+    '.pdf-foot span:nth-child(2){text-align:center;}.pdf-foot span:nth-child(3){text-align:right;}' +
+    '.pdf-rule{height:3px;background:#AD8901;margin-bottom:18px;}' +
+    '.pdf-name{font-size:22px;font-weight:700;color:#242E63;line-height:1.25;margin:0;}' +
+    '.pdf-meta{font-size:11px;color:#64748B;margin-top:6px;}' +
+    '.pdf-badges{font-size:11px;font-weight:600;margin-top:8px;}' +
+    '.pdf-badges span+span::before{content:"·";color:#94A3B8;margin:0 8px;font-weight:400;}' +
+    '.pdf-sep{height:1px;background:#E2E8F0;margin:16px 0 4px;}' +
+    '.pdf-cont{font-size:10px;color:#64748B;padding-bottom:8px;border-bottom:1px solid #E2E8F0;margin-bottom:4px;}' +
+    '.pdf-h{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#AD8901;margin:16px 0 8px;}' +
+    '.pdf-p{font-size:10.5px;line-height:1.6;margin:0 0 6px;}' +
+    '.pdf-item{display:grid;grid-template-columns:16px 1fr;gap:4px;font-size:10.5px;line-height:1.6;margin-bottom:4px;}' +
+    '.pdf-item b{font-weight:700;}' +
+    '.pdf-hist{display:grid;grid-template-columns:78px 1fr;gap:8px;font-size:10.5px;line-height:1.6;margin-bottom:4px;}' +
+    '.pdf-hist b{color:#AD8901;font-weight:700;}' +
+    '.pdf-iv{font-size:10.5px;line-height:1.6;color:#242E63;font-weight:500;}' +
+    '.pdf-cover{position:absolute;left:' + PAD_X + 'px;right:' + PAD_X + 'px;top:300px;}' +
+    '.pdf-cover__org{font-size:16px;font-weight:600;color:#242E63;letter-spacing:.02em;}' +
+    '.pdf-cover__rule{width:72px;height:3px;background:#AD8901;margin:18px 0;}' +
+    '.pdf-cover__brand{font-size:14px;font-weight:700;color:#AD8901;text-transform:uppercase;letter-spacing:.14em;}' +
+    '.pdf-cover__title{font-size:34px;font-weight:700;color:#242E63;line-height:1.15;margin:10px 0 0;}' +
+    '.pdf-cover__date{font-size:13px;color:#64748B;margin-top:14px;}' +
+    '.pdf-cover__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:56px;}' +
+    '.pdf-cover__stat{border:1px solid #E2E8F0;border-radius:10px;padding:16px;}' +
+    '.pdf-cover__num{font-size:28px;font-weight:700;color:#242E63;line-height:1;}' +
+    '.pdf-cover__lbl{font-size:11px;color:#64748B;margin-top:6px;}' +
+    '.pdf-cover__url{margin-top:48px;font-size:11px;color:#64748B;}';
+
+  function el(html) { var t = document.createElement("div"); t.innerHTML = html; return t.firstChild; }
+
+  function newPage(stage, footLeft) {
+    var p = el('<div class="pdf-page"><div class="pdf-content"></div><div class="pdf-foot"><span>' + esc(footLeft) +
+      '</span><span>Comité d\'Intérêt de Quartier - Luynes en action</span><span class="pdf-num"></span></div></div>');
+    stage.appendChild(p);
+    return p;
+  }
+
+  // Découpe une fiche en blocs ; un bloc trop long pour la page part sur une page de suite.
+  function dossierBlocks(d) {
+    var b = [];
+    var colored = function (def) { return '<span style="color:' + def.color + '">' + esc(def.label) + '</span>'; };
+    var meta = [esc(themeOf(d))];
+    if (d.start_year) meta.push("Depuis " + esc(d.start_year));
+    b.push('<div><div class="pdf-rule"></div><h1 class="pdf-name">' + esc(d.name) + '</h1>' +
+      '<div class="pdf-meta">' + meta.join(" · ") + '</div>' +
+      '<div class="pdf-badges">' + colored(STATUS[d.status]) + colored(SCORE[d.score]) + colored(TREND[d.tendance]) + '</div>' +
+      '<div class="pdf-sep"></div></div>');
+    function section(title, items) {
+      if (!items.length) return;
+      // Le titre reste attaché au premier élément.
+      b.push('<div><div class="pdf-h">' + esc(title) + '</div>' + items[0] + '</div>');
+      for (var i = 1; i < items.length; i++) b.push(items[i]);
+    }
+    function paras(txt) {
+      return String(txt || "").split(/\n+/).filter(function (x) { return x.trim(); })
+        .map(function (x) { return '<p class="pdf-p">' + esc(x) + '</p>'; });
+    }
+    section("Description", paras(d.description));
+    section("Situation en cours", paras(d.current_situation));
+    section("Prochaines étapes", (d.next_steps || []).map(function (s) {
+      return '<div class="pdf-item"><b style="color:' + (s.done ? "#15803D" : "#94A3B8") + '">' + (s.done ? "✓" : "○") + '</b><span' +
+        (s.done ? ' style="text-decoration:line-through;color:#64748B"' : '') + '>' + esc(s.text) + '</span></div>';
+    }));
+    section("Actions déjà mises en place", (d.actions_done || []).map(function (a) {
+      return '<div class="pdf-item"><b style="color:#AD8901">✓</b><span>' + esc(a.text) + '</span></div>';
+    }));
+    section("Historique des décisions", (d.decision_history || []).map(function (h) {
+      return '<div class="pdf-hist"><b>' + esc(fmtNum(h.date)) + '</b><span>' + esc(h.text) + '</span></div>';
+    }));
+    if (d.intervenants && d.intervenants.length)
+      section("Intervenants impliqués", ['<div class="pdf-iv">' + d.intervenants.map(esc).join(", ") + '</div>']);
+    return b;
+  }
+
+  function layoutDossier(stage, d) {
+    var foot = "Mis à jour le " + fmtShort(d.updated_date);
+    var pages = [];
+    var page = newPage(stage, foot), box = page.firstChild;
+    pages.push(page);
+    dossierBlocks(d).forEach(function (html) {
+      var node = el(html);
+      box.appendChild(node);
+      if (box.scrollHeight > box.clientHeight + 1 && box.children.length > 1) {
+        box.removeChild(node);
+        page = newPage(stage, foot); box = page.firstChild; pages.push(page);
+        box.appendChild(el('<div class="pdf-cont">' + esc(d.name) + ' (suite)</div>'));
+        box.appendChild(node);
+      }
+    });
+    return pages;
+  }
+
+  function layoutCover(stage, list, now) {
+    var count = function (f) { return list.filter(f).length; };
+    var p = newPage(stage, "Édité le " + fmtNum(isoToday()));
+    p.firstChild.remove();
+    p.insertBefore(el('<div class="pdf-cover">' +
+      '<div class="pdf-cover__org">CIQ Luynes en action</div><div class="pdf-cover__rule"></div>' +
+      '<div class="pdf-cover__brand">Luynes\'Score</div>' +
+      '<h1 class="pdf-cover__title">Rapport des dossiers de quartier</h1>' +
+      '<div class="pdf-cover__date">Édité le ' + fmtLong(now) + '</div>' +
+      '<div class="pdf-cover__stats">' +
+        stat(list.length, "Total") +
+        stat(count(function (d) { return d.status === "open"; }), "Ouverts") +
+        stat(count(function (d) { return d.score === "A"; }), "Score A") +
+        stat(count(function (d) { return d.score === "C"; }), "Score C") +
+      '</div>' +
+      '<div class="pdf-cover__url">ciq.13080.fr/moyens/score</div></div>'), p.firstChild);
+    return p;
+    function stat(n, l) { return '<div class="pdf-cover__stat"><div class="pdf-cover__num">' + n + '</div><div class="pdf-cover__lbl">' + l + '</div></div>'; }
+  }
+
+  function fontsReady() {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    return Promise.all(["400 12px Outfit", "500 12px Outfit", "600 12px Outfit", "700 12px Outfit"].map(function (f) {
+      return document.fonts.load(f).catch(function () {});
+    })).then(function () { return document.fonts.ready; });
+  }
+
+  function exportPdf(list, btn) {
+    if (!list.length) return;
+    var label = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = ICON_DL + "Préparation…";
+    var stage = document.createElement("div");
+    stage.className = "ls-pdf-stage";
+    stage.setAttribute("aria-hidden", "true");
+    stage.innerHTML = "<style>" + PDF_CSS + "</style>";
+    document.body.appendChild(stage);
+
+    Promise.all([loadScript(LIB.jspdf), loadScript(LIB.h2c), fontsReady()]).then(function () {
+      var now = new Date();
+      var pages = [];
+      if (list.length > 1) pages.push(layoutCover(stage, list, now));
+      list.forEach(function (d) { pages = pages.concat(layoutDossier(stage, d)); });
+      pages.forEach(function (p, i) { p.querySelector(".pdf-num").textContent = "Page " + (i + 1) + " sur " + pages.length; });
+
+      var pdf = new window.jspdf.jsPDF({ orientation: "portrait", unit: "mm", format: "a4", compress: true });
+      var chain = Promise.resolve();
+      pages.forEach(function (p, i) {
+        chain = chain.then(function () {
+          btn.innerHTML = ICON_DL + "Page " + (i + 1) + " / " + pages.length;
+          return window.html2canvas(p, { scale: 2, backgroundColor: "#ffffff", width: PAGE_W, height: PAGE_H, windowWidth: PAGE_W, logging: false, useCORS: true });
+        }).then(function (canvas) {
+          if (i > 0) pdf.addPage("a4", "portrait");
+          pdf.addImage(canvas.toDataURL("image/jpeg", 0.95), "JPEG", 0, 0, 210, 297);
+          canvas.width = canvas.height = 0;
+        });
+      });
+      return chain.then(function () {
+        pdf.setProperties({ title: "Luynes'Score : rapport des dossiers de quartier", author: "CIQ Luynes en action" });
+        pdf.save("luynes-score-rapport-" + isoToday() + ".pdf");
+        track("trackEvent", "Dossiers", "Export PDF", list.length === 1 ? list[0].name : list.length + " dossiers");
+      });
+    }).catch(function () {
+      toast("Le PDF n'a pas pu être généré. Réessayez dans un instant.");
+    }).then(function () {
+      stage.remove();
+      btn.disabled = false;
+      btn.innerHTML = label;
+    });
+  }
+
+  window.addEventListener("hashchange", route);
+  route();
+})();
+</script>
+
+</body>
+</html>
