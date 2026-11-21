@@ -1805,7 +1805,6 @@ window.LS_DOSSIERS = [
         { header: "Score", key: "score", width: 9 },
         { header: "Tendance", key: "trend", width: 15 },
         { header: "Année de début", key: "year", width: 15 },
-        { header: "Intérêts", key: "followers", width: 10 },
         { header: "Description", key: "desc", width: 70 },
         { header: "Situation en cours", key: "situation", width: 70 },
         { header: "Intervenants", key: "iv", width: 40 }
@@ -1814,7 +1813,7 @@ window.LS_DOSSIERS = [
       list.forEach(function (d) {
         ws.addRow({
           name: d.name, slug: d.slug, theme: themeOf(d), status: STATUS[d.status].label, score: d.score,
-          trend: TREND[d.tendance].label, year: d.start_year || "", followers: d.followers || 0,
+          trend: TREND[d.tendance].label, year: d.start_year || "",
           desc: d.description || "", situation: d.current_situation || "", iv: (d.intervenants || []).join(", ")
         });
       });
@@ -1843,9 +1842,9 @@ window.LS_DOSSIERS = [
         cs.alignment = { vertical: "top", horizontal: "center" };
         row.getCell("trend").font = { name: FONT, size: 11, bold: true, color: { argb: argb(tr.ink) } };
         row.getCell("status").font = { name: FONT, size: 11, bold: true, color: { argb: argb(STATUS[d.status].ink) } };
-        row.getCell("year").alignment = row.getCell("followers").alignment = { vertical: "top", horizontal: "center" };
+        row.getCell("year").alignment = { vertical: "top", horizontal: "center" };
       });
-      ws.autoFilter = { from: "A1", to: "K1" };
+      ws.autoFilter = { from: "A1", to: "J1" };
       return wb.xlsx.writeBuffer();
     }).then(function (buf) {
       if (!buf) return;
